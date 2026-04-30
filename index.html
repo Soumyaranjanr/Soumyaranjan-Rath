@@ -1,815 +1,560 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html class="dark scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Soumyaranjan Rath | Integration Architect & Technical Product Lead</title>
+    <meta name="description" content="Portfolio of Soumyaranjan Rath — Integration Architect & Technical Product Lead with 9+ years delivering enterprise-scale data platforms, SAP integrations, and AI-assisted automation."/>
+    <meta property="og:title" content="Soumyaranjan Rath | Integration Architect"/>
+    <meta property="og:description" content="I own enterprise data platforms end-to-end — from architecture to executive decision systems."/>
+    <meta property="og:type" content="website"/>
 
-    <title>Soumyaranjan Rath | Integration Architect & Senior Data Engineer</title>
-    <meta name="description"
-        content="Portfolio of Soumyaranjan Rath, Senior Data Engineer and AI Automation Specialist. 9+ years of expertise in enterprise ETL and system integrations.">
-    <meta property="og:title" content="Soumyaranjan Rath | Senior Data Engineer">
-    <meta property="og:description"
-        content="Architecting enterprise-grade ETL pipelines, automating complex workflows, and expanding into AI-driven automation.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://soumyaranjanr.github.io/Soumyaranjan-Rath/">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-dim": "#0c0d13",
+                        "surface-contrast": "#131622",
+                        "on-surface-variant": "#c3c6d6",
+                        "on-surface": "#e3e1ec",
+                        "surface": "#12131a",
+                        "outline-variant": "#434653",
+                        "primary-container": "#4570e2",
+                        "background": "#0c0d13",
+                        "on-background": "#e3e1ec",
+                        "surface-container": "#1e1f26",
+                        "primary": "#b4c5ff",
+                        "mint": "#64ffda",
+                        "accent": "#ffb86d"
+                    },
+                    fontFamily: {
+                        sans: ["Plus Jakarta Sans", "sans-serif"],
+                    },
+                    transitionTimingFunction: {
+                        'cinematic': 'cubic-bezier(0.16, 1, 0.3, 1)',
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'stream-drop': 'streamDrop 8s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(24px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        streamDrop: {
+                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
+                            '10%': { opacity: '1' },
+                            '90%': { opacity: '1' },
+                            '100%': { transform: 'translateY(100vh)', opacity: '0' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
     <style>
-        :root {
-            /* OLED-Optimized Dark Theme */
-            --base-bg: #09090b;
-            --surface-1: #18181b;
-            --surface-2: #27272a;
-            --surface-glass: rgba(24, 24, 27, 0.6);
-
-            /* Typography */
-            --text-primary: #fafafa;
-            --text-secondary: #a1a1aa;
-
-            /* Accents: Cyan to Violet Gradient */
-            --accent-cyan: #22d3ee;
-            --accent-blue: #3b82f6;
-            --accent-violet: #8b5cf6;
-
-            /* Utilities */
-            --border-subtle: rgba(255, 255, 255, 0.08);
-            --border-hover: rgba(255, 255, 255, 0.2);
-            --radius-lg: 1.5rem;
-            --radius-md: 1rem;
-            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+        * { box-sizing: border-box; }
 
         body {
-            background-color: var(--base-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
+            background-color: #0c0d13;
+            color: #e3e1ec;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Ambient Background Glow */
-        .ambient-glow {
-            position: fixed;
-            top: -20%;
-            left: -10%;
-            width: 50vw;
-            height: 50vw;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(9, 9, 11, 0) 70%);
-            filter: blur(80px);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .ambient-glow.right {
-            top: 40%;
-            left: auto;
-            right: -10%;
-            background: radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, rgba(9, 9, 11, 0) 70%);
-        }
-
-        /* Typography Base */
-        h1,
-        h2,
-        h3 {
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue), var(--accent-violet));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Layout Container */
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 6rem 2rem;
-        }
-
-        /* Glassmorphic Navbar */
-        .navbar {
-            position: fixed;
-            top: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc(100% - 4rem);
-            max-width: 800px;
-            background: var(--surface-glass);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--border-subtle);
-            border-radius: 999px;
-            z-index: 1000;
-            padding: 0.75rem 1.5rem;
-            transition: var(--transition-smooth);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            color: var(--text-primary);
-            font-weight: 800;
-            font-size: 1.25rem;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .nav-logo-dot {
-            width: 8px;
-            height: 8px;
-            background-color: var(--accent-cyan);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--accent-cyan);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition-smooth);
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--text-primary);
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding-top: 5rem;
-        }
-
-        .status-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(34, 211, 238, 0.1);
-            border: 1px solid rgba(34, 211, 238, 0.2);
-            border-radius: 999px;
-            color: var(--accent-cyan);
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .status-indicator {
-            width: 6px;
-            height: 6px;
-            background: var(--accent-cyan);
-            border-radius: 50%;
-            box-shadow: 0 0 8px var(--accent-cyan);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            50% {
-                opacity: 0.5;
-                transform: scale(1.5);
-            }
-
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .hero-title {
-            font-size: clamp(3rem, 6vw, 5.5rem);
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-            color: var(--text-secondary);
-            font-weight: 500;
-            max-width: 800px;
-            margin: 0 auto 3rem auto;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 999px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: var(--transition-smooth);
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--text-primary);
-            color: var(--base-bg);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            background: var(--accent-cyan);
-            color: var(--base-bg);
-            box-shadow: 0 10px 25px rgba(34, 211, 238, 0.3);
-        }
-
-        .btn-secondary {
-            background: var(--surface-1);
-            color: var(--text-primary);
-            border: 1px solid var(--border-subtle);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--border-hover);
-            background: var(--surface-2);
-            transform: translateY(-2px);
-        }
-
-        /* Section Headers */
-        .section-header {
-            margin-bottom: 4rem;
-        }
-
-        .section-label {
-            color: var(--accent-cyan);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 0.85rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-
-        /* Bento Grid Architecture (Skills & About) */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .bento-card {
-            background: var(--surface-1);
-            border: 1px solid var(--border-subtle);
-            border-radius: var(--radius-lg);
-            padding: 2.5rem;
-            position: relative;
+        /* ─── Minimal Data Stream Background ─── */
+        .data-stream-bg {
+            position: absolute;
+            inset: 0;
             overflow: hidden;
-            transition: var(--transition-smooth);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .bento-card:hover {
-            border-color: var(--border-hover);
-            transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .bento-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.03), transparent 40%);
-            opacity: 0;
-            transition: opacity 0.3s;
+            z-index: 0;
             pointer-events: none;
-            z-index: 1;
+            opacity: 0.15;
+        }
+        .stream-line {
+            position: absolute;
+            width: 1px;
+            height: 30vh;
+            background: linear-gradient(to bottom, transparent, #b4c5ff, transparent);
+            top: 0;
+            animation: streamDrop 8s linear infinite;
         }
 
-        .bento-card:hover::before {
-            opacity: 1;
+        /* ─── Reduced Glassmorphism ─── */
+        .glass-panel {
+            background: rgba(30, 31, 38, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .glass-panel:hover {
+            background: rgba(30, 31, 38, 0.4);
+            border-color: rgba(255, 255, 255, 0.1);
         }
 
-        .bento-icon {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .bento-title {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-
-        .bento-desc {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            flex-grow: 1;
-        }
-
-        /* Specific Bento Sizing */
-        .col-span-12 {
-            grid-column: span 12;
-        }
-
-        .col-span-8 {
-            grid-column: span 8;
-        }
-
-        .col-span-4 {
-            grid-column: span 4;
-        }
-
-        .col-span-6 {
-            grid-column: span 6;
-        }
-
-        /* Skill Pills inside Bento */
-        .pill-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .skill-pill {
-            background: var(--surface-2);
-            border: 1px solid var(--border-subtle);
-            padding: 0.5rem 1rem;
-            border-radius: 999px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-primary);
-            transition: var(--transition-smooth);
-        }
-
-        .skill-pill.highlight {
-            background: rgba(34, 211, 238, 0.1);
-            border-color: rgba(34, 211, 238, 0.3);
-            color: var(--accent-cyan);
-        }
-
-        .skill-pill:hover {
-            background: var(--text-primary);
-            color: var(--base-bg);
-            border-color: var(--text-primary);
-        }
-
-        /* Minimalist Timeline */
-        .timeline-wrapper {
-            position: relative;
-            padding-left: 2rem;
-            border-left: 1px solid var(--border-subtle);
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
-
-        .timeline-node {
-            position: relative;
-        }
-
-        .timeline-node::before {
+        /* ─── Timeline ─── */
+        .tl-track::before {
             content: '';
             position: absolute;
-            left: -2.35rem;
-            top: 0.25rem;
-            width: 12px;
-            height: 12px;
-            background: var(--surface-1);
-            border: 2px solid var(--text-secondary);
-            border-radius: 50%;
-            transition: var(--transition-smooth);
+            top: 0; bottom: 0;
+            left: 24px;
+            width: 2px;
+            background: linear-gradient(to bottom, #4570e2 0%, rgba(69,112,226,0.05) 100%);
+        }
+        @media(min-width:768px){
+            .tl-track::before { left: 50%; transform: translateX(-50%); }
         }
 
-        .timeline-node:hover::before,
-        .timeline-node.active::before {
-            background: var(--accent-cyan);
-            border-color: var(--accent-cyan);
-            box-shadow: 0 0 12px rgba(34, 211, 238, 0.5);
+        /* ─── Nav active ─── */
+        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: #b4c5ff;
+            transition: width 0.3s ease;
         }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
 
-        .time-meta {
-            color: var(--accent-cyan);
-            font-family: monospace;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            display: block;
-        }
-
-        .time-title {
-            font-size: 1.5rem;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .time-company {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            font-weight: 500;
-        }
-
-        .time-details {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Footer */
-        .site-footer {
-            border-top: 1px solid var(--border-subtle);
-            padding: 4rem 2rem;
-            text-align: center;
-            margin-top: 5rem;
-        }
-
-        .contact-email {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 2rem;
-            transition: var(--transition-smooth);
-        }
-
-        .contact-email:hover {
-            color: var(--accent-cyan);
-        }
-
-        .footer-meta {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-        }
-
-        /* Hardware-Accelerated Animations */
-        .reveal-up {
+        /* ─── Cinematic Reveal System ─── */
+        .reveal {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(24px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-            will-change: opacity, transform;
         }
-
-        .reveal-up.is-visible {
+        .reveal.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: none;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 1024px) {
-
-            .col-span-8,
-            .col-span-4,
-            .col-span-6 {
-                grid-column: span 12;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .navbar {
-                width: calc(100% - 2rem);
-                border-radius: 1rem;
-            }
-
-            .container {
-                padding: 4rem 1.5rem;
-            }
-
-            .bento-card {
-                padding: 1.5rem;
-            }
-
-            .btn-group {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .footer-meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
+        /* ─── Section divider ─── */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            margin: 0;
         }
     </style>
 </head>
 
-<body>
+<body class="min-h-screen flex flex-col">
 
-    <div class="ambient-glow"></div>
-    <div class="ambient-glow right"></div>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <div class="nav-logo-dot"></div>
-                Soumya.
+    <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
+    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-[#0c0d13]/90 backdrop-blur-md border-b border-white/5 h-[72px]">
+        <div class="max-w-[1200px] mx-auto h-full flex items-center justify-between px-6 md:px-8">
+            <a href="#home" class="text-white font-bold text-lg tracking-tight hover:opacity-80 transition-opacity">
+                Soumyaranjan Rath
             </a>
-            <ul class="nav-links">
-                <li><a href="#expertise">Expertise</a></li>
-                <li><a href="#projects">Operations</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
 
-    <section class="hero reveal-up" id="home">
-        <div class="container">
-            <div class="status-badge">
-                <div class="status-indicator"></div>
-                Notice Period: 60-90 Days
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#value" class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Value Prop</a>
+                <a href="#experience" class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Experience</a>
+                <a href="#impact" class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Business Impact</a>
+            </nav>
+
+            <div class="hidden md:flex items-center gap-5">
+                <a href="mailto:ultimate.soumya@gmail.com" class="text-slate-300 hover:text-white text-[13px] font-semibold transition-colors">
+                    Contact
+                </a>
+                <button onclick="window.print()" class="bg-white text-[#0c0d13] px-5 py-2 rounded text-[13px] font-bold hover:bg-slate-200 transition-colors">
+                    Get Resume
+                </button>
             </div>
-            <h1 class="hero-title">
-                Engineering <span class="gradient-text">Enterprise</span><br>Data Architecture.
+
+            <button id="mob-btn" class="md:hidden text-slate-300 p-1.5">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+
+        <!-- Mobile Nav -->
+        <div id="mob-nav" class="hidden md:hidden absolute top-full left-0 w-full bg-[#0c0d13] border-b border-white/5">
+            <div class="flex flex-col p-5 gap-2">
+                <a href="#value" class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Value Prop</a>
+                <a href="#experience" class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Experience</a>
+                <a href="#impact" class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Business Impact</a>
+                <a href="mailto:ultimate.soumya@gmail.com" class="mob-link mt-2 py-3 px-4 rounded bg-white text-[#0c0d13] text-[14px] font-bold text-center">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+    <section id="home" class="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden pt-20">
+        <!-- Subtle CSS Data Stream Background -->
+        <div class="data-stream-bg">
+            <div class="stream-line left-[10%]" style="animation-delay: 0s; animation-duration: 7s;"></div>
+            <div class="stream-line left-[30%]" style="animation-delay: 2s; animation-duration: 9s;"></div>
+            <div class="stream-line left-[50%]" style="animation-delay: 5s; animation-duration: 6s;"></div>
+            <div class="stream-line left-[70%]" style="animation-delay: 1s; animation-duration: 8s;"></div>
+            <div class="stream-line left-[90%]" style="animation-delay: 4s; animation-duration: 10s;"></div>
+        </div>
+
+        <div class="relative z-[10] w-full max-w-[1200px] mx-auto px-6 md:px-8">
+            <h1 class="animate-fade-in-up text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.15] tracking-tight text-white max-w-4xl mb-6">
+                I own enterprise data platforms end-to-end — from architecture to executive decision systems.
             </h1>
-            <p class="hero-subtitle">
-                Bridging legacy SAP integrations with next-generation AI automation. 9+ years of precision-driven ETL
-                engineering and SaaS delivery.
+
+            <p class="animate-fade-in-up text-lg text-slate-300 max-w-3xl mb-12 leading-relaxed" style="animation-delay: 0.1s;">
+                Integration Architect & Technical Product Lead with <strong>9+ years</strong> delivering SAP integrations, AI-assisted automation workflows, and real-time analytics systems that reduce operational effort by up to 90%.
             </p>
-            <div class="btn-group">
-                <a href="#projects" class="btn btn-primary">
-                    View System Impacts <i class="fa-solid fa-arrow-right"></i>
+
+            <div class="animate-fade-in-up flex flex-wrap gap-4 mb-20" style="animation-delay: 0.2s;">
+                <a href="mailto:ultimate.soumya@gmail.com" class="bg-white text-[#0c0d13] px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-slate-200">
+                    Discuss Your System Challenges
                 </a>
-                <a href="#contact" class="btn btn-secondary">
-                    <i class="fa-solid fa-terminal"></i> Initialize Contact
+                <a href="#impact" class="border border-white/20 text-white px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-white/5">
+                    View Business Impact
                 </a>
             </div>
-        </div>
-    </section>
 
-    <section class="container" id="expertise">
-        <div class="section-header reveal-up">
-            <span class="section-label">// System Capabilities</span>
-            <h2 class="section-title">The Full-Stack Advantage</h2>
-        </div>
-
-        <div class="bento-grid">
-            <div class="bento-card col-span-8 reveal-up">
-                <i class="fa-solid fa-network-wired bento-icon"></i>
-                <h3 class="bento-title">Enterprise ETL & Integration</h3>
-                <p class="bento-desc">Architecting bi-directional pipelines connecting SAP ECC to global supply chain
-                    and financial modules. Guaranteeing 99.9% data reliability by replacing legacy manual data-handling
-                    with robust, automated workflows.</p>
-                <div class="pill-container">
-                    <span class="skill-pill highlight">Magic XPI / XPA</span>
-                    <span class="skill-pill highlight">SAP ECC</span>
-                    <span class="skill-pill">API Architecture</span>
-                    <span class="skill-pill">Enterprise Pipelines</span>
+            <!-- Proof Strip / Metrics (Subdued visually to not fight CTAs) -->
+            <div class="animate-fade-in-up border-t border-white/10 pt-8 grid grid-cols-2 md:grid-cols-4 gap-6 opacity-80" style="animation-delay: 0.3s;">
+                <div>
+                    <p class="text-2xl font-bold text-white mb-1">0→1</p>
+                    <p class="text-xs text-slate-400 font-medium">Enterprise platform ownership</p>
                 </div>
-            </div>
-
-            <div class="bento-card col-span-4 reveal-up" style="transition-delay: 0.1s;">
-                <i class="fa-solid fa-database bento-icon"></i>
-                <h3 class="bento-title">Data Engineering</h3>
-                <p class="bento-desc">Deep structural optimization and real-time synchronization.</p>
-                <div class="pill-container">
-                    <span class="skill-pill">MS SQL Server</span>
-                    <span class="skill-pill">Query Optimization</span>
-                    <span class="skill-pill">JSON / XML</span>
+                <div>
+                    <p class="text-2xl font-bold text-white mb-1">~40+</p>
+                    <p class="text-xs text-slate-400 font-medium">Global stakeholders enabled</p>
                 </div>
-            </div>
-
-            <div class="bento-card col-span-6 reveal-up" style="transition-delay: 0.2s;">
-                <i class="fa-solid fa-code bento-icon"></i>
-                <h3 class="bento-title">Programming & UI</h3>
-                <p class="bento-desc">Building end-to-end applications and executive SaaS dashboards.</p>
-                <div class="pill-container">
-                    <span class="skill-pill">Python</span>
-                    <span class="skill-pill">Google Apps Script</span>
-                    <span class="skill-pill">SQL</span>
-                    <span class="skill-pill">HTML / CSS</span>
+                <div>
+                    <p class="text-2xl font-bold text-white mb-1">99.9%</p>
+                    <p class="text-xs text-slate-400 font-medium">System reliability SLA</p>
                 </div>
-            </div>
-
-            <div class="bento-card col-span-6 reveal-up" style="transition-delay: 0.3s;">
-                <i class="fa-solid fa-microchip bento-icon"></i>
-                <h3 class="bento-title">AI & DevOps</h3>
-                <p class="bento-desc">Actively expanding into AI-driven automation for next-gen efficiencies.</p>
-                <div class="pill-container">
-                    <span class="skill-pill highlight">Generative AI Tools</span>
-                    <span class="skill-pill">GitLab CI/CD</span>
-                    <span class="skill-pill">Automated Testing</span>
-                    <span class="skill-pill">Agile/Scrum</span>
+                <div>
+                    <p class="text-2xl font-bold text-white mb-1">Up to 90%</p>
+                    <p class="text-xs text-slate-400 font-medium">Reduction in manual operations</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="container" id="projects">
-        <div class="section-header reveal-up">
-            <span class="section-label">// Operational Impact</span>
-            <h2 class="section-title">Core Deployments</h2>
+    <!-- ═══════════════════════════════ WHY COMPANIES BRING ME IN ═══════════════════════════════ -->
+    <section id="value" class="py-24 max-w-[1200px] mx-auto px-6 md:px-8 border-t border-white/5">
+        <div class="reveal mb-12">
+            <h2 class="text-3xl font-extrabold text-white mb-4">Why Companies Bring Me In</h2>
         </div>
 
-        <div class="bento-grid">
-            <div class="bento-card col-span-6 reveal-up">
-                <i class="fa-solid fa-bolt bento-icon"></i>
-                <h3 class="bento-title">Global Workflow Automation</h3>
-                <p class="bento-desc">Engineered custom Google Apps Script automations to replace manual spreadsheet
-                    operations. This deployment saved over 20+ hours per week and reduced human error by 90% across
-                    cross-functional global teams.</p>
+        <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-1">hub</span>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-2">Fix broken enterprise integrations</h3>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">I resolve deep-rooted architecture flaws and SAP inconsistencies that cause downstream data discrepancies.</p>
+                </div>
             </div>
-
-            <div class="bento-card col-span-6 reveal-up" style="transition-delay: 0.1s;">
-                <i class="fa-solid fa-server bento-icon"></i>
-                <h3 class="bento-title">Architecture Migration & RCA</h3>
-                <p class="bento-desc">Spearheaded the Root Cause Analysis for critical SAP IDoc count discrepancies.
-                    Designed and successfully executed a migration to a highly stable SQL-based architecture, resolving
-                    long-standing reporting instability.</p>
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-1">precision_manufacturing</span>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-2">Replace manual workflows</h3>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">I deploy scalable, AI-assisted automation systems that reclaim hundreds of engineering and operational hours.</p>
+                </div>
             </div>
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-1">account_tree</span>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-2">Align execution with decisions</h3>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">I bridge the gap between engineering output and executive strategy, ensuring systems produce reliable dashboard KPIs.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary mt-1">verified_user</span>
+                <div>
+                    <h3 class="text-white font-bold text-lg mb-2">Deliver audit-proof pipelines</h3>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">I establish strict governance and fault-tolerant ETL pipelines to ensure data integrity during regulatory compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="bento-card col-span-12 reveal-up" style="transition-delay: 0.2s;">
-                <i class="fa-solid fa-chart-pie bento-icon"></i>
-                <h3 class="bento-title">Executive SaaS Dashboards & Operational Tracking</h3>
-                <p class="bento-desc">Designed interactive Power BI and SaaS UI dashboards consolidating multi-source
-                    data. Concurrently developed an automated loss-tracking and alert system, granting global executive
-                    management real-time visibility into KPI tracking and operational bottlenecks.</p>
+    <!-- ═══════════════════════════════ WHAT YOU GET WHEN YOU HIRE ME (CONTRAST SECTION) ═══════════════════════════════ -->
+    <section class="py-24 bg-surface-contrast border-y border-white/5">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+            <div class="reveal mb-12">
+                <h2 class="text-3xl font-extrabold text-white mb-4">What You Get When You Hire Me</h2>
+            </div>
+            
+            <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
+                    <span class="material-symbols-outlined text-mint">check</span>
+                    <span class="text-slate-300 text-[15px] font-medium">End-to-end ownership of enterprise data platforms</span>
+                </div>
+                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
+                    <span class="material-symbols-outlined text-mint">check</span>
+                    <span class="text-slate-300 text-[15px] font-medium">Elimination of chronic reporting inconsistencies</span>
+                </div>
+                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
+                    <span class="material-symbols-outlined text-mint">check</span>
+                    <span class="text-slate-300 text-[15px] font-medium">70–90% reduction in manual operational workload</span>
+                </div>
+                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
+                    <span class="material-symbols-outlined text-mint">check</span>
+                    <span class="text-slate-300 text-[15px] font-medium">Real-time executive dashboards for instant strategy</span>
+                </div>
+                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
+                    <span class="material-symbols-outlined text-mint">check</span>
+                    <span class="text-slate-300 text-[15px] font-medium">Stable, fault-tolerant integration architecture</span>
+                </div>
+                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
+                    <span class="material-symbols-outlined text-mint">check</span>
+                    <span class="text-slate-300 text-[15px] font-medium">Faster, predictable releases via GitLab CI/CD</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="container" id="experience">
-        <div class="section-header reveal-up">
-            <span class="section-label">// Career Trajectory</span>
-            <h2 class="section-title">9+ Years of Precision</h2>
+    <!-- ═══════════════════════════════ HOW I SOLVE PROBLEMS (METHODOLOGY) ═══════════════════════════════ -->
+    <section class="py-24 max-w-[1200px] mx-auto px-6 md:px-8">
+        <div class="reveal mb-12">
+            <h2 class="text-3xl font-extrabold text-white mb-4">How I Solve Enterprise Problems</h2>
         </div>
 
-        <div class="timeline-wrapper">
+        <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2 border-b border-white/10 pb-2">1. Architecture</h3>
+                <ul class="text-slate-400 text-[14px] space-y-3 mt-4">
+                    <li><strong class="text-slate-200">Problem:</strong> Fragmented silos block visibility.</li>
+                    <li><strong class="text-slate-200">Approach:</strong> Design scalable, unified integration layers mapping directly to core business workflows.</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2 border-b border-white/10 pb-2">2. Execution</h3>
+                <ul class="text-slate-400 text-[14px] space-y-3 mt-4">
+                    <li><strong class="text-slate-200">Problem:</strong> Brittle pipelines fail under volume.</li>
+                    <li><strong class="text-slate-200">Approach:</strong> Build fault-tolerant ETL and strict CI/CD to automate heavy lifting and eliminate manual steps.</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-white mb-2 border-b border-white/10 pb-2">3. Business Value</h3>
+                <ul class="text-slate-400 text-[14px] space-y-3 mt-4">
+                    <li><strong class="text-slate-200">Problem:</strong> Decisions made on stale data.</li>
+                    <li><strong class="text-slate-200">Approach:</strong> Deliver real-time executive dashboards for zero-discrepancy, trusted KPI tracking.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-            <div class="timeline-node active reveal-up">
-                <span class="time-meta">Sept 2019 — Present</span>
-                <h3 class="time-title">Senior ETL Developer & Tech Lead</h3>
-                <p class="time-company">Radiall | Bangalore, India</p>
-                <p class="time-details">Global enterprise integrations, SAP ECC architecture, workflow automation, and
-                    current transition into AI-driven system capabilities.</p>
+    <div class="section-divider"></div>
+
+    <!-- ═══════════════════════════════ EXPERIENCE ═══════════════════════════════ -->
+    <section id="experience" class="py-24 max-w-[1200px] mx-auto px-6 md:px-8">
+        <div class="reveal mb-16">
+            <h2 class="text-3xl font-extrabold text-white mb-4">Experience</h2>
+        </div>
+
+        <div class="relative tl-track max-w-4xl mx-auto">
+            
+            <!-- Radiall -->
+            <div class="reveal relative z-10 flex flex-col md:flex-row w-full mb-20">
+                <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                    <h3 class="text-xl font-bold text-white mb-1">Integration Architect & Tech Product Lead</h3>
+                    <p class="text-primary font-semibold mb-1">Radiall · Bangalore, India</p>
+                    <p class="text-slate-500 text-sm">Sept 2019 – Present</p>
+                </div>
+                <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1"></div>
+                <div class="md:w-1/2 md:pl-12 pl-12 mt-6 md:mt-0">
+                    <p class="text-slate-300 font-bold mb-3">Key Wins:</p>
+                    <ul class="text-slate-400 text-[14px] space-y-3 list-disc ml-4">
+                        <li>Owned architecture and delivery of a 0→1 enterprise data platform (Magic XPI), sustaining 99.9% reliability for ~40+ global stakeholders.</li>
+                        <li>Deployed AI-assisted automation workflows for FDA compliance and Lean process mapping, reducing manual operational effort by up to 90%.</li>
+                        <li>Led cross-functional teams to re-architect SQL reporting layers, achieving 100% elimination of historic SAP-IDoc data discrepancies.</li>
+                        <li>Defined system roadmap and established GitLab CI/CD pipelines, drastically reducing production deployment defects.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="timeline-node reveal-up">
-                <span class="time-meta">2016 — 2019</span>
-                <h3 class="time-title">Full-Stack Developer & Integration Specialist</h3>
-                <p class="time-company">MeritTrac Services Pvt Ltd | India</p>
-                <p class="time-details">Designed automated ETL pipelines utilizing Magic XPI for the high-volume
-                    examination sector, transforming raw operational data into frontend-ready structured datasets.</p>
+            <!-- MeritTrac -->
+            <div class="reveal relative z-10 flex flex-col md:flex-row w-full mb-20">
+                <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                    <h3 class="text-xl font-bold text-white mb-1">Integration Specialist & Full-Stack Dev</h3>
+                    <p class="text-primary font-semibold mb-1">MeritTrac Services · India</p>
+                    <p class="text-slate-500 text-sm">2016 – 2019</p>
+                </div>
+                <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-600 border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1"></div>
+                <div class="md:w-1/2 md:pl-12 pl-12 mt-6 md:mt-0">
+                    <p class="text-slate-300 font-bold mb-3">Key Wins:</p>
+                    <ul class="text-slate-400 text-[14px] space-y-3 list-disc ml-4">
+                        <li>Developed and scaled automated ETL pipelines across high-volume national examination systems.</li>
+                        <li>Replaced vulnerable manual data-handling processes with secure, real-time backend syncs.</li>
+                        <li>Bridged backend databases with user-facing assessment platforms via Magic XPA integration.</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="timeline-node reveal-up">
-                <span class="time-meta">2014 — 2016</span>
-                <h3 class="time-title">Master of Technology (M.Tech) - Computer Science</h3>
-                <p class="time-company">KIIT University | Bhubaneswar</p>
-            </div>
-
-            <div class="timeline-node reveal-up">
-                <span class="time-meta">2012 — 2014</span>
-                <h3 class="time-title">Lecturer (IT & Computer Science)</h3>
-                <p class="time-company">Polytechnic College | Odisha</p>
-                <p class="time-details">Delivered academic instruction on IT fundamentals, database structures, and
-                    Computer Science principles.</p>
-            </div>
-
-            <div class="timeline-node reveal-up">
-                <span class="time-meta">2008 — 2012</span>
-                <h3 class="time-title">Bachelor of Technology (B.Tech) - Information Technology</h3>
-                <p class="time-company">Centurion University of Technology & Management</p>
+            <!-- Polytechnic -->
+            <div class="reveal relative z-10 flex flex-col md:flex-row w-full">
+                <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+                    <h3 class="text-xl font-bold text-white mb-1">Lecturer, IT & Computer Science</h3>
+                    <p class="text-primary font-semibold mb-1">Polytechnic College · Odisha, India</p>
+                    <p class="text-slate-500 text-sm">2012 – 2014</p>
+                </div>
+                <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-700 border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1"></div>
+                <div class="md:w-1/2 md:pl-12 pl-12 mt-6 md:mt-0">
+                    <ul class="text-slate-400 text-[14px] space-y-3 list-disc ml-4">
+                        <li>Communicated database structures and CS principles to emerging technologists.</li>
+                        <li>Translated complex technical concepts into accessible curriculums.</li>
+                    </ul>
+                </div>
             </div>
 
         </div>
     </section>
 
-    <footer class="site-footer" id="contact">
-        <div class="container reveal-up">
-            <span class="section-label" style="justify-content: center; display: flex;">// Open for Opportunities</span>
-            <a href="mailto:ultimate.soumya@gmail.com" class="contact-email">ultimate.soumya@gmail.com</a>
+    <div class="section-divider"></div>
 
-            <div class="footer-meta">
-                <span><i class="fa-solid fa-phone"></i> +91 91247 44448</span>
-                <span><i class="fa-solid fa-location-dot"></i> Bangalore, India (Hybrid/Remote)</span>
-                <span><i class="fa-brands fa-github"></i> github.com/soumyaranjanr</span>
+    <!-- ═══════════════════════════════ PROJECTS / IMPACT ═══════════════════════════════ -->
+    <section id="impact" class="py-24 max-w-[1200px] mx-auto px-6 md:px-8">
+        <div class="reveal mb-12">
+            <h2 class="text-3xl font-extrabold text-white mb-4">Strategic Business Impact</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- FDA & LEAN AI PROJECT -->
+            <div class="reveal glass-panel rounded p-8">
+                <h3 class="text-lg font-bold text-white mb-4">AI-Automated FDA & Lean Mapping</h3>
+                <div class="space-y-3 text-[14px] text-slate-400">
+                    <p><strong class="text-slate-200">Problem:</strong> Manual process mapping slowed operations and risked audit failure.</p>
+                    <p><strong class="text-slate-200">Built:</strong> Intelligent AI-assisted automation engine parsing legacy documentation.</p>
+                    <p><strong class="text-white">Outcome:</strong> Accelerated Lean cycles by 40%, cut manual effort by up to 90%.</p>
+                </div>
             </div>
 
-            <p style="margin-top: 3rem; color: var(--surface-2); font-size: 0.85rem;">
-                &copy; 2026 Soumyaranjan Rath. Engineered for performance.
-            </p>
+            <!-- Analytics Platform -->
+            <div class="reveal glass-panel rounded p-8">
+                <h3 class="text-lg font-bold text-white mb-4">Executive Analytics Platform</h3>
+                <div class="space-y-3 text-[14px] text-slate-400">
+                    <p><strong class="text-slate-200">Problem:</strong> C-suite lacked real-time operational visibility.</p>
+                    <p><strong class="text-slate-200">Built:</strong> Direct-to-dashboard pipeline uniting SQL, Power BI, and Data Studio.</p>
+                    <p><strong class="text-white">Outcome:</strong> Instant KPI visibility enabling data-driven strategic planning.</p>
+                </div>
+            </div>
+
+            <!-- SAP-IDoc -->
+            <div class="reveal glass-panel rounded p-8">
+                <h3 class="text-lg font-bold text-white mb-4">SAP-IDoc Reliability Overhaul</h3>
+                <div class="space-y-3 text-[14px] text-slate-400">
+                    <p><strong class="text-slate-200">Problem:</strong> Inconsistencies eroded business trust in reporting metrics.</p>
+                    <p><strong class="text-slate-200">Built:</strong> Deep RCA and complete re-architecture of the SQL reporting layer.</p>
+                    <p><strong class="text-white">Outcome:</strong> 100% elimination of historic discrepancies; restored leadership trust.</p>
+                </div>
+            </div>
+
+            <!-- CI/CD -->
+            <div class="reveal glass-panel rounded p-8">
+                <h3 class="text-lg font-bold text-white mb-4">Enterprise CI/CD Implementation</h3>
+                <div class="space-y-3 text-[14px] text-slate-400">
+                    <p><strong class="text-slate-200">Problem:</strong> Manual deployments caused frequent pipeline downtime.</p>
+                    <p><strong class="text-slate-200">Built:</strong> Automated CI/CD pipelines enforcing strict GitLab protocols.</p>
+                    <p><strong class="text-white">Outcome:</strong> Faster, predictable, and highly reliable release cycles.</p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ WHAT MAKES ME DIFFERENT ═══════════════════════════════ -->
+    <section class="py-24 bg-surface-contrast border-y border-white/5">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-white mb-12">What Makes Me Different</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="p-4">
+                    <p class="text-xl font-bold text-white">I own outcomes, not just implementation.</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-xl font-bold text-white">I operate seamlessly across engineering, architecture, and product.</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-xl font-bold text-white">I translate technical systems into executive decisions.</p>
+                </div>
+                <div class="p-4">
+                    <p class="text-xl font-bold text-white">I eliminate inefficiencies at global enterprise scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ FINAL CTA ═══════════════════════════════ -->
+    <section class="py-24 max-w-[1200px] mx-auto px-6 md:px-8 text-center">
+        <div class="reveal">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-8">If your systems are slowing decisions, we should talk.</h2>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:ultimate.soumya@gmail.com" class="bg-white text-[#0c0d13] px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-slate-200">
+                    Book a Discussion
+                </a>
+                <button onclick="window.print()" class="border border-white/20 text-white px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-white/5">
+                    Download Case Study
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+    <footer class="py-8 border-t border-white/5">
+        <div class="max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+            <div>
+                <div class="text-white font-bold text-[15px]">Soumyaranjan Rath</div>
+            </div>
+            <div class="flex gap-6">
+                <a href="mailto:ultimate.soumya@gmail.com" class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">Email</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">LinkedIn</a>
+                <a href="https://github.com" target="_blank" rel="noopener" class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">GitHub</a>
+            </div>
         </div>
     </footer>
 
+    <!-- ─── Scripts ─── -->
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // High-Performance Scroll Reveal (Intersection Observer)
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
+        // Setup Mobile Menu Toggle
+        const mobBtn = document.getElementById('mob-btn');
+        const mobNav = document.getElementById('mob-nav');
+        mobBtn.addEventListener('click', () => mobNav.classList.toggle('hidden'));
+        document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobNav.classList.add('hidden')));
 
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.reveal-up').forEach(element => {
-                observer.observe(element);
-            });
-
-            // Smooth Active State Navigation
-            const sections = document.querySelectorAll("section[id]");
-            const navLinks = document.querySelectorAll(".nav-links a");
-
-            window.addEventListener("scroll", () => {
-                let current = "";
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                        current = section.getAttribute("id");
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href").includes(current)) {
-                        link.classList.add("active");
-                    }
-                });
-            });
-
-            // Mouse-tracking glow effect on Bento Cards
-            document.querySelectorAll('.bento-card').forEach(card => {
-                card.addEventListener('mousemove', e => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    card.style.setProperty('--mouse-x', `${x}px`);
-                    card.style.setProperty('--mouse-y', `${y}px`);
-                });
-            });
+        // Setup Header Scroll Background
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(12, 13, 19, 0.98)';
+                header.style.borderBottomColor = 'rgba(255, 255, 255, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(12, 13, 19, 0.9)';
+                header.style.borderBottomColor = 'rgba(255, 255, 255, 0.05)';
+            }
         });
+
+        // Setup Reveal Observer for Sections
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08 });
+        revealEls.forEach(el => revealObserver.observe(el));
+
+        // Setup Navigation Highlighting
+        const navLinks = document.querySelectorAll('.nav-link');
+        const scrollSpy = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    navLinks.forEach(link => {
+                        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+                    });
+                }
+            });
+        }, { threshold: 0.4, rootMargin: '-30% 0px -30% 0px' });
+        document.querySelectorAll('section[id]').forEach(s => scrollSpy.observe(s));
     </script>
 </body>
-
 </html>
