@@ -70,12 +70,46 @@
             overflow-x: hidden;
         }
 
+        /* ─── Ambient Subtle Blue Glow Animation ─── */
+        .ambient-glow-container {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -2;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .glow-orb-1, .glow-orb-2 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(140px);
+            opacity: 0.12;
+            animation: floatGlow 20s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
+        }
+        .glow-orb-1 {
+            width: 60vw; height: 60vh;
+            background: #4570e2; /* Deep blue */
+            top: -20%; left: -10%;
+        }
+        .glow-orb-2 {
+            width: 50vw; height: 50vh;
+            background: #b4c5ff; /* Light primary blue */
+            bottom: -20%; right: -10%;
+            animation-delay: -10s;
+            animation-duration: 25s;
+        }
+        @keyframes floatGlow {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(8%, 12%) scale(1.15); }
+        }
+
         /* ─── Minimal Data Stream Background ─── */
         .data-stream-bg {
             position: absolute;
             inset: 0;
             overflow: hidden;
-            z-index: 0;
+            z-index: -1;
             pointer-events: none;
             opacity: 0.15;
         }
@@ -141,10 +175,75 @@
             background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
             margin: 0;
         }
+
+        /* ═══════════════════════════════ PRINT / PDF STYLES ═══════════════════════════════ */
+        /* Ensures the exported PDF is highly readable and ignores the dark theme */
+        @media print {
+            @page { margin: 1.5cm; }
+            
+            /* Force light background and dark text */
+            body, html { 
+                background: white !important; 
+                color: black !important; 
+                font-size: 11pt !important;
+            }
+            
+            /* Overriding all dark mode text colors to black/dark gray */
+            * { color: #111 !important; text-shadow: none !important; box-shadow: none !important; }
+            
+            .text-white { color: #000 !important; font-weight: 800 !important; }
+            .text-slate-300, .text-slate-400, .text-slate-500 { color: #333 !important; }
+            .text-primary, .text-mint, .text-accent { color: #000 !important; font-weight: 700 !important; }
+            .bg-clip-text { -webkit-text-fill-color: black !important; background: none !important; }
+            
+            /* Hide non-printable UI elements */
+            header, button, #mob-nav, .data-stream-bg, .ambient-glow-container, #toasts, .material-symbols-outlined { 
+                display: none !important; 
+            }
+            a.bg-white { display: none !important; }
+            
+            /* Adjust spacing and element bounds for print */
+            section { 
+                padding-top: 1.5rem !important; 
+                padding-bottom: 1.5rem !important; 
+                min-height: auto !important;
+            }
+            .min-h-[90vh] { min-height: auto !important; padding-top: 0 !important; }
+            .py-24 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
+            .mb-20, .mb-12, .mb-16 { margin-bottom: 1.5rem !important; }
+            
+            /* Remove glassmorphism styling for print */
+            .glass-panel, .bg-surface-contrast { 
+                background: transparent !important; 
+                border: 1px solid #ccc !important; 
+                break-inside: avoid; /* Prevents card from breaking in half across pages */
+                page-break-inside: avoid;
+            }
+            
+            .bg-\[\#0c0d13\]\/50 {
+                background: transparent !important;
+            }
+
+            /* Adjust borders */
+            .border-white\/5, .border-white\/10, .border-t, .border-y { border-color: #ddd !important; }
+            .border-l-primary { border-left-color: #666 !important; }
+            
+            /* Ensure content fits */
+            .grid { display: block !important; }
+            .grid > div { margin-bottom: 1rem !important; }
+            .md\:w-1\/2 { width: 100% !important; }
+            .tl-track::before { display: none !important; } /* Hide timeline line to simplify print layout */
+        }
     </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
+
+    <!-- Subtle Blue Ambient Glow Container -->
+    <div class="ambient-glow-container">
+        <div class="glow-orb-1"></div>
+        <div class="glow-orb-2"></div>
+    </div>
 
     <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
     <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-[#0c0d13]/90 backdrop-blur-md border-b border-white/5 h-[72px]">
