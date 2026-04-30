@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html class="dark scroll-smooth" lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Soumyaranjan Rath | Integration Architect & Technical Product Lead</title>
-    <meta name="description" content="Portfolio of Soumyaranjan Rath — Integration Architect & Technical Product Lead with 9+ years delivering enterprise-scale data platforms, SAP integrations, and AI-assisted automation."/>
-    <meta property="og:title" content="Soumyaranjan Rath | Integration Architect"/>
-    <meta property="og:description" content="I own enterprise data platforms end-to-end — from architecture to executive decision systems."/>
-    <meta property="og:type" content="website"/>
+    <meta name="description"
+        content="Portfolio of Soumyaranjan Rath, Integration Architect & Technical Product Lead with 9+ years delivering enterprise-scale data platforms, SAP integrations, and AI-assisted automation." />
+    <meta property="og:title" content="Soumyaranjan Rath | Integration Architect" />
+    <meta property="og:description"
+        content="I own enterprise data platforms end-to-end. From architecture to executive decision systems." />
+    <meta property="og:type" content="website" />
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
+        rel="stylesheet" />
 
     <script id="tailwind-config">
         tailwind.config = {
@@ -41,18 +47,11 @@
                     },
                     animation: {
                         'fade-in-up': 'fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                        'stream-drop': 'streamDrop 8s linear infinite',
                     },
                     keyframes: {
                         fadeInUp: {
                             '0%': { opacity: '0', transform: 'translateY(24px)' },
                             '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        streamDrop: {
-                            '0%': { transform: 'translateY(-100%)', opacity: '0' },
-                            '10%': { opacity: '1' },
-                            '90%': { opacity: '1' },
-                            '100%': { transform: 'translateY(100vh)', opacity: '0' },
                         }
                     }
                 }
@@ -61,7 +60,9 @@
     </script>
 
     <style>
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             background-color: #0c0d13;
@@ -70,7 +71,7 @@
             overflow-x: hidden;
         }
 
-        /* ─── Ambient Subtle Blue Glow Animation ─── */
+        /* ─── Enriched Blue Ambient Glow Blend ─── */
         .ambient-glow-container {
             position: fixed;
             inset: 0;
@@ -80,46 +81,144 @@
             overflow: hidden;
             pointer-events: none;
         }
-        .glow-orb-1, .glow-orb-2 {
+
+        .glow-orb-1,
+        .glow-orb-2,
+        .glow-orb-3 {
             position: absolute;
             border-radius: 50%;
             filter: blur(140px);
-            opacity: 0.12;
+            opacity: 0.15;
             animation: floatGlow 20s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
         }
+
         .glow-orb-1 {
-            width: 60vw; height: 60vh;
-            background: #4570e2; /* Deep blue */
-            top: -20%; left: -10%;
-        }
-        .glow-orb-2 {
-            width: 50vw; height: 50vh;
-            background: #b4c5ff; /* Light primary blue */
-            bottom: -20%; right: -10%;
-            animation-delay: -10s;
-            animation-duration: 25s;
-        }
-        @keyframes floatGlow {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(8%, 12%) scale(1.15); }
+            width: 60vw;
+            height: 60vh;
+            background: #1d4ed8;
+            /* Deep Blue */
+            top: -10%;
+            left: -10%;
         }
 
-        /* ─── Minimal Data Stream Background ─── */
-        .data-stream-bg {
-            position: absolute;
+        .glow-orb-2 {
+            width: 50vw;
+            height: 50vh;
+            background: #3b82f6;
+            /* Bright Blue */
+            bottom: -10%;
+            right: -5%;
+            animation-delay: -5s;
+            animation-duration: 25s;
+        }
+
+        .glow-orb-3 {
+            width: 40vw;
+            height: 40vh;
+            background: #06b6d4;
+            /* Cyan/Teal accent */
+            top: 30%;
+            left: 30%;
+            animation-delay: -12s;
+            animation-duration: 28s;
+            opacity: 0.08;
+            /* Slightly softer */
+        }
+
+        @keyframes floatGlow {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            100% {
+                transform: translate(8%, 12%) scale(1.15);
+            }
+        }
+
+        /* ─── Animated Floating Bokeh Particles ─── */
+        .floating-particles {
+            position: fixed;
             inset: 0;
-            overflow: hidden;
             z-index: -1;
             pointer-events: none;
-            opacity: 0.15;
+            overflow: hidden;
         }
-        .stream-line {
+
+        .particle {
             position: absolute;
-            width: 1px;
-            height: 30vh;
-            background: linear-gradient(to bottom, transparent, #b4c5ff, transparent);
-            top: 0;
-            animation: streamDrop 8s linear infinite;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, rgba(59, 130, 246, 0) 70%);
+            opacity: 0;
+            animation: floatUp 20s infinite linear;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(0.5);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-20vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+
+        /* Particle variations */
+        .p1 {
+            width: 250px;
+            height: 250px;
+            left: 10%;
+            animation-duration: 28s;
+            animation-delay: 0s;
+        }
+
+        .p2 {
+            width: 150px;
+            height: 150px;
+            left: 35%;
+            animation-duration: 35s;
+            animation-delay: -10s;
+        }
+
+        .p3 {
+            width: 300px;
+            height: 300px;
+            left: 55%;
+            animation-duration: 40s;
+            animation-delay: -22s;
+        }
+
+        .p4 {
+            width: 180px;
+            height: 180px;
+            left: 75%;
+            animation-duration: 32s;
+            animation-delay: -5s;
+        }
+
+        .p5 {
+            width: 220px;
+            height: 220px;
+            left: 85%;
+            animation-duration: 38s;
+            animation-delay: -18s;
+        }
+
+        .p6 {
+            width: 120px;
+            height: 120px;
+            left: 20%;
+            animation-duration: 25s;
+            animation-delay: -15s;
         }
 
         /* ─── Reduced Glassmorphism ─── */
@@ -128,6 +227,7 @@
             border: 1px solid rgba(255, 255, 255, 0.04);
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .glass-panel:hover {
             background: rgba(30, 31, 38, 0.4);
             border-color: rgba(255, 255, 255, 0.1);
@@ -137,26 +237,41 @@
         .tl-track::before {
             content: '';
             position: absolute;
-            top: 0; bottom: 0;
+            top: 0;
+            bottom: 0;
             left: 24px;
             width: 2px;
-            background: linear-gradient(to bottom, #4570e2 0%, rgba(69,112,226,0.05) 100%);
+            background: linear-gradient(to bottom, #4570e2 0%, rgba(69, 112, 226, 0.05) 100%);
         }
-        @media(min-width:768px){
-            .tl-track::before { left: 50%; transform: translateX(-50%); }
+
+        @media(min-width:768px) {
+            .tl-track::before {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
 
         /* ─── Nav active ─── */
-        .nav-link { position: relative; transition: color 0.3s ease; }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
         .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -4px; left: 0;
-            width: 0; height: 2px;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
             background: #b4c5ff;
             transition: width 0.3s ease;
         }
-        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
 
         /* ─── Cinematic Reveal System ─── */
         .reveal {
@@ -164,6 +279,7 @@
             transform: translateY(24px);
             transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
+
         .reveal.visible {
             opacity: 1;
             transform: none;
@@ -172,97 +288,173 @@
         /* ─── Section divider ─── */
         .section-divider {
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
             margin: 0;
         }
 
         /* ═══════════════════════════════ PRINT / PDF STYLES ═══════════════════════════════ */
-        /* Ensures the exported PDF is highly readable and ignores the dark theme */
         @media print {
-            @page { margin: 1.5cm; }
-            
-            /* Force light background and dark text */
-            body, html { 
-                background: white !important; 
-                color: black !important; 
+            @page {
+                margin: 1.5cm;
+            }
+
+            body,
+            html {
+                background: white !important;
+                color: black !important;
                 font-size: 11pt !important;
             }
-            
-            /* Overriding all dark mode text colors to black/dark gray */
-            * { color: #111 !important; text-shadow: none !important; box-shadow: none !important; }
-            
-            .text-white { color: #000 !important; font-weight: 800 !important; }
-            .text-slate-300, .text-slate-400, .text-slate-500 { color: #333 !important; }
-            .text-primary, .text-mint, .text-accent { color: #000 !important; font-weight: 700 !important; }
-            .bg-clip-text { -webkit-text-fill-color: black !important; background: none !important; }
-            
-            /* Hide non-printable UI elements */
-            header, button, #mob-nav, .data-stream-bg, .ambient-glow-container, #toasts, .material-symbols-outlined { 
-                display: none !important; 
+
+            * {
+                color: #111 !important;
+                text-shadow: none !important;
+                box-shadow: none !important;
             }
-            a.bg-white { display: none !important; }
-            
-            /* Adjust spacing and element bounds for print */
-            section { 
-                padding-top: 1.5rem !important; 
-                padding-bottom: 1.5rem !important; 
+
+            .text-white {
+                color: #000 !important;
+                font-weight: 800 !important;
+            }
+
+            .text-slate-300,
+            .text-slate-400,
+            .text-slate-500 {
+                color: #333 !important;
+            }
+
+            .text-primary,
+            .text-mint,
+            .text-accent {
+                color: #000 !important;
+                font-weight: 700 !important;
+            }
+
+            .bg-clip-text {
+                -webkit-text-fill-color: black !important;
+                background: none !important;
+            }
+
+            /* Hide non-printable UI and effects */
+            header,
+            button,
+            #mob-nav,
+            .ambient-glow-container,
+            .floating-particles,
+            #toasts {
+                display: none !important;
+            }
+
+            a.bg-white {
+                display: none !important;
+            }
+
+            section {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
                 min-height: auto !important;
             }
-            .min-h-[90vh] { min-height: auto !important; padding-top: 0 !important; }
-            .py-24 { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; }
-            .mb-20, .mb-12, .mb-16 { margin-bottom: 1.5rem !important; }
-            
-            /* Remove glassmorphism styling for print */
-            .glass-panel, .bg-surface-contrast { 
-                background: transparent !important; 
-                border: 1px solid #ccc !important; 
-                break-inside: avoid; /* Prevents card from breaking in half across pages */
+
+            .min-h-\[90vh\] {
+                min-height: auto !important;
+                padding-top: 0 !important;
+            }
+
+            .py-24 {
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+
+            .mb-20,
+            .mb-12,
+            .mb-16 {
+                margin-bottom: 1.5rem !important;
+            }
+
+            .glass-panel,
+            .bg-surface-contrast {
+                background: transparent !important;
+                border: 1px solid #ccc !important;
+                break-inside: avoid;
                 page-break-inside: avoid;
             }
-            
+
             .bg-\[\#0c0d13\]\/50 {
                 background: transparent !important;
             }
 
-            /* Adjust borders */
-            .border-white\/5, .border-white\/10, .border-t, .border-y { border-color: #ddd !important; }
-            .border-l-primary { border-left-color: #666 !important; }
-            
-            /* Ensure content fits */
-            .grid { display: block !important; }
-            .grid > div { margin-bottom: 1rem !important; }
-            .md\:w-1\/2 { width: 100% !important; }
-            .tl-track::before { display: none !important; } /* Hide timeline line to simplify print layout */
+            .border-white\/5,
+            .border-white\/10,
+            .border-t,
+            .border-y {
+                border-color: #ddd !important;
+            }
+
+            .border-l-primary {
+                border-left-color: #666 !important;
+            }
+
+            .grid {
+                display: block !important;
+            }
+
+            .grid>div {
+                margin-bottom: 1rem !important;
+            }
+
+            .md\:w-1\/2 {
+                width: 100% !important;
+            }
+
+            .tl-track::before {
+                display: none !important;
+            }
         }
     </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
 
-    <!-- Subtle Blue Ambient Glow Container -->
+    <!-- Enriched Blue Ambient Glow Blend -->
     <div class="ambient-glow-container">
         <div class="glow-orb-1"></div>
         <div class="glow-orb-2"></div>
+        <div class="glow-orb-3"></div>
+    </div>
+
+    <!-- Animated Floating Bokeh Particles -->
+    <div class="floating-particles">
+        <div class="particle p1"></div>
+        <div class="particle p2"></div>
+        <div class="particle p3"></div>
+        <div class="particle p4"></div>
+        <div class="particle p5"></div>
+        <div class="particle p6"></div>
     </div>
 
     <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
-    <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-[#0c0d13]/90 backdrop-blur-md border-b border-white/5 h-[72px]">
+    <header id="header"
+        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-[#0c0d13]/90 backdrop-blur-md border-b border-white/5 h-[72px]">
         <div class="max-w-[1200px] mx-auto h-full flex items-center justify-between px-6 md:px-8">
             <a href="#home" class="text-white font-bold text-lg tracking-tight hover:opacity-80 transition-opacity">
                 Soumyaranjan Rath
             </a>
 
             <nav class="hidden md:flex items-center gap-8">
-                <a href="#value" class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Value Prop</a>
-                <a href="#experience" class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Experience</a>
-                <a href="#impact" class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Business Impact</a>
+                <a href="#value" class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Value
+                    Prop</a>
+                <a href="#experience"
+                    class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Experience</a>
+                <a href="#impact" class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Business
+                    Impact</a>
             </nav>
 
             <div class="hidden md:flex items-center gap-5">
-                <a href="mailto:ultimate.soumya@gmail.com" class="text-slate-300 hover:text-white text-[13px] font-semibold transition-colors">
+                <a href="mailto:ultimate.soumya@gmail.com"
+                    class="text-slate-300 hover:text-white text-[13px] font-semibold transition-colors">
                     Contact
                 </a>
-                <button onclick="window.print()" class="bg-white text-[#0c0d13] px-5 py-2 rounded text-[13px] font-bold hover:bg-slate-200 transition-colors">
+                <button onclick="window.print()"
+                    class="bg-white text-[#0c0d13] px-5 py-2 rounded text-[13px] font-bold hover:bg-slate-200 transition-colors">
                     Get Resume
                 </button>
             </div>
@@ -275,10 +467,16 @@
         <!-- Mobile Nav -->
         <div id="mob-nav" class="hidden md:hidden absolute top-full left-0 w-full bg-[#0c0d13] border-b border-white/5">
             <div class="flex flex-col p-5 gap-2">
-                <a href="#value" class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Value Prop</a>
-                <a href="#experience" class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Experience</a>
-                <a href="#impact" class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Business Impact</a>
-                <a href="mailto:ultimate.soumya@gmail.com" class="mob-link mt-2 py-3 px-4 rounded bg-white text-[#0c0d13] text-[14px] font-bold text-center">
+                <a href="#value"
+                    class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Value
+                    Prop</a>
+                <a href="#experience"
+                    class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Experience</a>
+                <a href="#impact"
+                    class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Business
+                    Impact</a>
+                <a href="mailto:ultimate.soumya@gmail.com"
+                    class="mob-link mt-2 py-3 px-4 rounded bg-white text-[#0c0d13] text-[14px] font-bold text-center">
                     Contact Me
                 </a>
             </div>
@@ -287,37 +485,35 @@
 
     <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
     <section id="home" class="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden pt-20">
-        <!-- Subtle CSS Data Stream Background -->
-        <div class="data-stream-bg">
-            <div class="stream-line left-[10%]" style="animation-delay: 0s; animation-duration: 7s;"></div>
-            <div class="stream-line left-[30%]" style="animation-delay: 2s; animation-duration: 9s;"></div>
-            <div class="stream-line left-[50%]" style="animation-delay: 5s; animation-duration: 6s;"></div>
-            <div class="stream-line left-[70%]" style="animation-delay: 1s; animation-duration: 8s;"></div>
-            <div class="stream-line left-[90%]" style="animation-delay: 4s; animation-duration: 10s;"></div>
-        </div>
-
         <div class="relative z-[10] w-full max-w-[1200px] mx-auto px-6 md:px-8">
-            <h1 class="animate-fade-in-up text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.15] tracking-tight text-white max-w-4xl mb-6">
-                I own enterprise data platforms end-to-end — from architecture to executive decision systems.
+            <h1
+                class="animate-fade-in-up text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.15] tracking-tight text-white max-w-4xl mb-6">
+                I own enterprise data platforms end-to-end: from architecture to executive decision systems.
             </h1>
 
-            <p class="animate-fade-in-up text-lg text-slate-300 max-w-3xl mb-12 leading-relaxed" style="animation-delay: 0.1s;">
-                Integration Architect & Technical Product Lead with <strong>9+ years</strong> delivering SAP integrations, AI-assisted automation workflows, and real-time analytics systems that reduce operational effort by up to 90%.
+            <p class="animate-fade-in-up text-lg text-slate-300 max-w-3xl mb-12 leading-relaxed"
+                style="animation-delay: 0.1s;">
+                Integration Architect & Technical Product Lead with <strong>9+ years</strong> delivering SAP
+                integrations, AI-assisted automation workflows, and real-time analytics systems that reduce operational
+                effort by up to 90%.
             </p>
 
             <div class="animate-fade-in-up flex flex-wrap gap-4 mb-20" style="animation-delay: 0.2s;">
-                <a href="mailto:ultimate.soumya@gmail.com" class="bg-white text-[#0c0d13] px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-slate-200">
+                <a href="mailto:ultimate.soumya@gmail.com"
+                    class="bg-white text-[#0c0d13] px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-slate-200">
                     Discuss Your System Challenges
                 </a>
-                <a href="#impact" class="border border-white/20 text-white px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-white/5">
+                <a href="#impact"
+                    class="border border-white/20 text-white px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-white/5">
                     View Business Impact
                 </a>
             </div>
 
-            <!-- Proof Strip / Metrics (Subdued visually to not fight CTAs) -->
-            <div class="animate-fade-in-up border-t border-white/10 pt-8 grid grid-cols-2 md:grid-cols-4 gap-6 opacity-80" style="animation-delay: 0.3s;">
+            <!-- Proof Strip / Metrics -->
+            <div class="animate-fade-in-up border-t border-white/10 pt-8 grid grid-cols-2 md:grid-cols-4 gap-6 opacity-80"
+                style="animation-delay: 0.3s;">
                 <div>
-                    <p class="text-2xl font-bold text-white mb-1">0→1</p>
+                    <p class="text-2xl font-bold text-white mb-1">0 to 1</p>
                     <p class="text-xs text-slate-400 font-medium">Enterprise platform ownership</p>
                 </div>
                 <div>
@@ -347,28 +543,32 @@
                 <span class="material-symbols-outlined text-primary mt-1">hub</span>
                 <div>
                     <h3 class="text-white font-bold text-lg mb-2">Fix broken enterprise integrations</h3>
-                    <p class="text-slate-400 text-[15px] leading-relaxed">I resolve deep-rooted architecture flaws and SAP inconsistencies that cause downstream data discrepancies.</p>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">I resolve deep-rooted architecture flaws and
+                        SAP inconsistencies that cause downstream data discrepancies.</p>
                 </div>
             </div>
             <div class="flex items-start gap-4">
                 <span class="material-symbols-outlined text-primary mt-1">precision_manufacturing</span>
                 <div>
                     <h3 class="text-white font-bold text-lg mb-2">Replace manual workflows</h3>
-                    <p class="text-slate-400 text-[15px] leading-relaxed">I deploy scalable, AI-assisted automation systems that reclaim hundreds of engineering and operational hours.</p>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">I deploy scalable, AI-assisted automation
+                        systems that reclaim hundreds of engineering and operational hours.</p>
                 </div>
             </div>
             <div class="flex items-start gap-4">
                 <span class="material-symbols-outlined text-primary mt-1">account_tree</span>
                 <div>
                     <h3 class="text-white font-bold text-lg mb-2">Align execution with decisions</h3>
-                    <p class="text-slate-400 text-[15px] leading-relaxed">I bridge the gap between engineering output and executive strategy, ensuring systems produce reliable dashboard KPIs.</p>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">I bridge the gap between engineering output
+                        and executive strategy, ensuring systems produce reliable dashboard KPIs.</p>
                 </div>
             </div>
             <div class="flex items-start gap-4">
                 <span class="material-symbols-outlined text-primary mt-1">verified_user</span>
                 <div>
                     <h3 class="text-white font-bold text-lg mb-2">Deliver audit-proof pipelines</h3>
-                    <p class="text-slate-400 text-[15px] leading-relaxed">I establish strict governance and fault-tolerant ETL pipelines to ensure data integrity during regulatory compliance.</p>
+                    <p class="text-slate-400 text-[15px] leading-relaxed">I establish strict governance and
+                        fault-tolerant ETL pipelines to ensure data integrity during regulatory compliance.</p>
                 </div>
             </div>
         </div>
@@ -380,31 +580,37 @@
             <div class="reveal mb-12">
                 <h2 class="text-3xl font-extrabold text-white mb-4">What You Get When You Hire Me</h2>
             </div>
-            
+
             <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
                     <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">End-to-end ownership of enterprise data platforms</span>
+                    <span class="text-slate-300 text-[15px] font-medium">End-to-end ownership of enterprise data
+                        platforms</span>
                 </div>
                 <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
                     <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">Elimination of chronic reporting inconsistencies</span>
+                    <span class="text-slate-300 text-[15px] font-medium">Elimination of chronic reporting
+                        inconsistencies</span>
                 </div>
                 <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
                     <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">70–90% reduction in manual operational workload</span>
+                    <span class="text-slate-300 text-[15px] font-medium">70 to 90% reduction in manual operational
+                        workload</span>
                 </div>
                 <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
                     <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">Real-time executive dashboards for instant strategy</span>
+                    <span class="text-slate-300 text-[15px] font-medium">Real-time executive dashboards for instant
+                        strategy</span>
                 </div>
                 <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
                     <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">Stable, fault-tolerant integration architecture</span>
+                    <span class="text-slate-300 text-[15px] font-medium">Stable, fault-tolerant integration
+                        architecture</span>
                 </div>
                 <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
                     <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">Faster, predictable releases via GitLab CI/CD</span>
+                    <span class="text-slate-300 text-[15px] font-medium">Faster, predictable releases via GitLab
+                        CI/CD</span>
                 </div>
             </div>
         </div>
@@ -421,21 +627,24 @@
                 <h3 class="text-lg font-bold text-white mb-2 border-b border-white/10 pb-2">1. Architecture</h3>
                 <ul class="text-slate-400 text-[14px] space-y-3 mt-4">
                     <li><strong class="text-slate-200">Problem:</strong> Fragmented silos block visibility.</li>
-                    <li><strong class="text-slate-200">Approach:</strong> Design scalable, unified integration layers mapping directly to core business workflows.</li>
+                    <li><strong class="text-slate-200">Approach:</strong> Design scalable, unified integration layers
+                        mapping directly to core business workflows.</li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-lg font-bold text-white mb-2 border-b border-white/10 pb-2">2. Execution</h3>
                 <ul class="text-slate-400 text-[14px] space-y-3 mt-4">
                     <li><strong class="text-slate-200">Problem:</strong> Brittle pipelines fail under volume.</li>
-                    <li><strong class="text-slate-200">Approach:</strong> Build fault-tolerant ETL and strict CI/CD to automate heavy lifting and eliminate manual steps.</li>
+                    <li><strong class="text-slate-200">Approach:</strong> Build fault-tolerant ETL and strict CI/CD to
+                        automate heavy lifting and eliminate manual steps.</li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-lg font-bold text-white mb-2 border-b border-white/10 pb-2">3. Business Value</h3>
                 <ul class="text-slate-400 text-[14px] space-y-3 mt-4">
                     <li><strong class="text-slate-200">Problem:</strong> Decisions made on stale data.</li>
-                    <li><strong class="text-slate-200">Approach:</strong> Deliver real-time executive dashboards for zero-discrepancy, trusted KPI tracking.</li>
+                    <li><strong class="text-slate-200">Approach:</strong> Deliver real-time executive dashboards for
+                        zero-discrepancy, trusted KPI tracking.</li>
                 </ul>
             </div>
         </div>
@@ -450,22 +659,28 @@
         </div>
 
         <div class="relative tl-track max-w-4xl mx-auto">
-            
+
             <!-- Radiall -->
             <div class="reveal relative z-10 flex flex-col md:flex-row w-full mb-20">
                 <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
                     <h3 class="text-xl font-bold text-white mb-1">Integration Architect & Tech Product Lead</h3>
                     <p class="text-primary font-semibold mb-1">Radiall · Bangalore, India</p>
-                    <p class="text-slate-500 text-sm">Sept 2019 – Present</p>
+                    <p class="text-slate-500 text-sm">Sept 2019 to Present</p>
                 </div>
-                <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1"></div>
+                <div
+                    class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1">
+                </div>
                 <div class="md:w-1/2 md:pl-12 pl-12 mt-6 md:mt-0">
                     <p class="text-slate-300 font-bold mb-3">Key Wins:</p>
                     <ul class="text-slate-400 text-[14px] space-y-3 list-disc ml-4">
-                        <li>Owned architecture and delivery of a 0→1 enterprise data platform (Magic XPI), sustaining 99.9% reliability for ~40+ global stakeholders.</li>
-                        <li>Deployed AI-assisted automation workflows for FDA compliance and Lean process mapping, reducing manual operational effort by up to 90%.</li>
-                        <li>Led cross-functional teams to re-architect SQL reporting layers, achieving 100% elimination of historic SAP-IDoc data discrepancies.</li>
-                        <li>Defined system roadmap and established GitLab CI/CD pipelines, drastically reducing production deployment defects.</li>
+                        <li>Owned architecture and delivery of a 0 to 1 enterprise data platform (Magic XPI), sustaining
+                            99.9% reliability for ~40+ global stakeholders.</li>
+                        <li>Deployed AI-assisted automation workflows for FDA compliance and Lean process mapping,
+                            reducing manual operational effort by up to 90%.</li>
+                        <li>Led cross-functional teams to re-architect SQL reporting layers, achieving 100% elimination
+                            of historic SAP-IDoc data discrepancies.</li>
+                        <li>Defined system roadmap and established GitLab CI/CD pipelines, drastically reducing
+                            production deployment defects.</li>
                     </ul>
                 </div>
             </div>
@@ -475,15 +690,20 @@
                 <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
                     <h3 class="text-xl font-bold text-white mb-1">Integration Specialist & Full-Stack Dev</h3>
                     <p class="text-primary font-semibold mb-1">MeritTrac Services · India</p>
-                    <p class="text-slate-500 text-sm">2016 – 2019</p>
+                    <p class="text-slate-500 text-sm">2016 to 2019</p>
                 </div>
-                <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-600 border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1"></div>
+                <div
+                    class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-600 border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1">
+                </div>
                 <div class="md:w-1/2 md:pl-12 pl-12 mt-6 md:mt-0">
                     <p class="text-slate-300 font-bold mb-3">Key Wins:</p>
                     <ul class="text-slate-400 text-[14px] space-y-3 list-disc ml-4">
-                        <li>Developed and scaled automated ETL pipelines across high-volume national examination systems.</li>
-                        <li>Replaced vulnerable manual data-handling processes with secure, real-time backend syncs.</li>
-                        <li>Bridged backend databases with user-facing assessment platforms via Magic XPA integration.</li>
+                        <li>Developed and scaled automated ETL pipelines across high-volume national examination
+                            systems.</li>
+                        <li>Replaced vulnerable manual data-handling processes with secure, real-time backend syncs.
+                        </li>
+                        <li>Bridged backend databases with user-facing assessment platforms via Magic XPA integration.
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -493,9 +713,11 @@
                 <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
                     <h3 class="text-xl font-bold text-white mb-1">Lecturer, IT & Computer Science</h3>
                     <p class="text-primary font-semibold mb-1">Polytechnic College · Odisha, India</p>
-                    <p class="text-slate-500 text-sm">2012 – 2014</p>
+                    <p class="text-slate-500 text-sm">2012 to 2014</p>
                 </div>
-                <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-700 border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1"></div>
+                <div
+                    class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-700 border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1">
+                </div>
                 <div class="md:w-1/2 md:pl-12 pl-12 mt-6 md:mt-0">
                     <ul class="text-slate-400 text-[14px] space-y-3 list-disc ml-4">
                         <li>Communicated database structures and CS principles to emerging technologists.</li>
@@ -521,9 +743,12 @@
             <div class="reveal glass-panel rounded p-8">
                 <h3 class="text-lg font-bold text-white mb-4">AI-Automated FDA & Lean Mapping</h3>
                 <div class="space-y-3 text-[14px] text-slate-400">
-                    <p><strong class="text-slate-200">Problem:</strong> Manual process mapping slowed operations and risked audit failure.</p>
-                    <p><strong class="text-slate-200">Built:</strong> Intelligent AI-assisted automation engine parsing legacy documentation.</p>
-                    <p><strong class="text-white">Outcome:</strong> Accelerated Lean cycles by 40%, cut manual effort by up to 90%.</p>
+                    <p><strong class="text-slate-200">Problem:</strong> Manual process mapping slowed operations and
+                        risked audit failure.</p>
+                    <p><strong class="text-slate-200">Built:</strong> Intelligent AI-assisted automation engine parsing
+                        legacy documentation.</p>
+                    <p><strong class="text-white">Outcome:</strong> Accelerated Lean cycles by 40%, cut manual effort by
+                        up to 90%.</p>
                 </div>
             </div>
 
@@ -531,9 +756,12 @@
             <div class="reveal glass-panel rounded p-8">
                 <h3 class="text-lg font-bold text-white mb-4">Executive Analytics Platform</h3>
                 <div class="space-y-3 text-[14px] text-slate-400">
-                    <p><strong class="text-slate-200">Problem:</strong> C-suite lacked real-time operational visibility.</p>
-                    <p><strong class="text-slate-200">Built:</strong> Direct-to-dashboard pipeline uniting SQL, Power BI, and Data Studio.</p>
-                    <p><strong class="text-white">Outcome:</strong> Instant KPI visibility enabling data-driven strategic planning.</p>
+                    <p><strong class="text-slate-200">Problem:</strong> C-suite lacked real-time operational visibility.
+                    </p>
+                    <p><strong class="text-slate-200">Built:</strong> Direct-to-dashboard pipeline uniting SQL, Power
+                        BI, and Data Studio.</p>
+                    <p><strong class="text-white">Outcome:</strong> Instant KPI visibility enabling data-driven
+                        strategic planning.</p>
                 </div>
             </div>
 
@@ -541,9 +769,12 @@
             <div class="reveal glass-panel rounded p-8">
                 <h3 class="text-lg font-bold text-white mb-4">SAP-IDoc Reliability Overhaul</h3>
                 <div class="space-y-3 text-[14px] text-slate-400">
-                    <p><strong class="text-slate-200">Problem:</strong> Inconsistencies eroded business trust in reporting metrics.</p>
-                    <p><strong class="text-slate-200">Built:</strong> Deep RCA and complete re-architecture of the SQL reporting layer.</p>
-                    <p><strong class="text-white">Outcome:</strong> 100% elimination of historic discrepancies; restored leadership trust.</p>
+                    <p><strong class="text-slate-200">Problem:</strong> Inconsistencies eroded business trust in
+                        reporting metrics.</p>
+                    <p><strong class="text-slate-200">Built:</strong> Deep RCA and complete re-architecture of the SQL
+                        reporting layer.</p>
+                    <p><strong class="text-white">Outcome:</strong> 100% elimination of historic discrepancies; restored
+                        leadership trust.</p>
                 </div>
             </div>
 
@@ -551,12 +782,15 @@
             <div class="reveal glass-panel rounded p-8">
                 <h3 class="text-lg font-bold text-white mb-4">Enterprise CI/CD Implementation</h3>
                 <div class="space-y-3 text-[14px] text-slate-400">
-                    <p><strong class="text-slate-200">Problem:</strong> Manual deployments caused frequent pipeline downtime.</p>
-                    <p><strong class="text-slate-200">Built:</strong> Automated CI/CD pipelines enforcing strict GitLab protocols.</p>
-                    <p><strong class="text-white">Outcome:</strong> Faster, predictable, and highly reliable release cycles.</p>
+                    <p><strong class="text-slate-200">Problem:</strong> Manual deployments caused frequent pipeline
+                        downtime.</p>
+                    <p><strong class="text-slate-200">Built:</strong> Automated CI/CD pipelines enforcing strict GitLab
+                        protocols.</p>
+                    <p><strong class="text-white">Outcome:</strong> Faster, predictable, and highly reliable release
+                        cycles.</p>
                 </div>
             </div>
-            
+
         </div>
     </section>
 
@@ -569,7 +803,8 @@
                     <p class="text-xl font-bold text-white">I own outcomes, not just implementation.</p>
                 </div>
                 <div class="p-4">
-                    <p class="text-xl font-bold text-white">I operate seamlessly across engineering, architecture, and product.</p>
+                    <p class="text-xl font-bold text-white">I operate seamlessly across engineering, architecture, and
+                        product.</p>
                 </div>
                 <div class="p-4">
                     <p class="text-xl font-bold text-white">I translate technical systems into executive decisions.</p>
@@ -584,12 +819,15 @@
     <!-- ═══════════════════════════════ FINAL CTA ═══════════════════════════════ -->
     <section class="py-24 max-w-[1200px] mx-auto px-6 md:px-8 text-center">
         <div class="reveal">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-8">If your systems are slowing decisions, we should talk.</h2>
+            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-8">If your systems are slowing decisions, we
+                should talk.</h2>
             <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:ultimate.soumya@gmail.com" class="bg-white text-[#0c0d13] px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-slate-200">
+                <a href="mailto:ultimate.soumya@gmail.com"
+                    class="bg-white text-[#0c0d13] px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-slate-200">
                     Book a Discussion
                 </a>
-                <button onclick="window.print()" class="border border-white/20 text-white px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-white/5">
+                <button onclick="window.print()"
+                    class="border border-white/20 text-white px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-white/5">
                     Download Case Study
                 </button>
             </div>
@@ -598,14 +836,18 @@
 
     <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
     <footer class="py-8 border-t border-white/5">
-        <div class="max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+        <div
+            class="max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <div>
                 <div class="text-white font-bold text-[15px]">Soumyaranjan Rath</div>
             </div>
             <div class="flex gap-6">
-                <a href="mailto:ultimate.soumya@gmail.com" class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">Email</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener" class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">LinkedIn</a>
-                <a href="https://github.com" target="_blank" rel="noopener" class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">GitHub</a>
+                <a href="mailto:ultimate.soumya@gmail.com"
+                    class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">Email</a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener"
+                    class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">LinkedIn</a>
+                <a href="https://github.com" target="_blank" rel="noopener"
+                    class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">GitHub</a>
             </div>
         </div>
     </footer>
@@ -656,4 +898,5 @@
         document.querySelectorAll('section[id]').forEach(s => scrollSpy.observe(s));
     </script>
 </body>
+
 </html>
