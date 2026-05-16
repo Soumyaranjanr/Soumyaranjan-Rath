@@ -10,6 +10,8 @@
   <meta property="og:type" content="website" />
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
@@ -70,6 +72,11 @@
     *, *::before, *::after { box-sizing: border-box; }
 
     html { scroll-behavior: smooth; }
+    
+    *:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 4px;
+    }
 
     body {
       background: var(--navy);
@@ -140,6 +147,8 @@
     .nav-link::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:1.5px; background:var(--blue-light); transition: width .3s; }
     .nav-link:hover::after, .nav-link.active::after { width:100%; }
 
+    .magnetic { transition: transform 0.1s ease-out; }
+
     /* ── Terminal card ── */
     .terminal {
       background: rgba(15,23,42,0.85);
@@ -165,6 +174,9 @@
     .tc-val { color: #eefff4; }
     .cursor { display:inline-block; width:8px; height:13px; background:#7b9fff; animation: blink 1s step-end infinite; vertical-align: -2px; }
 
+    .type-line { opacity: 0; transform: translateY(4px); transition: opacity 0.1s ease-out, transform 0.1s ease-out; }
+    .type-line.typed { opacity: 1; transform: translateY(0); }
+
     /* ── Skill tags ── */
     .skill-tag {
       display: inline-flex; align-items: center; gap: 6px;
@@ -181,15 +193,23 @@
 
     /* ── Project cards ── */
     .project-card {
+      position: relative;
       background: rgba(30,41,59,0.4);
-      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 12px;
-      transition: all .35s cubic-bezier(.16,1,.3,1);
+    }
+    .project-card::before {
+      content: ""; position: absolute; inset: 0; border-radius: 12px; padding: 1px;
+      background: rgba(255,255,255,0.08);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor; mask-composite: exclude;
+      transition: background 0.35s ease; pointer-events: none; z-index: 10;
     }
     .project-card:hover {
-      border-color: rgba(96,165,250,0.3);
-      box-shadow: 0 16px 40px rgba(0,0,0,.3), 0 0 0 1px rgba(96,165,250,0.05);
-      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.3);
+      --ty: -3px; /* utilized by tilt script */
+    }
+    .project-card:hover::before {
+      background: linear-gradient(135deg, var(--blue-light), var(--teal));
     }
     .project-chip {
       display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600;
@@ -209,6 +229,13 @@
     .evo-tag-then { padding:4px 10px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(255,255,255,0.05); color:#94a3b8; }
     .evo-tag-now  { padding:4px 10px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(52,211,153,0.1); color:#34d399; }
 
+    @keyframes flowRight {
+      0% { transform: translateX(-4px); opacity: 0.4; }
+      50% { opacity: 1; }
+      100% { transform: translateX(4px); opacity: 0.4; }
+    }
+    .evo-arrow { animation: flowRight 1.5s ease-in-out infinite; display: inline-block; }
+
     /* ── Timeline ── */
     .tl-track::before {
       content:''; position:absolute; top:0; bottom:0; left:24px; width:1.5px;
@@ -217,6 +244,13 @@
     @media(min-width:768px) {
       .tl-track::before { left:50%; transform:translateX(-50%); }
     }
+    .tl-progress {
+      position: absolute; top: 0; left: 24px; width: 2px;
+      background: linear-gradient(to bottom, var(--blue-light), var(--teal));
+      height: 0%; transform-origin: top; z-index: 5;
+      box-shadow: 0 0 10px rgba(52,211,153,0.5);
+    }
+    @media(min-width:768px) { .tl-progress { left: 50%; transform: translateX(-50%); } }
 
     /* ── Gradient text ── */
     .grad-text {
@@ -246,6 +280,23 @@
       transition: border-color .3s, box-shadow .3s;
     }
     .metric-card:hover { border-color: rgba(123,159,255,0.2); box-shadow: 0 0 30px rgba(123,159,255,0.08); }
+
+    /* ── 3D Tilt ── */
+    .tilt {
+      --rx: 0deg; --ry: 0deg; --ty: 0px;
+      transform: perspective(1000px) translateY(var(--ty)) rotateX(var(--rx)) rotateY(var(--ry));
+      transition: transform 0.1s ease-out, box-shadow 0.35s ease;
+    }
+
+    /* ── Back to Top ── */
+    #btt-btn {
+      position: fixed; bottom: 30px; right: 30px; z-index: 99; width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(15,23,42,0.8); border: 1px solid rgba(96,165,250,0.3); color: var(--blue-light);
+      display: flex; align-items: center; justify-content: center; backdrop-filter: blur(8px); cursor: pointer;
+      opacity: 0; pointer-events: none; transform: translateY(20px); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    #btt-btn.visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    #btt-btn:hover { background: rgba(37,99,235,0.8); color: #fff; box-shadow: 0 0 20px rgba(37,99,235,0.4); }
 
     /* ── Print ── */
     @media print {
@@ -331,7 +382,7 @@
 
           <div class="animate-fade-up flex flex-wrap gap-3 mb-14" style="animation-delay:.24s;">
             <a href="mailto:ultimate.soumya@gmail.com"
-               class="bg-primary-container text-white px-7 py-3 rounded-md font-bold text-[13.5px] transition-all hover:opacity-90 hover:shadow-lg hover:shadow-blue-900/40">
+               class="bg-primary-container text-white px-7 py-3 rounded-md font-bold text-[13.5px] transition-all hover:opacity-90 hover:shadow-lg hover:shadow-blue-900/40 magnetic inline-block">
               Start a Conversation
             </a>
             <a href="#projects"
@@ -370,26 +421,26 @@
               <span class="ml-3 text-xs text-on-surface-variant font-mono">ai_workflow_engine.py</span>
             </div>
             <div class="p-5 space-y-0.5">
-              <p><span class="tc-comment"># Senior AI Automation Engineer</span></p>
-              <p><span class="tc-comment"># Bangalore, India · Open to Remote</span></p>
+              <p class="type-line"><span class="tc-comment"># Senior AI Automation Engineer</span></p>
+              <p class="type-line"><span class="tc-comment"># Bangalore, India · Open to Remote</span></p>
               <p>&nbsp;</p>
-              <p><span class="tc-kw">stack</span> <span class="tc-op">=</span> <span class="tc-op">{</span></p>
-              <p>&nbsp;&nbsp;<span class="tc-key">"ai"</span><span class="tc-op">:</span> <span class="tc-op">[</span></p>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tc-str">"LLM APIs"</span><span class="tc-op">,</span> <span class="tc-str">"RAG"</span><span class="tc-op">,</span></p>
-              <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tc-str">"AI Agents"</span><span class="tc-op">,</span> <span class="tc-str">"Prompt Eng."</span></p>
-              <p>&nbsp;&nbsp;<span class="tc-op">],</span></p>
-              <p>&nbsp;&nbsp;<span class="tc-key">"data"</span><span class="tc-op">:</span> <span class="tc-op">[</span><span class="tc-str">"Python"</span><span class="tc-op">,</span> <span class="tc-str">"SQL"</span><span class="tc-op">,</span> <span class="tc-str">"SAP ECC"</span><span class="tc-op">],</span></p>
-              <p>&nbsp;&nbsp;<span class="tc-key">"ops"</span><span class="tc-op">:</span> <span class="tc-op">[</span><span class="tc-str">"GitLab CI/CD"</span><span class="tc-op">,</span> <span class="tc-str">"Power BI"</span><span class="tc-op">]</span></p>
-              <p><span class="tc-op">}</span></p>
+              <p class="type-line"><span class="tc-kw">stack</span> <span class="tc-op">=</span> <span class="tc-op">{</span></p>
+              <p class="type-line">&nbsp;&nbsp;<span class="tc-key">"ai"</span><span class="tc-op">:</span> <span class="tc-op">[</span></p>
+              <p class="type-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tc-str">"LLM APIs"</span><span class="tc-op">,</span> <span class="tc-str">"RAG"</span><span class="tc-op">,</span></p>
+              <p class="type-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="tc-str">"AI Agents"</span><span class="tc-op">,</span> <span class="tc-str">"Prompt Eng."</span></p>
+              <p class="type-line">&nbsp;&nbsp;<span class="tc-op">],</span></p>
+              <p class="type-line">&nbsp;&nbsp;<span class="tc-key">"data"</span><span class="tc-op">:</span> <span class="tc-op">[</span><span class="tc-str">"Python"</span><span class="tc-op">,</span> <span class="tc-str">"SQL"</span><span class="tc-op">,</span> <span class="tc-str">"SAP ECC"</span><span class="tc-op">],</span></p>
+              <p class="type-line">&nbsp;&nbsp;<span class="tc-key">"ops"</span><span class="tc-op">:</span> <span class="tc-op">[</span><span class="tc-str">"GitLab CI/CD"</span><span class="tc-op">,</span> <span class="tc-str">"Power BI"</span><span class="tc-op">]</span></p>
+              <p class="type-line"><span class="tc-op">}</span></p>
               <p>&nbsp;</p>
-              <p><span class="tc-fn">result</span> <span class="tc-op">=</span> <span class="tc-fn">automate</span><span class="tc-op">(</span></p>
-              <p>&nbsp;&nbsp;<span class="tc-key">enterprise</span><span class="tc-op">=</span><span class="tc-kw">True</span><span class="tc-op">,</span></p>
-              <p>&nbsp;&nbsp;<span class="tc-key">reliability</span><span class="tc-op">=</span><span class="tc-num">0.999</span><span class="tc-op">,</span></p>
-              <p>&nbsp;&nbsp;<span class="tc-key">effort_reduction</span><span class="tc-op">=</span><span class="tc-num">0.90</span></p>
-              <p><span class="tc-op">)</span></p>
+              <p class="type-line"><span class="tc-fn">result</span> <span class="tc-op">=</span> <span class="tc-fn">automate</span><span class="tc-op">(</span></p>
+              <p class="type-line">&nbsp;&nbsp;<span class="tc-key">enterprise</span><span class="tc-op">=</span><span class="tc-kw">True</span><span class="tc-op">,</span></p>
+              <p class="type-line">&nbsp;&nbsp;<span class="tc-key">reliability</span><span class="tc-op">=</span><span class="tc-num">0.999</span><span class="tc-op">,</span></p>
+              <p class="type-line">&nbsp;&nbsp;<span class="tc-key">effort_reduction</span><span class="tc-op">=</span><span class="tc-num">0.90</span></p>
+              <p class="type-line"><span class="tc-op">)</span></p>
               <p>&nbsp;</p>
-              <p><span class="tc-comment"># → 20+ hrs/week recovered</span></p>
-              <p><span class="tc-comment"># → 99.9% data reliability</span></p>
+              <p class="type-line"><span class="tc-comment"># → 20+ hrs/week recovered</span></p>
+              <p class="type-line"><span class="tc-comment"># → 99.9% data reliability</span></p>
               <p><span class="tc-var">$ </span><span class="cursor"></span></p>
             </div>
           </div>
@@ -438,7 +489,7 @@
         <div class="hidden md:block w-px flex-1 bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
         <div class="flex md:flex-col items-center gap-1.5">
           <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background:rgba(58,95,217,0.2);border:1px solid rgba(58,95,217,0.4);">
-            <span class="text-primary text-sm font-bold">→</span>
+            <span class="text-primary text-sm font-bold evo-arrow">→</span>
           </div>
           <p class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant md:writing-mode-vertical text-center md:text-left" style="writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);display:none;" class="md:block">6 yrs</p>
           <p class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant md:hidden">6 YEARS</p>
@@ -494,7 +545,7 @@
 
       <div class="space-y-8">
         <!-- AI Layer -->
-        <div class="reveal reveal-d1 glass-static rounded-xl p-7">
+        <div class="reveal reveal-d1 glass-static rounded-xl p-7 tilt">
           <div class="flex items-center gap-3 mb-5">
             <div class="w-2 h-2 rounded-full" style="background:var(--teal);box-shadow:0 0 8px var(--teal);"></div>
             <h3 class="font-display font-bold text-white text-[15px] tracking-wide">AI &amp; Automation Layer</h3>
@@ -512,7 +563,7 @@
         </div>
 
         <!-- Data Layer -->
-        <div class="reveal reveal-d2 glass-static rounded-xl p-7">
+        <div class="reveal reveal-d2 glass-static rounded-xl p-7 tilt">
           <div class="flex items-center gap-3 mb-5">
             <div class="w-2 h-2 rounded-full" style="background:var(--blue-light);box-shadow:0 0 8px var(--blue-light);"></div>
             <h3 class="font-display font-bold text-white text-[15px] tracking-wide">Data Engineering Layer</h3>
@@ -530,7 +581,7 @@
         </div>
 
         <!-- Ops Layer -->
-        <div class="reveal reveal-d3 glass-static rounded-xl p-7">
+        <div class="reveal reveal-d3 glass-static rounded-xl p-7 tilt">
           <div class="flex items-center gap-3 mb-5">
             <div class="w-2 h-2 rounded-full" style="background:#f59e0b;box-shadow:0 0 8px #f59e0b;"></div>
             <h3 class="font-display font-bold text-white text-[15px] tracking-wide">DevOps &amp; Analytics Layer</h3>
@@ -561,7 +612,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
       <!-- Project 1 -->
-      <div class="reveal reveal-d1 project-card p-7 flex flex-col">
+      <div class="reveal reveal-d1 project-card p-7 flex flex-col tilt">
         <div class="flex items-start justify-between mb-4">
           <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);">
             <span class="material-symbols-outlined text-[20px]" style="color:var(--teal);">bolt</span>
@@ -591,7 +642,7 @@
       </div>
 
       <!-- Project 2 -->
-      <div class="reveal reveal-d2 project-card p-7 flex flex-col">
+      <div class="reveal reveal-d2 project-card p-7 flex flex-col tilt">
         <div class="flex items-start justify-between mb-4">
           <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.2);">
             <span class="material-symbols-outlined text-[20px] text-primary">psychology</span>
@@ -625,7 +676,7 @@
       </div>
 
       <!-- Project 3 -->
-      <div class="reveal reveal-d3 project-card p-7 flex flex-col">
+      <div class="reveal reveal-d3 project-card p-7 flex flex-col tilt">
         <div class="flex items-start justify-between mb-4">
           <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);">
             <span class="material-symbols-outlined text-[20px]" style="color:#f59e0b;">analytics</span>
@@ -675,6 +726,7 @@
     </div>
 
     <div class="relative tl-track max-w-4xl mx-auto">
+      <div class="tl-progress" id="tl-progress"></div>
 
       <!-- Radiall -->
       <div class="reveal relative z-10 flex flex-col md:flex-row w-full mb-20">
@@ -745,7 +797,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-      <div class="reveal reveal-d1 glass rounded-xl p-7">
+      <div class="reveal reveal-d1 glass rounded-xl p-7 tilt">
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-[22px]" style="color:var(--teal);">smart_toy</span>
           <h3 class="font-display font-bold text-white text-[16px]">AI-Powered Workflow Automation</h3>
@@ -757,7 +809,7 @@
         </div>
       </div>
 
-      <div class="reveal reveal-d2 glass rounded-xl p-7">
+      <div class="reveal reveal-d2 glass rounded-xl p-7 tilt">
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-[22px] text-primary">bar_chart</span>
           <h3 class="font-display font-bold text-white text-[16px]">Executive Analytics Platform</h3>
@@ -769,7 +821,7 @@
         </div>
       </div>
 
-      <div class="reveal reveal-d1 glass rounded-xl p-7">
+      <div class="reveal reveal-d1 glass rounded-xl p-7 tilt">
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-[22px]" style="color:#f59e0b;">verified</span>
           <h3 class="font-display font-bold text-white text-[16px]">SAP-IDoc Reliability Overhaul</h3>
@@ -781,7 +833,7 @@
         </div>
       </div>
 
-      <div class="reveal reveal-d2 glass rounded-xl p-7">
+      <div class="reveal reveal-d2 glass rounded-xl p-7 tilt">
         <div class="flex items-center gap-3 mb-4">
           <span class="material-symbols-outlined text-[22px] text-primary">deployed_code</span>
           <h3 class="font-display font-bold text-white text-[16px]">Enterprise CI/CD Implementation</h3>
@@ -835,7 +887,7 @@
       <p class="text-on-surface-variant text-[15px] mb-10 max-w-xl mx-auto">I build automation systems that stick — not demos that look good in presentations.</p>
       <div class="flex flex-wrap justify-center gap-3">
         <a href="mailto:ultimate.soumya@gmail.com"
-           class="bg-primary-container text-white px-8 py-3.5 rounded-md font-bold text-[13.5px] hover:opacity-90 transition-all hover:shadow-lg hover:shadow-blue-900/40">
+           class="bg-primary-container text-white px-8 py-3.5 rounded-md font-bold text-[13.5px] hover:opacity-90 transition-all hover:shadow-lg hover:shadow-blue-900/40 magnetic inline-block">
           Start a Conversation
         </a>
         <a href="https://linkedin.com/in/soumyaranjanr" target="_blank" rel="noopener"
@@ -866,6 +918,11 @@
       </div>
     </div>
   </footer>
+
+  <!-- Back to Top Button -->
+  <button id="btt-btn" aria-label="Scroll to top">
+    <span class="material-symbols-outlined text-[24px]">arrow_upward</span>
+  </button>
 
   <!-- ─── Scripts ─── -->
   <script>
@@ -902,6 +959,16 @@
           navLinks.forEach(link => {
             link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
           });
+          
+          document.querySelectorAll('.mob-link').forEach(link => {
+            if (link.getAttribute('href') === '#' + entry.target.id) {
+              link.classList.add('bg-white/10', 'text-white');
+              link.classList.remove('text-on-surface-variant');
+            } else {
+              link.classList.remove('bg-white/10', 'text-white');
+              link.classList.add('text-on-surface-variant');
+            }
+          });
         }
       });
     }, { threshold: 0.35, rootMargin: '-25% 0px -25% 0px' });
@@ -935,6 +1002,59 @@
       });
     }, { threshold: 0.5 });
     document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+
+    // Terminal Typing Animation
+    const terminalLines = document.querySelectorAll('.type-line');
+    const termObs = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        terminalLines.forEach((line, i) => {
+          setTimeout(() => line.classList.add('typed'), i * 150 + 200);
+        });
+        termObs.disconnect();
+      }
+    }, { threshold: 0.2 });
+    const terminalEl = document.querySelector('.terminal');
+    if(terminalEl) termObs.observe(terminalEl);
+
+    // Scroll Timeline
+    const track = document.querySelector('.tl-track');
+    const progress = document.getElementById('tl-progress');
+    window.addEventListener('scroll', () => {
+      if(!track || !progress) return;
+      const rect = track.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      let percent = (windowHeight / 2 - rect.top) / rect.height;
+      percent = Math.max(0, Math.min(1, percent));
+      progress.style.height = (percent * 100) + '%';
+    });
+
+    // Magnetic Buttons
+    document.querySelectorAll('.magnetic').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const rect = btn.getBoundingClientRect();
+        const x = (e.clientX - rect.left - rect.width / 2) * 0.35;
+        const y = (e.clientY - rect.top - rect.height / 2) * 0.35;
+        btn.style.transform = `translate(${x}px, ${y}px)`;
+      });
+      btn.addEventListener('mouseleave', () => btn.style.transform = 'translate(0px, 0px)');
+    });
+
+    // 3D Tilt Effect
+    document.querySelectorAll('.tilt').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const rotateX = ((e.clientY - rect.top - rect.height / 2) / (rect.height / 2)) * -5;
+        const rotateY = ((e.clientX - rect.left - rect.width / 2) / (rect.width / 2)) * 5;
+        card.style.setProperty('--rx', `${rotateX}deg`);
+        card.style.setProperty('--ry', `${rotateY}deg`);
+      });
+      card.addEventListener('mouseleave', () => { card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg'); });
+    });
+
+    // Back to Top functionality
+    const btt = document.getElementById('btt-btn');
+    window.addEventListener('scroll', () => { window.scrollY > 600 ? btt.classList.add('visible') : btt.classList.remove('visible'); });
+    btt.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
   </script>
 </body>
 </html>
