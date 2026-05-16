@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
 
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
   <script id="tailwind-config">
@@ -19,23 +19,23 @@
       theme: {
         extend: {
           colors: {
-            "surface-dim":       "#080910",
-            "surface-contrast":  "#0f1018",
-            "surface":           "#0d0e16",
-            "surface-container": "#14151f",
-            "on-surface":        "#e4e2f0",
-            "on-surface-variant":"#9da3bc",
-            "outline-variant":   "#2a2d3e",
-            "primary":           "#7b9fff",
-            "primary-container": "#3a5fd9",
-            "mint":              "#4eefc9",
-            "accent":            "#f5a742",
-            "background":        "#080910",
-            "on-background":     "#e4e2f0",
+            "surface-dim":       "#0f172a",
+            "surface-contrast":  "#1e293b",
+            "surface":           "#020617",
+            "surface-container": "#1e293b",
+            "on-surface":        "#f8fafc",
+            "on-surface-variant":"#94a3b8",
+            "outline-variant":   "#334155",
+            "primary":           "#60a5fa",
+            "primary-container": "#2563eb",
+            "mint":              "#34d399",
+            "accent":            "#f59e0b",
+            "background":        "#020617",
+            "on-background":     "#f8fafc",
           },
           fontFamily: {
-            sans:    ["Plus Jakarta Sans", "sans-serif"],
-            display: ["Syne", "sans-serif"],
+            sans:    ["Inter", "sans-serif"],
+            display: ["Outfit", "sans-serif"],
           },
           animation: {
             'fade-up':   'fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) forwards',
@@ -58,13 +58,13 @@
 
   <style>
     :root {
-      --navy: #080910;
-      --blue-mid: #3a5fd9;
-      --blue-light: #7b9fff;
-      --teal: #4eefc9;
-      --text: #e4e2f0;
-      --muted: #9da3bc;
-      --border: rgba(255,255,255,0.06);
+      --navy: #020617;
+      --blue-mid: #2563eb;
+      --blue-light: #60a5fa;
+      --teal: #34d399;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255,255,255,0.08);
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -74,7 +74,7 @@
     body {
       background: var(--navy);
       color: var(--text);
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Inter', sans-serif;
       overflow-x: hidden;
     }
 
@@ -86,43 +86,22 @@
       position: absolute; border-radius: 50%; filter: blur(160px); opacity: 0;
       animation: pulseGlow 20s ease-in-out infinite alternate;
     }
-    .g1 { width:70vw; height:60vh; background:#1a3880; top:-15%; left:-15%; opacity:.13; animation-delay:0s; }
-    .g2 { width:55vw; height:55vh; background:#2563eb; bottom:-10%; right:-10%; opacity:.1; animation-delay:-8s; animation-duration:26s; }
-    .g3 { width:35vw; height:40vh; background:#0ea5e9; top:35%; left:40%; opacity:.06; animation-delay:-16s; animation-duration:32s; }
+    .g1 { width:70vw; height:60vh; background:#1e3a8a; top:-15%; left:-15%; opacity:.08; animation-delay:0s; }
+    .g2 { width:55vw; height:55vh; background:#1d4ed8; bottom:-10%; right:-10%; opacity:.06; animation-delay:-8s; animation-duration:26s; }
+    .g3 { width:35vw; height:40vh; background:#0f766e; top:35%; left:40%; opacity:.04; animation-delay:-16s; animation-duration:32s; }
 
     /* ── Dot grid ── */
     .dot-grid {
       position: fixed; inset: 0; z-index: -2; pointer-events: none;
-      background-image: radial-gradient(circle, rgba(123,159,255,0.06) 1px, transparent 1px);
+      background-image: radial-gradient(circle, rgba(96,165,250,0.05) 1px, transparent 1px);
       background-size: 32px 32px;
     }
 
     /* ── Scan line ── */
-    .scan-line {
-      position: fixed; left: 0; right: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(78,239,201,0.15), transparent);
-      z-index: -1; pointer-events: none;
-      animation: scan 8s linear infinite;
-    }
+    .scan-line { display: none; }
 
     /* ── Particles ── */
-    .particles { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
-    .particle {
-      position: absolute; border-radius: 50%;
-      background: radial-gradient(circle, rgba(123,159,255,0.12) 0%, transparent 70%);
-      opacity: 0; animation: floatUp 25s infinite linear;
-    }
-    @keyframes floatUp {
-      0%   { transform: translateY(110vh) scale(.5); opacity: 0; }
-      15%  { opacity: 1; }
-      85%  { opacity: .6; }
-      100% { transform: translateY(-20vh) scale(1.3); opacity: 0; }
-    }
-    .p1{width:300px;height:300px;left:8%;animation-duration:30s;animation-delay:0s;}
-    .p2{width:160px;height:160px;left:32%;animation-duration:38s;animation-delay:-12s;}
-    .p3{width:240px;height:240px;left:58%;animation-duration:44s;animation-delay:-24s;}
-    .p4{width:200px;height:200px;left:76%;animation-duration:34s;animation-delay:-6s;}
-    .p5{width:130px;height:130px;left:88%;animation-duration:42s;animation-delay:-20s;}
+    .particles { display: none; }
 
     /* ── Glass panels ── */
     .glass {
@@ -132,10 +111,10 @@
       transition: background .35s ease, border-color .35s ease, transform .35s ease, box-shadow .35s ease;
     }
     .glass:hover {
-      background: rgba(30,32,46,0.5);
-      border-color: rgba(123,159,255,0.18);
+      background: rgba(30,41,59,0.5);
+      border-color: rgba(96,165,250,0.2);
       transform: translateY(-2px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(123,159,255,0.08);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.2), 0 0 0 1px rgba(96,165,250,0.05);
     }
     .glass-static {
       background: rgba(20,21,31,0.35);
@@ -163,13 +142,13 @@
 
     /* ── Terminal card ── */
     .terminal {
-      background: rgba(8,9,16,0.85);
-      border: 1px solid rgba(123,159,255,0.15);
+      background: rgba(15,23,42,0.85);
+      border: 1px solid rgba(96,165,250,0.15);
       border-radius: 10px;
       font-family: 'DM Mono', 'Fira Code', 'Cascadia Code', monospace;
       font-size: 12.5px;
       line-height: 1.75;
-      box-shadow: 0 32px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04);
+      box-shadow: 0 24px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
     }
     .terminal-bar { background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.06); border-radius: 10px 10px 0 0; padding: 10px 14px; display:flex; align-items:center; gap:6px; }
     .dot-r { width:10px;height:10px;border-radius:50%;background:#ff5f57; }
@@ -193,42 +172,42 @@
       border: 1px solid; transition: all .25s;
       cursor: default; white-space: nowrap;
     }
-    .skill-ai { background: rgba(78,239,201,0.08); border-color: rgba(78,239,201,0.2); color: #4eefc9; }
-    .skill-ai:hover { background: rgba(78,239,201,0.15); border-color: rgba(78,239,201,0.4); box-shadow: 0 0 16px rgba(78,239,201,0.15); }
-    .skill-data { background: rgba(123,159,255,0.08); border-color: rgba(123,159,255,0.2); color: #7b9fff; }
-    .skill-data:hover { background: rgba(123,159,255,0.15); border-color: rgba(123,159,255,0.4); box-shadow: 0 0 16px rgba(123,159,255,0.15); }
-    .skill-ops { background: rgba(245,167,66,0.08); border-color: rgba(245,167,66,0.2); color: #f5a742; }
-    .skill-ops:hover { background: rgba(245,167,66,0.15); border-color: rgba(245,167,66,0.4); box-shadow: 0 0 16px rgba(245,167,66,0.12); }
+    .skill-ai { background: rgba(52,211,153,0.08); border-color: rgba(52,211,153,0.2); color: #34d399; }
+    .skill-ai:hover { background: rgba(52,211,153,0.15); border-color: rgba(52,211,153,0.3); box-shadow: 0 0 12px rgba(52,211,153,0.1); }
+    .skill-data { background: rgba(96,165,250,0.08); border-color: rgba(96,165,250,0.2); color: #60a5fa; }
+    .skill-data:hover { background: rgba(96,165,250,0.15); border-color: rgba(96,165,250,0.3); box-shadow: 0 0 12px rgba(96,165,250,0.1); }
+    .skill-ops { background: rgba(245,158,11,0.08); border-color: rgba(245,158,11,0.2); color: #f59e0b; }
+    .skill-ops:hover { background: rgba(245,158,11,0.15); border-color: rgba(245,158,11,0.3); box-shadow: 0 0 12px rgba(245,158,11,0.1); }
 
     /* ── Project cards ── */
     .project-card {
-      background: rgba(14,15,24,0.6);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(30,41,59,0.4);
+      border: 1px solid rgba(255,255,255,0.08);
       border-radius: 12px;
       transition: all .35s cubic-bezier(.16,1,.3,1);
     }
     .project-card:hover {
-      border-color: rgba(123,159,255,0.25);
-      box-shadow: 0 24px 64px rgba(0,0,0,.5), 0 0 0 1px rgba(123,159,255,0.1), 0 0 40px rgba(123,159,255,0.05);
+      border-color: rgba(96,165,250,0.3);
+      box-shadow: 0 16px 40px rgba(0,0,0,.3), 0 0 0 1px rgba(96,165,250,0.05);
       transform: translateY(-3px);
     }
     .project-chip {
       display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600;
-      background: rgba(123,159,255,0.1); color: #7b9fff; border: 1px solid rgba(123,159,255,0.2);
+      background: rgba(96,165,250,0.1); color: #60a5fa; border: 1px solid rgba(96,165,250,0.2);
     }
 
     /* ── Evolution cards ── */
     .evo-then {
-      background: rgba(15,16,26,0.7);
-      border: 1px solid rgba(255,255,255,0.06);
+      background: rgba(30,41,59,0.4);
+      border: 1px solid rgba(255,255,255,0.08);
     }
     .evo-now {
-      background: rgba(20,28,55,0.5);
-      border: 1px solid rgba(123,159,255,0.2);
-      box-shadow: 0 0 40px rgba(58,95,217,0.1);
+      background: rgba(30,41,59,0.7);
+      border: 1px solid rgba(96,165,250,0.2);
+      box-shadow: 0 0 30px rgba(37,99,235,0.05);
     }
-    .evo-tag-then { padding:4px 10px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(255,255,255,0.05); color:#9da3bc; }
-    .evo-tag-now  { padding:4px 10px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(78,239,201,0.1); color:#4eefc9; }
+    .evo-tag-then { padding:4px 10px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(255,255,255,0.05); color:#94a3b8; }
+    .evo-tag-now  { padding:4px 10px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(52,211,153,0.1); color:#34d399; }
 
     /* ── Timeline ── */
     .tl-track::before {
@@ -241,16 +220,16 @@
 
     /* ── Gradient text ── */
     .grad-text {
-      background: linear-gradient(135deg, #7b9fff, #4eefc9);
+      background: linear-gradient(135deg, #60a5fa, #34d399);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
     .grad-text-warm {
-      background: linear-gradient(135deg, #f5a742, #ff7e7e);
+      background: linear-gradient(135deg, #f59e0b, #f87171);
       -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
 
     /* ── Counter ── */
-    .counter { font-family: 'Syne', sans-serif; }
+    .counter { font-family: 'Outfit', sans-serif; }
 
     /* ── Section label ── */
     .section-label {
@@ -290,7 +269,7 @@
   <div class="particles"><div class="particle p1"></div><div class="particle p2"></div><div class="particle p3"></div><div class="particle p4"></div><div class="particle p5"></div></div>
 
   <!-- ════════════ HEADER ════════════ -->
-  <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 h-[68px]" style="background:rgba(8,9,16,0.88);border-bottom:1px solid rgba(255,255,255,0.05);backdrop-filter:blur(16px);">
+  <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 h-[68px]" style="background:rgba(2,6,23,0.88);border-bottom:1px solid rgba(255,255,255,0.05);backdrop-filter:blur(16px);">
     <div class="max-w-[1200px] mx-auto h-full flex items-center justify-between px-6 md:px-8">
       <a href="#home" class="font-display font-bold text-[15px] text-white tracking-tight hover:opacity-75 transition-opacity">SR</a>
 
@@ -314,7 +293,7 @@
     </div>
 
     <!-- Mobile nav -->
-    <div id="mob-nav" class="hidden md:hidden absolute top-full left-0 w-full border-b border-white/5" style="background:rgba(8,9,16,0.98);">
+    <div id="mob-nav" class="hidden md:hidden absolute top-full left-0 w-full border-b border-white/5" style="background:rgba(2,6,23,0.98);">
       <div class="flex flex-col p-4 gap-1">
         <a href="#evolution"  class="mob-link py-3 px-4 rounded text-on-surface-variant hover:bg-white/5 text-[14px] font-semibold">Evolution</a>
         <a href="#stack"      class="mob-link py-3 px-4 rounded text-on-surface-variant hover:bg-white/5 text-[14px] font-semibold">Stack</a>
@@ -346,7 +325,7 @@
           <p class="animate-fade-up text-[16px] text-on-surface-variant max-w-xl mb-10 leading-relaxed" style="animation-delay:.18s;">
             I build <strong class="text-white">LLM-powered automation systems</strong>, SAP-integrated ETL pipelines, and
             intelligent workflow orchestration that reduce operational effort by up to
-            <strong class="text-teal-300" style="color:#4eefc9;">90%</strong> — and keep running at
+            <strong class="text-teal-400" style="color:var(--teal);">90%</strong> — and keep running at
             <strong class="text-white">99.9%</strong> reliability.
           </p>
 
@@ -373,7 +352,7 @@
               <p class="text-[11px] text-on-surface-variant font-medium">Automated Weekly</p>
             </div>
             <div class="metric-card">
-              <p class="counter text-2xl font-extrabold mb-0.5" style="color:#4eefc9;" data-target="90" data-suffix="%">0%</p>
+              <p class="counter text-2xl font-extrabold mb-0.5" style="color:var(--teal);" data-target="90" data-suffix="%">0%</p>
               <p class="text-[11px] text-on-surface-variant font-medium">Effort Reduced</p>
             </div>
             <div class="metric-card">
@@ -470,16 +449,16 @@
       <!-- NOW -->
       <div class="flex-1 rounded-xl p-7 evo-now">
         <div class="flex items-center justify-between mb-5">
-          <span class="font-display text-xs font-bold tracking-widest uppercase" style="color:#4eefc9;">2025–26</span>
+          <span class="font-display text-xs font-bold tracking-widest uppercase" style="color:var(--teal);">2025–26</span>
           <span class="evo-tag-now">Current Capability</span>
         </div>
         <h3 class="font-display text-lg font-bold text-white mb-4">Senior AI Automation Engineer</h3>
         <div class="space-y-2 mb-6">
-          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:#4eefc9;" class="mt-0.5">▸</span> LLM APIs — Claude, OpenAI</p>
-          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:#4eefc9;" class="mt-0.5">▸</span> RAG pipelines + AI Agents</p>
-          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:#4eefc9;" class="mt-0.5">▸</span> Prompt-driven workflow orchestration</p>
-          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:#4eefc9;" class="mt-0.5">▸</span> Proactive anomaly detection</p>
-          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:#4eefc9;" class="mt-0.5">▸</span> Real-time executive intelligence</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:var(--teal);" class="mt-0.5">▸</span> LLM APIs — Claude, OpenAI</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:var(--teal);" class="mt-0.5">▸</span> RAG pipelines + AI Agents</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:var(--teal);" class="mt-0.5">▸</span> Prompt-driven workflow orchestration</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:var(--teal);" class="mt-0.5">▸</span> Proactive anomaly detection</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:var(--teal);" class="mt-0.5">▸</span> Real-time executive intelligence</p>
         </div>
         <div class="flex flex-wrap gap-2">
           <span class="evo-tag-now">Python</span>
@@ -505,7 +484,7 @@
   <div class="divider"></div>
 
   <!-- ════════════ CORE STACK ════════════ -->
-  <section id="stack" class="py-24" style="background:rgba(12,13,20,0.5);">
+  <section id="stack" class="py-24" style="background:rgba(15,23,42,0.3);">
     <div class="max-w-[1200px] mx-auto px-6 md:px-8">
       <div class="reveal mb-12">
         <span class="section-label">Technical Stack</span>
@@ -517,7 +496,7 @@
         <!-- AI Layer -->
         <div class="reveal reveal-d1 glass-static rounded-xl p-7">
           <div class="flex items-center gap-3 mb-5">
-            <div class="w-2 h-2 rounded-full" style="background:#4eefc9;box-shadow:0 0 8px #4eefc9;"></div>
+            <div class="w-2 h-2 rounded-full" style="background:var(--teal);box-shadow:0 0 8px var(--teal);"></div>
             <h3 class="font-display font-bold text-white text-[15px] tracking-wide">AI &amp; Automation Layer</h3>
             <span class="ml-auto text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Active • 2024–26</span>
           </div>
@@ -535,7 +514,7 @@
         <!-- Data Layer -->
         <div class="reveal reveal-d2 glass-static rounded-xl p-7">
           <div class="flex items-center gap-3 mb-5">
-            <div class="w-2 h-2 rounded-full" style="background:#7b9fff;box-shadow:0 0 8px #7b9fff;"></div>
+            <div class="w-2 h-2 rounded-full" style="background:var(--blue-light);box-shadow:0 0 8px var(--blue-light);"></div>
             <h3 class="font-display font-bold text-white text-[15px] tracking-wide">Data Engineering Layer</h3>
             <span class="ml-auto text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">9+ Years</span>
           </div>
@@ -553,7 +532,7 @@
         <!-- Ops Layer -->
         <div class="reveal reveal-d3 glass-static rounded-xl p-7">
           <div class="flex items-center gap-3 mb-5">
-            <div class="w-2 h-2 rounded-full" style="background:#f5a742;box-shadow:0 0 8px #f5a742;"></div>
+            <div class="w-2 h-2 rounded-full" style="background:#f59e0b;box-shadow:0 0 8px #f59e0b;"></div>
             <h3 class="font-display font-bold text-white text-[15px] tracking-wide">DevOps &amp; Analytics Layer</h3>
           </div>
           <div class="flex flex-wrap gap-2">
@@ -584,8 +563,8 @@
       <!-- Project 1 -->
       <div class="reveal reveal-d1 project-card p-7 flex flex-col">
         <div class="flex items-start justify-between mb-4">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(78,239,201,0.1);border:1px solid rgba(78,239,201,0.2);">
-            <span class="material-symbols-outlined text-[20px]" style="color:#4eefc9;">bolt</span>
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(52,211,153,0.1);border:1px solid rgba(52,211,153,0.2);">
+            <span class="material-symbols-outlined text-[20px]" style="color:var(--teal);">bolt</span>
           </div>
           <span class="text-[11px] font-bold text-on-surface-variant tracking-widest">2025</span>
         </div>
@@ -600,7 +579,7 @@
             <p class="text-on-surface-variant">AI-driven workflow orchestration framework converting operations into deployable internal web apps — with PRD automation and guided UI generation.</p>
           </div>
           <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest mb-1" style="color:#4eefc9;">Outcome</p>
+            <p class="text-[11px] font-bold uppercase tracking-widest mb-1" style="color:var(--teal);">Outcome</p>
             <p class="text-white font-medium">Excel → deployable web app. Zero manual handoff in operational workflows.</p>
           </div>
         </div>
@@ -614,11 +593,11 @@
       <!-- Project 2 -->
       <div class="reveal reveal-d2 project-card p-7 flex flex-col">
         <div class="flex items-start justify-between mb-4">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(123,159,255,0.1);border:1px solid rgba(123,159,255,0.2);">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(96,165,250,0.1);border:1px solid rgba(96,165,250,0.2);">
             <span class="material-symbols-outlined text-[20px] text-primary">psychology</span>
           </div>
           <div class="flex items-center gap-2">
-            <span class="text-[10px] px-2 py-0.5 rounded" style="background:rgba(78,239,201,0.1);color:#4eefc9;border:1px solid rgba(78,239,201,0.2);font-weight:700;">Open Source</span>
+            <span class="text-[10px] px-2 py-0.5 rounded" style="background:rgba(52,211,153,0.1);color:var(--teal);border:1px solid rgba(52,211,153,0.2);font-weight:700;">Open Source</span>
             <span class="text-[11px] font-bold text-on-surface-variant tracking-widest">2025</span>
           </div>
         </div>
@@ -633,7 +612,7 @@
             <p class="text-on-surface-variant">Autonomous ETL anomaly classifier using the Claude API — classifies events, generates structured remediation guidance, and feeds Power BI dashboards via JSON outputs.</p>
           </div>
           <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest mb-1" style="color:#4eefc9;">Outcome</p>
+            <p class="text-[11px] font-bold uppercase tracking-widest mb-1" style="color:var(--teal);">Outcome</p>
             <p class="text-white font-medium">Autonomous triage replacing human review for routine ETL incidents.</p>
           </div>
         </div>
@@ -648,8 +627,8 @@
       <!-- Project 3 -->
       <div class="reveal reveal-d3 project-card p-7 flex flex-col">
         <div class="flex items-start justify-between mb-4">
-          <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(245,167,66,0.1);border:1px solid rgba(245,167,66,0.2);">
-            <span class="material-symbols-outlined text-[20px]" style="color:#f5a742;">analytics</span>
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);">
+            <span class="material-symbols-outlined text-[20px]" style="color:#f59e0b;">analytics</span>
           </div>
           <span class="text-[11px] font-bold text-on-surface-variant tracking-widest">2024–25</span>
         </div>
@@ -664,7 +643,7 @@
             <p class="text-on-surface-variant">AI-assisted SQL health monitoring with LLM-generated executive summaries and multi-step prompt chains that surface insights automatically.</p>
           </div>
           <div>
-            <p class="text-[11px] font-bold uppercase tracking-widest mb-1" style="color:#4eefc9;">Outcome</p>
+            <p class="text-[11px] font-bold uppercase tracking-widest mb-1" style="color:var(--teal);">Outcome</p>
             <p class="text-white font-medium">~60% reduction in SAP RCA investigation effort per incident.</p>
           </div>
         </div>
@@ -701,7 +680,7 @@
       <div class="reveal relative z-10 flex flex-col md:flex-row w-full mb-20">
         <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
           <h3 class="font-display text-[18px] font-bold text-white mb-1">Senior ETL Developer &amp; Tech Lead</h3>
-          <p class="font-semibold mb-1 text-[14px]" style="color:#7b9fff;">Radiall India Pvt Ltd · Bangalore</p>
+          <p class="font-semibold mb-1 text-[14px]" style="color:var(--blue-light);">Radiall India Pvt Ltd · Bangalore</p>
           <p class="text-on-surface-variant text-[13px]">Sept 2019 – Present</p>
           <div class="hidden md:flex justify-end mt-4">
             <span class="evo-tag-now text-[11px]">Current Role</span>
@@ -710,12 +689,12 @@
         <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-primary-container border-4 z-20 mt-1.5 md:mt-1" style="border-color:var(--navy);box-shadow:0 0 12px rgba(58,95,217,0.6);"></div>
         <div class="md:w-1/2 md:pl-12 pl-12 mt-5 md:mt-0">
           <ul class="space-y-3">
-            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Engineered Python and Apps Script automations recovering <strong class="text-white">20+ hours/week</strong>, reducing manual reporting effort by <strong class="text-white">90%</strong> across business units.</li>
-            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Architected SAP ECC ETL pipelines sustaining <strong class="text-white">99.9% data reliability</strong> across global enterprise operations.</li>
-            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Designed <strong class="text-white">prompt-driven workflow systems</strong> for anomaly detection, exception handling, and operational summaries — materially reducing manual investigation time.</li>
-            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Built real-time visibility into plant-level bottlenecks and operational risks for <strong class="text-white">global stakeholders across 3 manufacturing plants</strong>.</li>
-            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Owned full product lifecycle of a <strong class="text-white">Training Intelligence SaaS Dashboard</strong> — requirements → deployment — enabling global Lean &amp; Six Sigma certification tracking with manager-level filtering.</li>
-            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Implemented <strong class="text-white">GitLab CI/CD pipelines</strong> with automated testing and structured deployment for ETL workflows.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:var(--teal);margin-top:3px;font-size:10px;">●</span> Engineered Python and Apps Script automations recovering <strong class="text-white">20+ hours/week</strong>, reducing manual reporting effort by <strong class="text-white">90%</strong> across business units.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:var(--teal);margin-top:3px;font-size:10px;">●</span> Architected SAP ECC ETL pipelines sustaining <strong class="text-white">99.9% data reliability</strong> across global enterprise operations.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:var(--teal);margin-top:3px;font-size:10px;">●</span> Designed <strong class="text-white">prompt-driven workflow systems</strong> for anomaly detection, exception handling, and operational summaries — materially reducing manual investigation time.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:var(--teal);margin-top:3px;font-size:10px;">●</span> Built real-time visibility into plant-level bottlenecks and operational risks for <strong class="text-white">global stakeholders across 3 manufacturing plants</strong>.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:var(--teal);margin-top:3px;font-size:10px;">●</span> Owned full product lifecycle of a <strong class="text-white">Training Intelligence SaaS Dashboard</strong> — requirements → deployment — enabling global Lean &amp; Six Sigma certification tracking with manager-level filtering.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:var(--teal);margin-top:3px;font-size:10px;">●</span> Implemented <strong class="text-white">GitLab CI/CD pipelines</strong> with automated testing and structured deployment for ETL workflows.</li>
           </ul>
         </div>
       </div>
@@ -724,7 +703,7 @@
       <div class="reveal relative z-10 flex flex-col md:flex-row w-full mb-20">
         <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
           <h3 class="font-display text-[18px] font-bold text-white mb-1">Full-Stack Developer &amp; Integration Specialist</h3>
-          <p class="font-semibold mb-1 text-[14px]" style="color:#7b9fff;">MeritTrac Services Pvt Ltd · India</p>
+          <p class="font-semibold mb-1 text-[14px]" style="color:var(--blue-light);">MeritTrac Services Pvt Ltd · India</p>
           <p class="text-on-surface-variant text-[13px]">Aug 2016 – Sept 2019</p>
         </div>
         <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full z-20 mt-1.5 md:mt-1" style="background:#334155;border:4px solid var(--navy);"></div>
@@ -741,7 +720,7 @@
       <div class="reveal relative z-10 flex flex-col md:flex-row w-full">
         <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
           <h3 class="font-display text-[18px] font-bold text-white mb-1">Lecturer — IT &amp; Computer Science</h3>
-          <p class="font-semibold mb-1 text-[14px]" style="color:#7b9fff;">Polytechnic College · Odisha, India</p>
+          <p class="font-semibold mb-1 text-[14px]" style="color:var(--blue-light);">Polytechnic College · Odisha, India</p>
           <p class="text-on-surface-variant text-[13px]">2012 – 2014</p>
         </div>
         <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full z-20 mt-1.5 md:mt-1" style="background:#1e293b;border:4px solid var(--navy);"></div>
@@ -768,13 +747,13 @@
 
       <div class="reveal reveal-d1 glass rounded-xl p-7">
         <div class="flex items-center gap-3 mb-4">
-          <span class="material-symbols-outlined text-[22px]" style="color:#4eefc9;">smart_toy</span>
+          <span class="material-symbols-outlined text-[22px]" style="color:var(--teal);">smart_toy</span>
           <h3 class="font-display font-bold text-white text-[16px]">AI-Powered Workflow Automation</h3>
         </div>
         <div class="space-y-2 text-[13.5px] text-on-surface-variant">
           <p><strong class="text-white">Problem:</strong> Manual process mapping slowed operations and risked audit failure across FDA &amp; Lean compliance cycles.</p>
           <p><strong class="text-white">Built:</strong> Intelligent AI-assisted automation engine parsing legacy documentation and generating structured workflow maps.</p>
-          <p style="color:#4eefc9;"><strong style="color:#4eefc9;">Outcome:</strong> Lean cycles accelerated by 40%. Manual effort cut by up to 90%.</p>
+          <p style="color:var(--teal);"><strong style="color:var(--teal);">Outcome:</strong> Lean cycles accelerated by 40%. Manual effort cut by up to 90%.</p>
         </div>
       </div>
 
@@ -792,13 +771,13 @@
 
       <div class="reveal reveal-d1 glass rounded-xl p-7">
         <div class="flex items-center gap-3 mb-4">
-          <span class="material-symbols-outlined text-[22px]" style="color:#f5a742;">verified</span>
+          <span class="material-symbols-outlined text-[22px]" style="color:#f59e0b;">verified</span>
           <h3 class="font-display font-bold text-white text-[16px]">SAP-IDoc Reliability Overhaul</h3>
         </div>
         <div class="space-y-2 text-[13.5px] text-on-surface-variant">
           <p><strong class="text-white">Problem:</strong> Persistent IDoc discrepancies eroded leadership trust in enterprise reporting metrics.</p>
           <p><strong class="text-white">Built:</strong> Deep RCA process and complete re-architecture of the SQL reporting and reconciliation layer.</p>
-          <p style="color:#4eefc9;"><strong style="color:#4eefc9;">Outcome:</strong> 100% elimination of historic discrepancies. Leadership trust restored.</p>
+          <p style="color:var(--teal);"><strong style="color:var(--teal);">Outcome:</strong> 100% elimination of historic discrepancies. Leadership trust restored.</p>
         </div>
       </div>
 
@@ -810,7 +789,7 @@
         <div class="space-y-2 text-[13.5px] text-on-surface-variant">
           <p><strong class="text-white">Problem:</strong> Manual deployments caused frequent pipeline downtime and unpredictable release quality.</p>
           <p><strong class="text-white">Built:</strong> Automated CI/CD pipelines with strict GitLab protocols, testing gates, and deployment automation.</p>
-          <p style="color:#4eefc9;"><strong style="color:#4eefc9;">Outcome:</strong> Faster, predictable, and highly reliable release cycles — zero manual deployment errors.</p>
+          <p style="color:var(--teal);"><strong style="color:var(--teal);">Outcome:</strong> Faster, predictable, and highly reliable release cycles — zero manual deployment errors.</p>
         </div>
       </div>
 
@@ -820,26 +799,26 @@
   <div class="divider"></div>
 
   <!-- ════════════ DIFFERENTIATORS ════════════ -->
-  <section class="py-24" style="background:rgba(12,13,20,0.5);">
+  <section class="py-24" style="background:rgba(15,23,42,0.3);">
     <div class="max-w-[1200px] mx-auto px-6 md:px-8">
       <div class="reveal text-center mb-14">
         <span class="section-label">What Sets Me Apart</span>
         <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white mt-2">Why Hire Me</h2>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
-        <div class="reveal reveal-d1 glass-static rounded-xl p-7 border-l-2" style="border-left-color:#7b9fff;">
+        <div class="reveal reveal-d1 glass-static rounded-xl p-7 border-l-2" style="border-left-color:var(--blue-light);">
           <h3 class="font-display text-[17px] font-bold text-white mb-2">Enterprise depth + AI breadth.</h3>
           <p class="text-on-surface-variant text-[13.5px]">9 years of production-hardened data engineering means I don't just layer AI on top — I architect it to survive enterprise realities.</p>
         </div>
-        <div class="reveal reveal-d2 glass-static rounded-xl p-7 border-l-2" style="border-left-color:#4eefc9;">
+        <div class="reveal reveal-d2 glass-static rounded-xl p-7 border-l-2" style="border-left-color:var(--teal);">
           <h3 class="font-display text-[17px] font-bold text-white mb-2">I own outcomes, not just tasks.</h3>
           <p class="text-on-surface-variant text-[13.5px]">From requirements definition to deployment and monitoring — I take full ownership of the systems I build.</p>
         </div>
-        <div class="reveal reveal-d1 glass-static rounded-xl p-7 border-l-2" style="border-left-color:#7b9fff;">
+        <div class="reveal reveal-d1 glass-static rounded-xl p-7 border-l-2" style="border-left-color:var(--blue-light);">
           <h3 class="font-display text-[17px] font-bold text-white mb-2">I translate systems into decisions.</h3>
           <p class="text-on-surface-variant text-[13.5px]">I bridge the gap between engineering execution and executive strategy — ensuring systems produce trusted, actionable KPIs.</p>
         </div>
-        <div class="reveal reveal-d2 glass-static rounded-xl p-7 border-l-2" style="border-left-color:#f5a742;">
+        <div class="reveal reveal-d2 glass-static rounded-xl p-7 border-l-2" style="border-left-color:#f59e0b;">
           <h3 class="font-display text-[17px] font-bold text-white mb-2">I ship at global enterprise scale.</h3>
           <p class="text-on-surface-variant text-[13.5px]">3 manufacturing plants. 40+ global stakeholders. Real production workloads with real reliability requirements.</p>
         </div>
@@ -900,7 +879,7 @@
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
       const scrolled = window.scrollY > 50;
-      header.style.backgroundColor = scrolled ? 'rgba(8,9,16,0.98)' : 'rgba(8,9,16,0.88)';
+      header.style.backgroundColor = scrolled ? 'rgba(2,6,23,0.98)' : 'rgba(2,6,23,0.88)';
       header.style.borderBottomColor = scrolled ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.05)';
     });
 
