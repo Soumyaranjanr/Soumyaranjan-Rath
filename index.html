@@ -1,902 +1,961 @@
 <!DOCTYPE html>
 <html class="dark scroll-smooth" lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Soumyaranjan Rath | Integration Architect & Technical Product Lead</title>
-    <meta name="description"
-        content="Portfolio of Soumyaranjan Rath, Integration Architect & Technical Product Lead with 9+ years delivering enterprise-scale data platforms, SAP integrations, and AI-assisted automation." />
-    <meta property="og:title" content="Soumyaranjan Rath | Integration Architect" />
-    <meta property="og:description"
-        content="I own enterprise data platforms end-to-end. From architecture to executive decision systems." />
-    <meta property="og:type" content="website" />
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Soumyaranjan Rath | Senior AI Automation Engineer</title>
+  <meta name="description" content="Senior AI Automation Engineer with 9+ years delivering enterprise AI-powered automation, SAP integrations, and intelligent data workflows. 99.9% reliability. 90% effort reduction." />
+  <meta property="og:title" content="Soumyaranjan Rath | Senior AI Automation Engineer" />
+  <meta property="og:description" content="Engineering AI-powered workflow systems on top of 9 years of enterprise data infrastructure." />
+  <meta property="og:type" content="website" />
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
-        rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
-    <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "surface-dim": "#0c0d13",
-                        "surface-contrast": "#131622",
-                        "on-surface-variant": "#c3c6d6",
-                        "on-surface": "#e3e1ec",
-                        "surface": "#12131a",
-                        "outline-variant": "#434653",
-                        "primary-container": "#4570e2",
-                        "background": "#0c0d13",
-                        "on-background": "#e3e1ec",
-                        "surface-container": "#1e1f26",
-                        "primary": "#b4c5ff",
-                        "mint": "#64ffda",
-                        "accent": "#ffb86d"
-                    },
-                    fontFamily: {
-                        sans: ["Plus Jakarta Sans", "sans-serif"],
-                    },
-                    transitionTimingFunction: {
-                        'cinematic': 'cubic-bezier(0.16, 1, 0.3, 1)',
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(24px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                }
-            }
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-dim":       "#080910",
+            "surface-contrast":  "#0f1018",
+            "surface":           "#0d0e16",
+            "surface-container": "#14151f",
+            "on-surface":        "#e4e2f0",
+            "on-surface-variant":"#9da3bc",
+            "outline-variant":   "#2a2d3e",
+            "primary":           "#7b9fff",
+            "primary-container": "#3a5fd9",
+            "mint":              "#4eefc9",
+            "accent":            "#f5a742",
+            "background":        "#080910",
+            "on-background":     "#e4e2f0",
+          },
+          fontFamily: {
+            sans:    ["Plus Jakarta Sans", "sans-serif"],
+            display: ["Syne", "sans-serif"],
+          },
+          animation: {
+            'fade-up':   'fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) forwards',
+            'fade-in':   'fadeIn 1.2s cubic-bezier(0.16,1,0.3,1) forwards',
+            'scan':      'scan 4s linear infinite',
+            'pulse-glow':'pulseGlow 3s ease-in-out infinite',
+            'blink':     'blink 1s step-end infinite',
+          },
+          keyframes: {
+            fadeUp:    { '0%':{ opacity:'0', transform:'translateY(28px)' }, '100%':{ opacity:'1', transform:'none' } },
+            fadeIn:    { '0%':{ opacity:'0' }, '100%':{ opacity:'1' } },
+            scan:      { '0%':{ transform:'translateY(-100%)' }, '100%':{ transform:'translateY(100vh)' } },
+            pulseGlow: { '0%,100%':{ opacity:'.6', transform:'scale(1)' }, '50%':{ opacity:'1', transform:'scale(1.08)' } },
+            blink:     { '0%,100%':{ opacity:'1' }, '50%':{ opacity:'0' } },
+          }
         }
-    </script>
+      }
+    }
+  </script>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    :root {
+      --navy: #080910;
+      --blue-mid: #3a5fd9;
+      --blue-light: #7b9fff;
+      --teal: #4eefc9;
+      --text: #e4e2f0;
+      --muted: #9da3bc;
+      --border: rgba(255,255,255,0.06);
+    }
 
-        body {
-            background-color: #0c0d13;
-            color: #e3e1ec;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            overflow-x: hidden;
-        }
+    *, *::before, *::after { box-sizing: border-box; }
 
-        /* ─── Enriched Blue Ambient Glow Blend ─── */
-        .ambient-glow-container {
-            position: fixed;
-            inset: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -2;
-            overflow: hidden;
-            pointer-events: none;
-        }
+    html { scroll-behavior: smooth; }
 
-        .glow-orb-1,
-        .glow-orb-2,
-        .glow-orb-3 {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(140px);
-            opacity: 0.15;
-            animation: floatGlow 20s cubic-bezier(0.25, 1, 0.5, 1) infinite alternate;
-        }
+    body {
+      background: var(--navy);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
 
-        .glow-orb-1 {
-            width: 60vw;
-            height: 60vh;
-            background: #1d4ed8;
-            /* Deep Blue */
-            top: -10%;
-            left: -10%;
-        }
+    /* ── Ambient glow ── */
+    .glow-wrap {
+      position: fixed; inset: 0; z-index: -3; pointer-events: none; overflow: hidden;
+    }
+    .glow-orb {
+      position: absolute; border-radius: 50%; filter: blur(160px); opacity: 0;
+      animation: pulseGlow 20s ease-in-out infinite alternate;
+    }
+    .g1 { width:70vw; height:60vh; background:#1a3880; top:-15%; left:-15%; opacity:.13; animation-delay:0s; }
+    .g2 { width:55vw; height:55vh; background:#2563eb; bottom:-10%; right:-10%; opacity:.1; animation-delay:-8s; animation-duration:26s; }
+    .g3 { width:35vw; height:40vh; background:#0ea5e9; top:35%; left:40%; opacity:.06; animation-delay:-16s; animation-duration:32s; }
 
-        .glow-orb-2 {
-            width: 50vw;
-            height: 50vh;
-            background: #3b82f6;
-            /* Bright Blue */
-            bottom: -10%;
-            right: -5%;
-            animation-delay: -5s;
-            animation-duration: 25s;
-        }
+    /* ── Dot grid ── */
+    .dot-grid {
+      position: fixed; inset: 0; z-index: -2; pointer-events: none;
+      background-image: radial-gradient(circle, rgba(123,159,255,0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+    }
 
-        .glow-orb-3 {
-            width: 40vw;
-            height: 40vh;
-            background: #06b6d4;
-            /* Cyan/Teal accent */
-            top: 30%;
-            left: 30%;
-            animation-delay: -12s;
-            animation-duration: 28s;
-            opacity: 0.08;
-            /* Slightly softer */
-        }
+    /* ── Scan line ── */
+    .scan-line {
+      position: fixed; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(78,239,201,0.15), transparent);
+      z-index: -1; pointer-events: none;
+      animation: scan 8s linear infinite;
+    }
 
-        @keyframes floatGlow {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
+    /* ── Particles ── */
+    .particles { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+    .particle {
+      position: absolute; border-radius: 50%;
+      background: radial-gradient(circle, rgba(123,159,255,0.12) 0%, transparent 70%);
+      opacity: 0; animation: floatUp 25s infinite linear;
+    }
+    @keyframes floatUp {
+      0%   { transform: translateY(110vh) scale(.5); opacity: 0; }
+      15%  { opacity: 1; }
+      85%  { opacity: .6; }
+      100% { transform: translateY(-20vh) scale(1.3); opacity: 0; }
+    }
+    .p1{width:300px;height:300px;left:8%;animation-duration:30s;animation-delay:0s;}
+    .p2{width:160px;height:160px;left:32%;animation-duration:38s;animation-delay:-12s;}
+    .p3{width:240px;height:240px;left:58%;animation-duration:44s;animation-delay:-24s;}
+    .p4{width:200px;height:200px;left:76%;animation-duration:34s;animation-delay:-6s;}
+    .p5{width:130px;height:130px;left:88%;animation-duration:42s;animation-delay:-20s;}
 
-            100% {
-                transform: translate(8%, 12%) scale(1.15);
-            }
-        }
+    /* ── Glass panels ── */
+    .glass {
+      background: rgba(20,21,31,0.35);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      transition: background .35s ease, border-color .35s ease, transform .35s ease, box-shadow .35s ease;
+    }
+    .glass:hover {
+      background: rgba(30,32,46,0.5);
+      border-color: rgba(123,159,255,0.18);
+      transform: translateY(-2px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(123,159,255,0.08);
+    }
+    .glass-static {
+      background: rgba(20,21,31,0.35);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
 
-        /* ─── Animated Floating Bokeh Particles ─── */
-        .floating-particles {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            pointer-events: none;
-            overflow: hidden;
-        }
+    /* ── Section divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+    }
 
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(96, 165, 250, 0.15) 0%, rgba(59, 130, 246, 0) 70%);
-            opacity: 0;
-            animation: floatUp 20s infinite linear;
-        }
+    /* ── Reveal system ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1); }
+    .reveal.visible { opacity: 1; transform: none; }
+    .reveal-d1 { transition-delay: .05s; }
+    .reveal-d2 { transition-delay: .12s; }
+    .reveal-d3 { transition-delay: .19s; }
 
-        @keyframes floatUp {
-            0% {
-                transform: translateY(100vh) scale(0.5);
-                opacity: 0;
-            }
+    /* ── Nav ── */
+    .nav-link { position: relative; transition: color .25s; }
+    .nav-link::after { content:''; position:absolute; bottom:-4px; left:0; width:0; height:1.5px; background:var(--blue-light); transition: width .3s; }
+    .nav-link:hover::after, .nav-link.active::after { width:100%; }
 
-            20% {
-                opacity: 1;
-            }
+    /* ── Terminal card ── */
+    .terminal {
+      background: rgba(8,9,16,0.85);
+      border: 1px solid rgba(123,159,255,0.15);
+      border-radius: 10px;
+      font-family: 'DM Mono', 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 12.5px;
+      line-height: 1.75;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .terminal-bar { background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.06); border-radius: 10px 10px 0 0; padding: 10px 14px; display:flex; align-items:center; gap:6px; }
+    .dot-r { width:10px;height:10px;border-radius:50%;background:#ff5f57; }
+    .dot-y { width:10px;height:10px;border-radius:50%;background:#febc2e; }
+    .dot-g { width:10px;height:10px;border-radius:50%;background:#28c840; }
+    .tc-comment { color: #5a6585; }
+    .tc-kw { color: #c792ea; }
+    .tc-str { color: #c3e88d; }
+    .tc-var { color: #82aaff; }
+    .tc-fn  { color: #82aaff; }
+    .tc-num { color: #f78c6c; }
+    .tc-op  { color: #89ddff; }
+    .tc-key { color: #4eefc9; }
+    .tc-val { color: #eefff4; }
+    .cursor { display:inline-block; width:8px; height:13px; background:#7b9fff; animation: blink 1s step-end infinite; vertical-align: -2px; }
 
-            80% {
-                opacity: 1;
-            }
+    /* ── Skill tags ── */
+    .skill-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 5px 12px; border-radius: 20px; font-size: 12.5px; font-weight: 600;
+      border: 1px solid; transition: all .25s;
+      cursor: default; white-space: nowrap;
+    }
+    .skill-ai { background: rgba(78,239,201,0.08); border-color: rgba(78,239,201,0.2); color: #4eefc9; }
+    .skill-ai:hover { background: rgba(78,239,201,0.15); border-color: rgba(78,239,201,0.4); box-shadow: 0 0 16px rgba(78,239,201,0.15); }
+    .skill-data { background: rgba(123,159,255,0.08); border-color: rgba(123,159,255,0.2); color: #7b9fff; }
+    .skill-data:hover { background: rgba(123,159,255,0.15); border-color: rgba(123,159,255,0.4); box-shadow: 0 0 16px rgba(123,159,255,0.15); }
+    .skill-ops { background: rgba(245,167,66,0.08); border-color: rgba(245,167,66,0.2); color: #f5a742; }
+    .skill-ops:hover { background: rgba(245,167,66,0.15); border-color: rgba(245,167,66,0.4); box-shadow: 0 0 16px rgba(245,167,66,0.12); }
 
-            100% {
-                transform: translateY(-20vh) scale(1.2);
-                opacity: 0;
-            }
-        }
+    /* ── Project cards ── */
+    .project-card {
+      background: rgba(14,15,24,0.6);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      transition: all .35s cubic-bezier(.16,1,.3,1);
+    }
+    .project-card:hover {
+      border-color: rgba(123,159,255,0.25);
+      box-shadow: 0 24px 64px rgba(0,0,0,.5), 0 0 0 1px rgba(123,159,255,0.1), 0 0 40px rgba(123,159,255,0.05);
+      transform: translateY(-3px);
+    }
+    .project-chip {
+      display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600;
+      background: rgba(123,159,255,0.1); color: #7b9fff; border: 1px solid rgba(123,159,255,0.2);
+    }
 
-        /* Particle variations */
-        .p1 {
-            width: 250px;
-            height: 250px;
-            left: 10%;
-            animation-duration: 28s;
-            animation-delay: 0s;
-        }
+    /* ── Evolution cards ── */
+    .evo-then {
+      background: rgba(15,16,26,0.7);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .evo-now {
+      background: rgba(20,28,55,0.5);
+      border: 1px solid rgba(123,159,255,0.2);
+      box-shadow: 0 0 40px rgba(58,95,217,0.1);
+    }
+    .evo-tag-then { padding:4px 10px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(255,255,255,0.05); color:#9da3bc; }
+    .evo-tag-now  { padding:4px 10px; border-radius:8px; font-size:12px; font-weight:600; background:rgba(78,239,201,0.1); color:#4eefc9; }
 
-        .p2 {
-            width: 150px;
-            height: 150px;
-            left: 35%;
-            animation-duration: 35s;
-            animation-delay: -10s;
-        }
+    /* ── Timeline ── */
+    .tl-track::before {
+      content:''; position:absolute; top:0; bottom:0; left:24px; width:1.5px;
+      background: linear-gradient(to bottom, var(--blue-mid), rgba(58,95,217,0.04));
+    }
+    @media(min-width:768px) {
+      .tl-track::before { left:50%; transform:translateX(-50%); }
+    }
 
-        .p3 {
-            width: 300px;
-            height: 300px;
-            left: 55%;
-            animation-duration: 40s;
-            animation-delay: -22s;
-        }
+    /* ── Gradient text ── */
+    .grad-text {
+      background: linear-gradient(135deg, #7b9fff, #4eefc9);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .grad-text-warm {
+      background: linear-gradient(135deg, #f5a742, #ff7e7e);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
 
-        .p4 {
-            width: 180px;
-            height: 180px;
-            left: 75%;
-            animation-duration: 32s;
-            animation-delay: -5s;
-        }
+    /* ── Counter ── */
+    .counter { font-family: 'Syne', sans-serif; }
 
-        .p5 {
-            width: 220px;
-            height: 220px;
-            left: 85%;
-            animation-duration: 38s;
-            animation-delay: -18s;
-        }
+    /* ── Section label ── */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      color: var(--blue-light); margin-bottom: 12px;
+    }
+    .section-label::before { content:''; width:20px; height:1px; background:var(--blue-light); }
 
-        .p6 {
-            width: 120px;
-            height: 120px;
-            left: 20%;
-            animation-duration: 25s;
-            animation-delay: -15s;
-        }
+    /* ── Metric card ── */
+    .metric-card {
+      background: rgba(14,15,24,0.5); border: 1px solid rgba(255,255,255,0.06);
+      border-radius:10px; padding:20px 24px;
+      transition: border-color .3s, box-shadow .3s;
+    }
+    .metric-card:hover { border-color: rgba(123,159,255,0.2); box-shadow: 0 0 30px rgba(123,159,255,0.08); }
 
-        /* ─── Reduced Glassmorphism ─── */
-        .glass-panel {
-            background: rgba(30, 31, 38, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .glass-panel:hover {
-            background: rgba(30, 31, 38, 0.4);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-
-        /* ─── Timeline ─── */
-        .tl-track::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 24px;
-            width: 2px;
-            background: linear-gradient(to bottom, #4570e2 0%, rgba(69, 112, 226, 0.05) 100%);
-        }
-
-        @media(min-width:768px) {
-            .tl-track::before {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-
-        /* ─── Nav active ─── */
-        .nav-link {
-            position: relative;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #b4c5ff;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        /* ─── Cinematic Reveal System ─── */
-        .reveal {
-            opacity: 0;
-            transform: translateY(24px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: none;
-        }
-
-        /* ─── Section divider ─── */
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
-            margin: 0;
-        }
-
-        /* ═══════════════════════════════ PRINT / PDF STYLES ═══════════════════════════════ */
-        @media print {
-            @page {
-                margin: 1.5cm;
-            }
-
-            body,
-            html {
-                background: white !important;
-                color: black !important;
-                font-size: 11pt !important;
-            }
-
-            * {
-                color: #111 !important;
-                text-shadow: none !important;
-                box-shadow: none !important;
-            }
-
-            .text-white {
-                color: #000 !important;
-                font-weight: 800 !important;
-            }
-
-            .text-slate-300,
-            .text-slate-400,
-            .text-slate-500 {
-                color: #333 !important;
-            }
-
-            .text-primary,
-            .text-mint,
-            .text-accent {
-                color: #000 !important;
-                font-weight: 700 !important;
-            }
-
-            .bg-clip-text {
-                -webkit-text-fill-color: black !important;
-                background: none !important;
-            }
-
-            /* Hide non-printable UI and effects */
-            header,
-            button,
-            #mob-nav,
-            .ambient-glow-container,
-            .floating-particles,
-            #toasts {
-                display: none !important;
-            }
-
-            a.bg-white {
-                display: none !important;
-            }
-
-            section {
-                padding-top: 1.5rem !important;
-                padding-bottom: 1.5rem !important;
-                min-height: auto !important;
-            }
-
-            .min-h-\[90vh\] {
-                min-height: auto !important;
-                padding-top: 0 !important;
-            }
-
-            .py-24 {
-                padding-top: 1.5rem !important;
-                padding-bottom: 1.5rem !important;
-            }
-
-            .mb-20,
-            .mb-12,
-            .mb-16 {
-                margin-bottom: 1.5rem !important;
-            }
-
-            .glass-panel,
-            .bg-surface-contrast {
-                background: transparent !important;
-                border: 1px solid #ccc !important;
-                break-inside: avoid;
-                page-break-inside: avoid;
-            }
-
-            .bg-\[\#0c0d13\]\/50 {
-                background: transparent !important;
-            }
-
-            .border-white\/5,
-            .border-white\/10,
-            .border-t,
-            .border-y {
-                border-color: #ddd !important;
-            }
-
-            .border-l-primary {
-                border-left-color: #666 !important;
-            }
-
-            .grid {
-                display: block !important;
-            }
-
-            .grid>div {
-                margin-bottom: 1rem !important;
-            }
-
-            .md\:w-1\/2 {
-                width: 100% !important;
-            }
-
-            .tl-track::before {
-                display: none !important;
-            }
-        }
-    </style>
+    /* ── Print ── */
+    @media print {
+      @page { margin: 1.5cm; }
+      body, html { background: white !important; color: black !important; font-size: 11pt !important; }
+      header, .glow-wrap, .dot-grid, .scan-line, .particles, button { display: none !important; }
+      section { padding-top: 1.5rem !important; padding-bottom: 1.5rem !important; min-height: auto !important; }
+      .glass, .glass-static, .project-card, .glass-panel { background: transparent !important; border: 1px solid #ccc !important; }
+      * { color: #111 !important; text-shadow: none !important; box-shadow: none !important; }
+      .grad-text, .grad-text-warm { -webkit-text-fill-color: #111 !important; }
+    }
+  </style>
 </head>
 
 <body class="min-h-screen flex flex-col">
 
-    <!-- Enriched Blue Ambient Glow Blend -->
-    <div class="ambient-glow-container">
-        <div class="glow-orb-1"></div>
-        <div class="glow-orb-2"></div>
-        <div class="glow-orb-3"></div>
+  <!-- ── Background layers ── -->
+  <div class="glow-wrap"><div class="glow-orb g1"></div><div class="glow-orb g2"></div><div class="glow-orb g3"></div></div>
+  <div class="dot-grid"></div>
+  <div class="scan-line"></div>
+  <div class="particles"><div class="particle p1"></div><div class="particle p2"></div><div class="particle p3"></div><div class="particle p4"></div><div class="particle p5"></div></div>
+
+  <!-- ════════════ HEADER ════════════ -->
+  <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 h-[68px]" style="background:rgba(8,9,16,0.88);border-bottom:1px solid rgba(255,255,255,0.05);backdrop-filter:blur(16px);">
+    <div class="max-w-[1200px] mx-auto h-full flex items-center justify-between px-6 md:px-8">
+      <a href="#home" class="font-display font-bold text-[15px] text-white tracking-tight hover:opacity-75 transition-opacity">SR</a>
+
+      <nav class="hidden md:flex items-center gap-7">
+        <a href="#evolution" class="nav-link text-on-surface-variant hover:text-white text-[12.5px] font-semibold">Evolution</a>
+        <a href="#stack"     class="nav-link text-on-surface-variant hover:text-white text-[12.5px] font-semibold">Stack</a>
+        <a href="#projects"  class="nav-link text-on-surface-variant hover:text-white text-[12.5px] font-semibold">AI Projects</a>
+        <a href="#experience"class="nav-link text-on-surface-variant hover:text-white text-[12.5px] font-semibold">Experience</a>
+        <a href="#impact"    class="nav-link text-on-surface-variant hover:text-white text-[12.5px] font-semibold">Impact</a>
+      </nav>
+
+      <div class="hidden md:flex items-center gap-4">
+        <a href="mailto:ultimate.soumya@gmail.com" class="text-on-surface-variant hover:text-white text-[12.5px] font-semibold transition-colors">Contact</a>
+        <a href="https://linkedin.com/in/soumyaranjanr" target="_blank" rel="noopener" class="text-on-surface-variant hover:text-white text-[12.5px] font-semibold transition-colors">LinkedIn</a>
+        <button onclick="window.print()" class="bg-primary-container text-white px-5 py-2 rounded-md text-[12.5px] font-bold hover:opacity-90 transition-opacity">Get Resume</button>
+      </div>
+
+      <button id="mob-btn" class="md:hidden text-on-surface-variant p-1.5">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
     </div>
 
-    <!-- Animated Floating Bokeh Particles -->
-    <div class="floating-particles">
-        <div class="particle p1"></div>
-        <div class="particle p2"></div>
-        <div class="particle p3"></div>
-        <div class="particle p4"></div>
-        <div class="particle p5"></div>
-        <div class="particle p6"></div>
+    <!-- Mobile nav -->
+    <div id="mob-nav" class="hidden md:hidden absolute top-full left-0 w-full border-b border-white/5" style="background:rgba(8,9,16,0.98);">
+      <div class="flex flex-col p-4 gap-1">
+        <a href="#evolution"  class="mob-link py-3 px-4 rounded text-on-surface-variant hover:bg-white/5 text-[14px] font-semibold">Evolution</a>
+        <a href="#stack"      class="mob-link py-3 px-4 rounded text-on-surface-variant hover:bg-white/5 text-[14px] font-semibold">Stack</a>
+        <a href="#projects"   class="mob-link py-3 px-4 rounded text-on-surface-variant hover:bg-white/5 text-[14px] font-semibold">AI Projects</a>
+        <a href="#experience" class="mob-link py-3 px-4 rounded text-on-surface-variant hover:bg-white/5 text-[14px] font-semibold">Experience</a>
+        <a href="#impact"     class="mob-link py-3 px-4 rounded text-on-surface-variant hover:bg-white/5 text-[14px] font-semibold">Impact</a>
+        <a href="mailto:ultimate.soumya@gmail.com" class="mob-link mt-2 py-3 px-4 rounded bg-primary-container text-white text-[14px] font-bold text-center">Contact Me</a>
+      </div>
     </div>
+  </header>
 
-    <!-- ═══════════════════════════════ HEADER ═══════════════════════════════ -->
-    <header id="header"
-        class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-[#0c0d13]/90 backdrop-blur-md border-b border-white/5 h-[72px]">
-        <div class="max-w-[1200px] mx-auto h-full flex items-center justify-between px-6 md:px-8">
-            <a href="#home" class="text-white font-bold text-lg tracking-tight hover:opacity-80 transition-opacity">
-                Soumyaranjan Rath
+  <!-- ════════════ HERO ════════════ -->
+  <section id="home" class="relative w-full min-h-[92vh] flex flex-col justify-center overflow-hidden pt-20">
+    <div class="relative z-10 w-full max-w-[1200px] mx-auto px-6 md:px-8">
+      <div class="flex flex-col lg:flex-row lg:items-center gap-12 lg:gap-16">
+
+        <!-- Left: Copy -->
+        <div class="flex-1 max-w-2xl">
+          <div class="animate-fade-up" style="animation-delay:.05s;">
+            <span class="section-label">Senior AI Automation Engineer</span>
+          </div>
+
+          <h1 class="font-display animate-fade-up text-4xl md:text-5xl lg:text-[54px] font-extrabold leading-[1.1] tracking-tight text-white mt-2 mb-6" style="animation-delay:.1s;">
+            Engineering AI on top of<br>
+            <span class="grad-text">9 years of enterprise</span><br>
+            data infrastructure.
+          </h1>
+
+          <p class="animate-fade-up text-[16px] text-on-surface-variant max-w-xl mb-10 leading-relaxed" style="animation-delay:.18s;">
+            I build <strong class="text-white">LLM-powered automation systems</strong>, SAP-integrated ETL pipelines, and
+            intelligent workflow orchestration that reduce operational effort by up to
+            <strong class="text-teal-300" style="color:#4eefc9;">90%</strong> — and keep running at
+            <strong class="text-white">99.9%</strong> reliability.
+          </p>
+
+          <div class="animate-fade-up flex flex-wrap gap-3 mb-14" style="animation-delay:.24s;">
+            <a href="mailto:ultimate.soumya@gmail.com"
+               class="bg-primary-container text-white px-7 py-3 rounded-md font-bold text-[13.5px] transition-all hover:opacity-90 hover:shadow-lg hover:shadow-blue-900/40">
+              Start a Conversation
             </a>
+            <a href="#projects"
+               class="border text-white px-7 py-3 rounded-md font-bold text-[13.5px] transition-all hover:bg-white/5"
+               style="border-color:rgba(255,255,255,0.15);">
+              View AI Projects
+            </a>
+          </div>
 
-            <nav class="hidden md:flex items-center gap-8">
-                <a href="#value" class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Value
-                    Prop</a>
-                <a href="#experience"
-                    class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Experience</a>
-                <a href="#impact" class="nav-link text-slate-300 hover:text-white text-[13px] font-semibold">Business
-                    Impact</a>
-            </nav>
-
-            <div class="hidden md:flex items-center gap-5">
-                <a href="mailto:ultimate.soumya@gmail.com"
-                    class="text-slate-300 hover:text-white text-[13px] font-semibold transition-colors">
-                    Contact
-                </a>
-                <button onclick="window.print()"
-                    class="bg-white text-[#0c0d13] px-5 py-2 rounded text-[13px] font-bold hover:bg-slate-200 transition-colors">
-                    Get Resume
-                </button>
+          <!-- Metrics strip -->
+          <div class="animate-fade-up grid grid-cols-2 md:grid-cols-4 gap-4" style="animation-delay:.3s;">
+            <div class="metric-card">
+              <p class="counter text-2xl font-extrabold text-white mb-0.5" data-target="99.9" data-suffix="%">0%</p>
+              <p class="text-[11px] text-on-surface-variant font-medium">System Reliability</p>
             </div>
-
-            <button id="mob-btn" class="md:hidden text-slate-300 p-1.5">
-                <span class="material-symbols-outlined">menu</span>
-            </button>
+            <div class="metric-card">
+              <p class="counter text-2xl font-extrabold grad-text mb-0.5" data-target="20" data-suffix="+ hrs">0</p>
+              <p class="text-[11px] text-on-surface-variant font-medium">Automated Weekly</p>
+            </div>
+            <div class="metric-card">
+              <p class="counter text-2xl font-extrabold mb-0.5" style="color:#4eefc9;" data-target="90" data-suffix="%">0%</p>
+              <p class="text-[11px] text-on-surface-variant font-medium">Effort Reduced</p>
+            </div>
+            <div class="metric-card">
+              <p class="counter text-2xl font-extrabold text-white mb-0.5" data-target="9" data-suffix="+ yrs">0</p>
+              <p class="text-[11px] text-on-surface-variant font-medium">Enterprise Delivery</p>
+            </div>
+          </div>
         </div>
 
-        <!-- Mobile Nav -->
-        <div id="mob-nav" class="hidden md:hidden absolute top-full left-0 w-full bg-[#0c0d13] border-b border-white/5">
-            <div class="flex flex-col p-5 gap-2">
-                <a href="#value"
-                    class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Value
-                    Prop</a>
-                <a href="#experience"
-                    class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Experience</a>
-                <a href="#impact"
-                    class="mob-link py-3 px-4 rounded text-slate-300 hover:bg-white/5 text-[14px] font-semibold">Business
-                    Impact</a>
-                <a href="mailto:ultimate.soumya@gmail.com"
-                    class="mob-link mt-2 py-3 px-4 rounded bg-white text-[#0c0d13] text-[14px] font-bold text-center">
-                    Contact Me
-                </a>
+        <!-- Right: Terminal card -->
+        <div class="hidden lg:block flex-shrink-0 w-[380px] animate-fade-up" style="animation-delay:.35s;">
+          <div class="terminal overflow-hidden">
+            <div class="terminal-bar">
+              <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
+              <span class="ml-3 text-xs text-on-surface-variant font-mono">ai_workflow_engine.py</span>
             </div>
-        </div>
-    </header>
-
-    <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
-    <section id="home" class="relative w-full min-h-[90vh] flex flex-col justify-center overflow-hidden pt-20">
-        <div class="relative z-[10] w-full max-w-[1200px] mx-auto px-6 md:px-8">
-            <h1
-                class="animate-fade-in-up text-4xl md:text-5xl lg:text-[56px] font-extrabold leading-[1.15] tracking-tight text-white max-w-4xl mb-6">
-                I own enterprise data platforms end-to-end: from architecture to executive decision systems.
-            </h1>
-
-            <p class="animate-fade-in-up text-lg text-slate-300 max-w-3xl mb-12 leading-relaxed"
-                style="animation-delay: 0.1s;">
-                Integration Architect & Technical Product Lead with <strong>9+ years</strong> delivering SAP
-                integrations, AI-assisted automation workflows, and real-time analytics systems that reduce operational
-                effort by up to 90%.
-            </p>
-
-            <div class="animate-fade-in-up flex flex-wrap gap-4 mb-20" style="animation-delay: 0.2s;">
-                <a href="mailto:ultimate.soumya@gmail.com"
-                    class="bg-white text-[#0c0d13] px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-slate-200">
-                    Discuss Your System Challenges
-                </a>
-                <a href="#impact"
-                    class="border border-white/20 text-white px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-white/5">
-                    View Business Impact
-                </a>
+            <div class="p-5 space-y-0.5">
+              <p><span class="tc-comment"># Senior AI Automation Engineer</span></p>
+              <p><span class="tc-comment"># Bangalore, India · Open to Remote</span></p>
+              <p>&nbsp;</p>
+              <p><span class="tc-kw">stack</span> <span class="tc-op">=</span> <span class="tc-op">{</span></p>
+              <p>&nbsp;&nbsp;<span class="tc-key">"ai"</span><span class="tc-op">:</span> <span class="tc-op">[</span></p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tc-str">"LLM APIs"</span><span class="tc-op">,</span> <span class="tc-str">"RAG"</span><span class="tc-op">,</span></p>
+              <p>&nbsp;&nbsp;&nbsp;&nbsp;<span class="tc-str">"AI Agents"</span><span class="tc-op">,</span> <span class="tc-str">"Prompt Eng."</span></p>
+              <p>&nbsp;&nbsp;<span class="tc-op">],</span></p>
+              <p>&nbsp;&nbsp;<span class="tc-key">"data"</span><span class="tc-op">:</span> <span class="tc-op">[</span><span class="tc-str">"Python"</span><span class="tc-op">,</span> <span class="tc-str">"SQL"</span><span class="tc-op">,</span> <span class="tc-str">"SAP ECC"</span><span class="tc-op">],</span></p>
+              <p>&nbsp;&nbsp;<span class="tc-key">"ops"</span><span class="tc-op">:</span> <span class="tc-op">[</span><span class="tc-str">"GitLab CI/CD"</span><span class="tc-op">,</span> <span class="tc-str">"Power BI"</span><span class="tc-op">]</span></p>
+              <p><span class="tc-op">}</span></p>
+              <p>&nbsp;</p>
+              <p><span class="tc-fn">result</span> <span class="tc-op">=</span> <span class="tc-fn">automate</span><span class="tc-op">(</span></p>
+              <p>&nbsp;&nbsp;<span class="tc-key">enterprise</span><span class="tc-op">=</span><span class="tc-kw">True</span><span class="tc-op">,</span></p>
+              <p>&nbsp;&nbsp;<span class="tc-key">reliability</span><span class="tc-op">=</span><span class="tc-num">0.999</span><span class="tc-op">,</span></p>
+              <p>&nbsp;&nbsp;<span class="tc-key">effort_reduction</span><span class="tc-op">=</span><span class="tc-num">0.90</span></p>
+              <p><span class="tc-op">)</span></p>
+              <p>&nbsp;</p>
+              <p><span class="tc-comment"># → 20+ hrs/week recovered</span></p>
+              <p><span class="tc-comment"># → 99.9% data reliability</span></p>
+              <p><span class="tc-var">$ </span><span class="cursor"></span></p>
             </div>
-
-            <!-- Proof Strip / Metrics -->
-            <div class="animate-fade-in-up border-t border-white/10 pt-8 grid grid-cols-2 md:grid-cols-4 gap-6 opacity-80"
-                style="animation-delay: 0.3s;">
-                <div>
-                    <p class="text-2xl font-bold text-white mb-1">0 to 1</p>
-                    <p class="text-xs text-slate-400 font-medium">Enterprise platform ownership</p>
-                </div>
-                <div>
-                    <p class="text-2xl font-bold text-white mb-1">~40+</p>
-                    <p class="text-xs text-slate-400 font-medium">Global stakeholders enabled</p>
-                </div>
-                <div>
-                    <p class="text-2xl font-bold text-white mb-1">99.9%</p>
-                    <p class="text-xs text-slate-400 font-medium">System reliability SLA</p>
-                </div>
-                <div>
-                    <p class="text-2xl font-bold text-white mb-1">Up to 90%</p>
-                    <p class="text-xs text-slate-400 font-medium">Reduction in manual operations</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ═══════════════════════════════ WHY COMPANIES BRING ME IN ═══════════════════════════════ -->
-    <section id="value" class="py-24 max-w-[1200px] mx-auto px-6 md:px-8 border-t border-white/5">
-        <div class="reveal mb-12">
-            <h2 class="text-3xl font-extrabold text-white mb-4">Why Companies Bring Me In</h2>
+          </div>
         </div>
 
-        <div class="reveal grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary mt-1">hub</span>
-                <div>
-                    <h3 class="text-white font-bold text-lg mb-2">Fix broken enterprise integrations</h3>
-                    <p class="text-slate-400 text-[15px] leading-relaxed">I resolve deep-rooted architecture flaws and
-                        SAP inconsistencies that cause downstream data discrepancies.</p>
-                </div>
-            </div>
-            <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary mt-1">precision_manufacturing</span>
-                <div>
-                    <h3 class="text-white font-bold text-lg mb-2">Replace manual workflows</h3>
-                    <p class="text-slate-400 text-[15px] leading-relaxed">I deploy scalable, AI-assisted automation
-                        systems that reclaim hundreds of engineering and operational hours.</p>
-                </div>
-            </div>
-            <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary mt-1">account_tree</span>
-                <div>
-                    <h3 class="text-white font-bold text-lg mb-2">Align execution with decisions</h3>
-                    <p class="text-slate-400 text-[15px] leading-relaxed">I bridge the gap between engineering output
-                        and executive strategy, ensuring systems produce reliable dashboard KPIs.</p>
-                </div>
-            </div>
-            <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary mt-1">verified_user</span>
-                <div>
-                    <h3 class="text-white font-bold text-lg mb-2">Deliver audit-proof pipelines</h3>
-                    <p class="text-slate-400 text-[15px] leading-relaxed">I establish strict governance and
-                        fault-tolerant ETL pipelines to ensure data integrity during regulatory compliance.</p>
-                </div>
-            </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ════════════ CAREER EVOLUTION ════════════ -->
+  <section id="evolution" class="py-24 max-w-[1200px] mx-auto px-6 md:px-8">
+    <div class="reveal mb-14">
+      <span class="section-label">Career Transformation</span>
+      <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white mt-2 mb-3">From Middleware to Machine Intelligence</h2>
+      <p class="text-on-surface-variant text-[15px] max-w-2xl">Six years of compounding delivery — same enterprise rigour, entirely new capabilities.</p>
+    </div>
+
+    <div class="reveal flex flex-col md:flex-row items-stretch gap-4 md:gap-6">
+
+      <!-- THEN -->
+      <div class="flex-1 rounded-xl p-7 evo-then">
+        <div class="flex items-center justify-between mb-5">
+          <span class="font-display text-xs font-bold tracking-widest uppercase text-on-surface-variant">2019</span>
+          <span class="evo-tag-then">Starting Point</span>
         </div>
-    </section>
-
-    <!-- ═══════════════════════════════ WHAT YOU GET WHEN YOU HIRE ME (CONTRAST SECTION) ═══════════════════════════════ -->
-    <section class="py-24 bg-surface-contrast border-y border-white/5">
-        <div class="max-w-[1200px] mx-auto px-6 md:px-8">
-            <div class="reveal mb-12">
-                <h2 class="text-3xl font-extrabold text-white mb-4">What You Get When You Hire Me</h2>
-            </div>
-
-            <div class="reveal grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
-                    <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">End-to-end ownership of enterprise data
-                        platforms</span>
-                </div>
-                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
-                    <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">Elimination of chronic reporting
-                        inconsistencies</span>
-                </div>
-                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
-                    <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">70 to 90% reduction in manual operational
-                        workload</span>
-                </div>
-                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
-                    <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">Real-time executive dashboards for instant
-                        strategy</span>
-                </div>
-                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
-                    <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">Stable, fault-tolerant integration
-                        architecture</span>
-                </div>
-                <div class="bg-[#0c0d13]/50 p-6 rounded border border-white/5 flex items-start gap-3">
-                    <span class="material-symbols-outlined text-mint">check</span>
-                    <span class="text-slate-300 text-[15px] font-medium">Faster, predictable releases via GitLab
-                        CI/CD</span>
-                </div>
-            </div>
+        <h3 class="font-display text-lg font-bold text-white mb-4">Integration Developer</h3>
+        <div class="space-y-2 mb-6">
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span class="text-on-surface-variant mt-0.5">▸</span> Magic XPI / Magic XPA middleware</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span class="mt-0.5">▸</span> Manual ETL configuration</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span class="mt-0.5">▸</span> SAP point-to-point integrations</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span class="mt-0.5">▸</span> Reactive error handling</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span class="mt-0.5">▸</span> Report-by-request dashboards</p>
         </div>
-    </section>
-
-    <!-- ═══════════════════════════════ HOW I SOLVE PROBLEMS (METHODOLOGY) ═══════════════════════════════ -->
-    <section class="py-24 max-w-[1200px] mx-auto px-6 md:px-8">
-        <div class="reveal mb-12">
-            <h2 class="text-3xl font-extrabold text-white mb-4">How I Solve Enterprise Problems</h2>
+        <div class="flex flex-wrap gap-2">
+          <span class="evo-tag-then">Magic XPI</span>
+          <span class="evo-tag-then">Magic XPA</span>
+          <span class="evo-tag-then">Manual ETL</span>
+          <span class="evo-tag-then">IDoc processing</span>
         </div>
+      </div>
 
-        <div class="reveal grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-                <h3 class="text-lg font-bold text-white mb-2 border-b border-white/10 pb-2">1. Architecture</h3>
-                <ul class="text-slate-400 text-[14px] space-y-3 mt-4">
-                    <li><strong class="text-slate-200">Problem:</strong> Fragmented silos block visibility.</li>
-                    <li><strong class="text-slate-200">Approach:</strong> Design scalable, unified integration layers
-                        mapping directly to core business workflows.</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-lg font-bold text-white mb-2 border-b border-white/10 pb-2">2. Execution</h3>
-                <ul class="text-slate-400 text-[14px] space-y-3 mt-4">
-                    <li><strong class="text-slate-200">Problem:</strong> Brittle pipelines fail under volume.</li>
-                    <li><strong class="text-slate-200">Approach:</strong> Build fault-tolerant ETL and strict CI/CD to
-                        automate heavy lifting and eliminate manual steps.</li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-lg font-bold text-white mb-2 border-b border-white/10 pb-2">3. Business Value</h3>
-                <ul class="text-slate-400 text-[14px] space-y-3 mt-4">
-                    <li><strong class="text-slate-200">Problem:</strong> Decisions made on stale data.</li>
-                    <li><strong class="text-slate-200">Approach:</strong> Deliver real-time executive dashboards for
-                        zero-discrepancy, trusted KPI tracking.</li>
-                </ul>
-            </div>
+      <!-- Arrow -->
+      <div class="flex md:flex-col items-center justify-center gap-2 px-2 my-4 md:my-0">
+        <div class="hidden md:block w-px flex-1 bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+        <div class="flex md:flex-col items-center gap-1.5">
+          <div class="w-8 h-8 rounded-full flex items-center justify-center" style="background:rgba(58,95,217,0.2);border:1px solid rgba(58,95,217,0.4);">
+            <span class="text-primary text-sm font-bold">→</span>
+          </div>
+          <p class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant md:writing-mode-vertical text-center md:text-left" style="writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg);display:none;" class="md:block">6 yrs</p>
+          <p class="text-[10px] font-bold tracking-widest uppercase text-on-surface-variant md:hidden">6 YEARS</p>
         </div>
-    </section>
+        <div class="hidden md:block w-px flex-1 bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+      </div>
 
-    <div class="section-divider"></div>
+      <!-- NOW -->
+      <div class="flex-1 rounded-xl p-7 evo-now">
+        <div class="flex items-center justify-between mb-5">
+          <span class="font-display text-xs font-bold tracking-widest uppercase" style="color:#4eefc9;">2025–26</span>
+          <span class="evo-tag-now">Current Capability</span>
+        </div>
+        <h3 class="font-display text-lg font-bold text-white mb-4">Senior AI Automation Engineer</h3>
+        <div class="space-y-2 mb-6">
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:#4eefc9;" class="mt-0.5">▸</span> LLM APIs — Claude, OpenAI</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:#4eefc9;" class="mt-0.5">▸</span> RAG pipelines + AI Agents</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:#4eefc9;" class="mt-0.5">▸</span> Prompt-driven workflow orchestration</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:#4eefc9;" class="mt-0.5">▸</span> Proactive anomaly detection</p>
+          <p class="text-[13.5px] text-on-surface-variant flex items-start gap-2"><span style="color:#4eefc9;" class="mt-0.5">▸</span> Real-time executive intelligence</p>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <span class="evo-tag-now">Python</span>
+          <span class="evo-tag-now">LLM APIs</span>
+          <span class="evo-tag-now">RAG</span>
+          <span class="evo-tag-now">AI Agents</span>
+          <span class="evo-tag-now">GitLab CI/CD</span>
+        </div>
+      </div>
 
-    <!-- ═══════════════════════════════ EXPERIENCE ═══════════════════════════════ -->
-    <section id="experience" class="py-24 max-w-[1200px] mx-auto px-6 md:px-8">
-        <div class="reveal mb-16">
-            <h2 class="text-3xl font-extrabold text-white mb-4">Experience</h2>
+    </div>
+
+    <!-- The compound stat -->
+    <div class="reveal mt-8 glass-static rounded-xl p-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-[14px] text-on-surface-variant max-w-lg">This compound growth — enterprise data rigour plus applied AI — is what separates someone who <em>talks</em> about AI automation from someone who <strong class="text-white">ships it inside real production systems.</strong></p>
+      <div class="flex-shrink-0 text-right">
+        <p class="font-display text-3xl font-extrabold grad-text">3 projects</p>
+        <p class="text-[12px] text-on-surface-variant">shipped in production since 2024</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ════════════ CORE STACK ════════════ -->
+  <section id="stack" class="py-24" style="background:rgba(12,13,20,0.5);">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+      <div class="reveal mb-12">
+        <span class="section-label">Technical Stack</span>
+        <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white mt-2 mb-3">Core Capabilities</h2>
+        <p class="text-on-surface-variant text-[15px] max-w-xl">Three layers that work together: AI on top, data engineering beneath, enterprise integration at the foundation.</p>
+      </div>
+
+      <div class="space-y-8">
+        <!-- AI Layer -->
+        <div class="reveal reveal-d1 glass-static rounded-xl p-7">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-2 h-2 rounded-full" style="background:#4eefc9;box-shadow:0 0 8px #4eefc9;"></div>
+            <h3 class="font-display font-bold text-white text-[15px] tracking-wide">AI &amp; Automation Layer</h3>
+            <span class="ml-auto text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">Active • 2024–26</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag skill-ai">LLM APIs (Claude / OpenAI)</span>
+            <span class="skill-tag skill-ai">Prompt Engineering</span>
+            <span class="skill-tag skill-ai">RAG Pipelines</span>
+            <span class="skill-tag skill-ai">AI Agents</span>
+            <span class="skill-tag skill-ai">Workflow Orchestration</span>
+            <span class="skill-tag skill-ai">Anomaly Detection</span>
+            <span class="skill-tag skill-ai">AI-Assisted Automation</span>
+          </div>
         </div>
 
-        <div class="relative tl-track max-w-4xl mx-auto">
-
-            <!-- Radiall -->
-            <div class="reveal relative z-10 flex flex-col md:flex-row w-full mb-20">
-                <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
-                    <h3 class="text-xl font-bold text-white mb-1">Integration Architect & Tech Product Lead</h3>
-                    <p class="text-primary font-semibold mb-1">Radiall · Bangalore, India</p>
-                    <p class="text-slate-500 text-sm">Sept 2019 to Present</p>
-                </div>
-                <div
-                    class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1">
-                </div>
-                <div class="md:w-1/2 md:pl-12 pl-12 mt-6 md:mt-0">
-                    <p class="text-slate-300 font-bold mb-3">Key Wins:</p>
-                    <ul class="text-slate-400 text-[14px] space-y-3 list-disc ml-4">
-                        <li>Owned architecture and delivery of a 0 to 1 enterprise data platform (Magic XPI), sustaining
-                            99.9% reliability for ~40+ global stakeholders.</li>
-                        <li>Deployed AI-assisted automation workflows for FDA compliance and Lean process mapping,
-                            reducing manual operational effort by up to 90%.</li>
-                        <li>Led cross-functional teams to re-architect SQL reporting layers, achieving 100% elimination
-                            of historic SAP-IDoc data discrepancies.</li>
-                        <li>Defined system roadmap and established GitLab CI/CD pipelines, drastically reducing
-                            production deployment defects.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- MeritTrac -->
-            <div class="reveal relative z-10 flex flex-col md:flex-row w-full mb-20">
-                <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
-                    <h3 class="text-xl font-bold text-white mb-1">Integration Specialist & Full-Stack Dev</h3>
-                    <p class="text-primary font-semibold mb-1">MeritTrac Services · India</p>
-                    <p class="text-slate-500 text-sm">2016 to 2019</p>
-                </div>
-                <div
-                    class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-600 border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1">
-                </div>
-                <div class="md:w-1/2 md:pl-12 pl-12 mt-6 md:mt-0">
-                    <p class="text-slate-300 font-bold mb-3">Key Wins:</p>
-                    <ul class="text-slate-400 text-[14px] space-y-3 list-disc ml-4">
-                        <li>Developed and scaled automated ETL pipelines across high-volume national examination
-                            systems.</li>
-                        <li>Replaced vulnerable manual data-handling processes with secure, real-time backend syncs.
-                        </li>
-                        <li>Bridged backend databases with user-facing assessment platforms via Magic XPA integration.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Polytechnic -->
-            <div class="reveal relative z-10 flex flex-col md:flex-row w-full">
-                <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
-                    <h3 class="text-xl font-bold text-white mb-1">Lecturer, IT & Computer Science</h3>
-                    <p class="text-primary font-semibold mb-1">Polytechnic College · Odisha, India</p>
-                    <p class="text-slate-500 text-sm">2012 to 2014</p>
-                </div>
-                <div
-                    class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-slate-700 border-4 border-[#0c0d13] z-20 mt-1.5 md:mt-1">
-                </div>
-                <div class="md:w-1/2 md:pl-12 pl-12 mt-6 md:mt-0">
-                    <ul class="text-slate-400 text-[14px] space-y-3 list-disc ml-4">
-                        <li>Communicated database structures and CS principles to emerging technologists.</li>
-                        <li>Translated complex technical concepts into accessible curriculums.</li>
-                    </ul>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <div class="section-divider"></div>
-
-    <!-- ═══════════════════════════════ PROJECTS / IMPACT ═══════════════════════════════ -->
-    <section id="impact" class="py-24 max-w-[1200px] mx-auto px-6 md:px-8">
-        <div class="reveal mb-12">
-            <h2 class="text-3xl font-extrabold text-white mb-4">Strategic Business Impact</h2>
+        <!-- Data Layer -->
+        <div class="reveal reveal-d2 glass-static rounded-xl p-7">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-2 h-2 rounded-full" style="background:#7b9fff;box-shadow:0 0 8px #7b9fff;"></div>
+            <h3 class="font-display font-bold text-white text-[15px] tracking-wide">Data Engineering Layer</h3>
+            <span class="ml-auto text-[11px] font-bold text-on-surface-variant uppercase tracking-widest">9+ Years</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag skill-data">Python</span>
+            <span class="skill-tag skill-data">SQL &amp; Stored Procedures</span>
+            <span class="skill-tag skill-data">SAP ECC (RFC / BAPI / IDoc)</span>
+            <span class="skill-tag skill-data">ETL Pipeline Architecture</span>
+            <span class="skill-tag skill-data">Data Validation &amp; Reconciliation</span>
+            <span class="skill-tag skill-data">REST APIs</span>
+            <span class="skill-tag skill-data">Google Apps Script</span>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-
-            <!-- FDA & LEAN AI PROJECT -->
-            <div class="reveal glass-panel rounded p-8">
-                <h3 class="text-lg font-bold text-white mb-4">AI-Automated FDA & Lean Mapping</h3>
-                <div class="space-y-3 text-[14px] text-slate-400">
-                    <p><strong class="text-slate-200">Problem:</strong> Manual process mapping slowed operations and
-                        risked audit failure.</p>
-                    <p><strong class="text-slate-200">Built:</strong> Intelligent AI-assisted automation engine parsing
-                        legacy documentation.</p>
-                    <p><strong class="text-white">Outcome:</strong> Accelerated Lean cycles by 40%, cut manual effort by
-                        up to 90%.</p>
-                </div>
-            </div>
-
-            <!-- Analytics Platform -->
-            <div class="reveal glass-panel rounded p-8">
-                <h3 class="text-lg font-bold text-white mb-4">Executive Analytics Platform</h3>
-                <div class="space-y-3 text-[14px] text-slate-400">
-                    <p><strong class="text-slate-200">Problem:</strong> C-suite lacked real-time operational visibility.
-                    </p>
-                    <p><strong class="text-slate-200">Built:</strong> Direct-to-dashboard pipeline uniting SQL, Power
-                        BI, and Data Studio.</p>
-                    <p><strong class="text-white">Outcome:</strong> Instant KPI visibility enabling data-driven
-                        strategic planning.</p>
-                </div>
-            </div>
-
-            <!-- SAP-IDoc -->
-            <div class="reveal glass-panel rounded p-8">
-                <h3 class="text-lg font-bold text-white mb-4">SAP-IDoc Reliability Overhaul</h3>
-                <div class="space-y-3 text-[14px] text-slate-400">
-                    <p><strong class="text-slate-200">Problem:</strong> Inconsistencies eroded business trust in
-                        reporting metrics.</p>
-                    <p><strong class="text-slate-200">Built:</strong> Deep RCA and complete re-architecture of the SQL
-                        reporting layer.</p>
-                    <p><strong class="text-white">Outcome:</strong> 100% elimination of historic discrepancies; restored
-                        leadership trust.</p>
-                </div>
-            </div>
-
-            <!-- CI/CD -->
-            <div class="reveal glass-panel rounded p-8">
-                <h3 class="text-lg font-bold text-white mb-4">Enterprise CI/CD Implementation</h3>
-                <div class="space-y-3 text-[14px] text-slate-400">
-                    <p><strong class="text-slate-200">Problem:</strong> Manual deployments caused frequent pipeline
-                        downtime.</p>
-                    <p><strong class="text-slate-200">Built:</strong> Automated CI/CD pipelines enforcing strict GitLab
-                        protocols.</p>
-                    <p><strong class="text-white">Outcome:</strong> Faster, predictable, and highly reliable release
-                        cycles.</p>
-                </div>
-            </div>
-
+        <!-- Ops Layer -->
+        <div class="reveal reveal-d3 glass-static rounded-xl p-7">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-2 h-2 rounded-full" style="background:#f5a742;box-shadow:0 0 8px #f5a742;"></div>
+            <h3 class="font-display font-bold text-white text-[15px] tracking-wide">DevOps &amp; Analytics Layer</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="skill-tag skill-ops">GitLab CI/CD</span>
+            <span class="skill-tag skill-ops">Power BI</span>
+            <span class="skill-tag skill-ops">Google Data Studio</span>
+            <span class="skill-tag skill-ops">MS SQL Server</span>
+            <span class="skill-tag skill-ops">Bash Scripting</span>
+            <span class="skill-tag skill-ops">Agile / KAIZEN</span>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- ═══════════════════════════════ WHAT MAKES ME DIFFERENT ═══════════════════════════════ -->
-    <section class="py-24 bg-surface-contrast border-y border-white/5">
-        <div class="max-w-[1200px] mx-auto px-6 md:px-8 text-center">
-            <h2 class="text-3xl font-extrabold text-white mb-12">What Makes Me Different</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="p-4">
-                    <p class="text-xl font-bold text-white">I own outcomes, not just implementation.</p>
-                </div>
-                <div class="p-4">
-                    <p class="text-xl font-bold text-white">I operate seamlessly across engineering, architecture, and
-                        product.</p>
-                </div>
-                <div class="p-4">
-                    <p class="text-xl font-bold text-white">I translate technical systems into executive decisions.</p>
-                </div>
-                <div class="p-4">
-                    <p class="text-xl font-bold text-white">I eliminate inefficiencies at global enterprise scale.</p>
-                </div>
-            </div>
+  <div class="divider"></div>
+
+  <!-- ════════════ AI PROJECTS ════════════ -->
+  <section id="projects" class="py-24 max-w-[1200px] mx-auto px-6 md:px-8">
+    <div class="reveal mb-12">
+      <span class="section-label">Proof Layer</span>
+      <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white mt-2 mb-3">AI Projects</h2>
+      <p class="text-on-surface-variant text-[15px] max-w-xl">Production systems shipped using LLM APIs, prompt orchestration, and AI-assisted automation — not prototypes.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Project 1 -->
+      <div class="reveal reveal-d1 project-card p-7 flex flex-col">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(78,239,201,0.1);border:1px solid rgba(78,239,201,0.2);">
+            <span class="material-symbols-outlined text-[20px]" style="color:#4eefc9;">bolt</span>
+          </div>
+          <span class="text-[11px] font-bold text-on-surface-variant tracking-widest">2025</span>
         </div>
-    </section>
-
-    <!-- ═══════════════════════════════ FINAL CTA ═══════════════════════════════ -->
-    <section class="py-24 max-w-[1200px] mx-auto px-6 md:px-8 text-center">
-        <div class="reveal">
-            <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-8">If your systems are slowing decisions, we
-                should talk.</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:ultimate.soumya@gmail.com"
-                    class="bg-white text-[#0c0d13] px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-slate-200">
-                    Book a Discussion
-                </a>
-                <button onclick="window.print()"
-                    class="border border-white/20 text-white px-8 py-3.5 rounded font-bold text-[14px] transition-colors hover:bg-white/5">
-                    Download Case Study
-                </button>
-            </div>
+        <h3 class="font-display text-[17px] font-bold text-white mb-3">AI Engineer OS</h3>
+        <div class="space-y-3 text-[13.5px] mb-5 flex-1">
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Problem</p>
+            <p class="text-on-surface-variant">Manual Excel-based operations trapped in spreadsheets with no scalability or auditability.</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Built</p>
+            <p class="text-on-surface-variant">AI-driven workflow orchestration framework converting operations into deployable internal web apps — with PRD automation and guided UI generation.</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest mb-1" style="color:#4eefc9;">Outcome</p>
+            <p class="text-white font-medium">Excel → deployable web app. Zero manual handoff in operational workflows.</p>
+          </div>
         </div>
-    </section>
-
-    <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
-    <footer class="py-8 border-t border-white/5">
-        <div
-            class="max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
-            <div>
-                <div class="text-white font-bold text-[15px]">Soumyaranjan Rath</div>
-            </div>
-            <div class="flex gap-6">
-                <a href="mailto:ultimate.soumya@gmail.com"
-                    class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">Email</a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener"
-                    class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">LinkedIn</a>
-                <a href="https://github.com" target="_blank" rel="noopener"
-                    class="text-slate-400 hover:text-white text-[13px] font-medium transition-colors">GitHub</a>
-            </div>
+        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/5">
+          <span class="project-chip">LLM APIs</span>
+          <span class="project-chip">Workflow Orchestration</span>
+          <span class="project-chip">Apps Script</span>
         </div>
-    </footer>
+      </div>
 
-    <!-- ─── Scripts ─── -->
-    <script>
-        // Setup Mobile Menu Toggle
-        const mobBtn = document.getElementById('mob-btn');
-        const mobNav = document.getElementById('mob-nav');
-        mobBtn.addEventListener('click', () => mobNav.classList.toggle('hidden'));
-        document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobNav.classList.add('hidden')));
+      <!-- Project 2 -->
+      <div class="reveal reveal-d2 project-card p-7 flex flex-col">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(123,159,255,0.1);border:1px solid rgba(123,159,255,0.2);">
+            <span class="material-symbols-outlined text-[20px] text-primary">psychology</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[10px] px-2 py-0.5 rounded" style="background:rgba(78,239,201,0.1);color:#4eefc9;border:1px solid rgba(78,239,201,0.2);font-weight:700;">Open Source</span>
+            <span class="text-[11px] font-bold text-on-surface-variant tracking-widest">2025</span>
+          </div>
+        </div>
+        <h3 class="font-display text-[17px] font-bold text-white mb-3">AI Ops Assistant</h3>
+        <div class="space-y-3 text-[13.5px] mb-5 flex-1">
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Problem</p>
+            <p class="text-on-surface-variant">ETL anomalies required manual triage, causing delayed incident response and downstream data issues.</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Built</p>
+            <p class="text-on-surface-variant">Autonomous ETL anomaly classifier using the Claude API — classifies events, generates structured remediation guidance, and feeds Power BI dashboards via JSON outputs.</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest mb-1" style="color:#4eefc9;">Outcome</p>
+            <p class="text-white font-medium">Autonomous triage replacing human review for routine ETL incidents.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/5">
+          <span class="project-chip">Claude API</span>
+          <span class="project-chip">AI Agents</span>
+          <span class="project-chip">Power BI</span>
+          <span class="project-chip">Python</span>
+        </div>
+      </div>
 
-        // Setup Header Scroll Background
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.style.backgroundColor = 'rgba(12, 13, 19, 0.98)';
-                header.style.borderBottomColor = 'rgba(255, 255, 255, 0.1)';
-            } else {
-                header.style.backgroundColor = 'rgba(12, 13, 19, 0.9)';
-                header.style.borderBottomColor = 'rgba(255, 255, 255, 0.05)';
-            }
-        });
+      <!-- Project 3 -->
+      <div class="reveal reveal-d3 project-card p-7 flex flex-col">
+        <div class="flex items-start justify-between mb-4">
+          <div class="w-10 h-10 rounded-lg flex items-center justify-center" style="background:rgba(245,167,66,0.1);border:1px solid rgba(245,167,66,0.2);">
+            <span class="material-symbols-outlined text-[20px]" style="color:#f5a742;">analytics</span>
+          </div>
+          <span class="text-[11px] font-bold text-on-surface-variant tracking-widest">2024–25</span>
+        </div>
+        <h3 class="font-display text-[17px] font-bold text-white mb-3">SAP ETL Intelligence Layer</h3>
+        <div class="space-y-3 text-[13.5px] mb-5 flex-1">
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Problem</p>
+            <p class="text-on-surface-variant">SAP root-cause analysis was time-consuming and required senior engineer involvement for every incident.</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest text-on-surface-variant mb-1">Built</p>
+            <p class="text-on-surface-variant">AI-assisted SQL health monitoring with LLM-generated executive summaries and multi-step prompt chains that surface insights automatically.</p>
+          </div>
+          <div>
+            <p class="text-[11px] font-bold uppercase tracking-widest mb-1" style="color:#4eefc9;">Outcome</p>
+            <p class="text-white font-medium">~60% reduction in SAP RCA investigation effort per incident.</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap gap-1.5 pt-4 border-t border-white/5">
+          <span class="project-chip">RAG</span>
+          <span class="project-chip">Prompt Chaining</span>
+          <span class="project-chip">SAP ECC</span>
+          <span class="project-chip">SQL</span>
+        </div>
+      </div>
 
-        // Setup Reveal Observer for Sections
-        const revealEls = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, i) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => entry.target.classList.add('visible'), i * 80);
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.08 });
-        revealEls.forEach(el => revealObserver.observe(el));
+    </div>
 
-        // Setup Navigation Highlighting
-        const navLinks = document.querySelectorAll('.nav-link');
-        const scrollSpy = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => {
-                        link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
-                    });
-                }
-            });
-        }, { threshold: 0.4, rootMargin: '-30% 0px -30% 0px' });
-        document.querySelectorAll('section[id]').forEach(s => scrollSpy.observe(s));
-    </script>
+    <div class="reveal mt-6 glass-static rounded-xl px-7 py-5 flex items-center justify-between gap-4 flex-wrap">
+      <p class="text-[13.5px] text-on-surface-variant">All three projects ship against real enterprise data inside production environments — not side-project sandboxes.</p>
+      <a href="https://soumyaranjanr.github.io/Soumyaranjan-Rath" target="_blank" rel="noopener" class="flex-shrink-0 flex items-center gap-2 text-[13px] font-bold text-primary hover:opacity-75 transition-opacity">
+        <span class="material-symbols-outlined text-[16px]">open_in_new</span> View on GitHub
+      </a>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ════════════ EXPERIENCE ════════════ -->
+  <section id="experience" class="py-24 max-w-[1200px] mx-auto px-6 md:px-8">
+    <div class="reveal mb-16">
+      <span class="section-label">Career History</span>
+      <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white mt-2">Experience</h2>
+    </div>
+
+    <div class="relative tl-track max-w-4xl mx-auto">
+
+      <!-- Radiall -->
+      <div class="reveal relative z-10 flex flex-col md:flex-row w-full mb-20">
+        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+          <h3 class="font-display text-[18px] font-bold text-white mb-1">Senior ETL Developer &amp; Tech Lead</h3>
+          <p class="font-semibold mb-1 text-[14px]" style="color:#7b9fff;">Radiall India Pvt Ltd · Bangalore</p>
+          <p class="text-on-surface-variant text-[13px]">Sept 2019 – Present</p>
+          <div class="hidden md:flex justify-end mt-4">
+            <span class="evo-tag-now text-[11px]">Current Role</span>
+          </div>
+        </div>
+        <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-primary-container border-4 z-20 mt-1.5 md:mt-1" style="border-color:var(--navy);box-shadow:0 0 12px rgba(58,95,217,0.6);"></div>
+        <div class="md:w-1/2 md:pl-12 pl-12 mt-5 md:mt-0">
+          <ul class="space-y-3">
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Engineered Python and Apps Script automations recovering <strong class="text-white">20+ hours/week</strong>, reducing manual reporting effort by <strong class="text-white">90%</strong> across business units.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Architected SAP ECC ETL pipelines sustaining <strong class="text-white">99.9% data reliability</strong> across global enterprise operations.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Designed <strong class="text-white">prompt-driven workflow systems</strong> for anomaly detection, exception handling, and operational summaries — materially reducing manual investigation time.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Built real-time visibility into plant-level bottlenecks and operational risks for <strong class="text-white">global stakeholders across 3 manufacturing plants</strong>.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Owned full product lifecycle of a <strong class="text-white">Training Intelligence SaaS Dashboard</strong> — requirements → deployment — enabling global Lean &amp; Six Sigma certification tracking with manager-level filtering.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span style="color:#4eefc9;margin-top:3px;font-size:10px;">●</span> Implemented <strong class="text-white">GitLab CI/CD pipelines</strong> with automated testing and structured deployment for ETL workflows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MeritTrac -->
+      <div class="reveal relative z-10 flex flex-col md:flex-row w-full mb-20">
+        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+          <h3 class="font-display text-[18px] font-bold text-white mb-1">Full-Stack Developer &amp; Integration Specialist</h3>
+          <p class="font-semibold mb-1 text-[14px]" style="color:#7b9fff;">MeritTrac Services Pvt Ltd · India</p>
+          <p class="text-on-surface-variant text-[13px]">Aug 2016 – Sept 2019</p>
+        </div>
+        <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full z-20 mt-1.5 md:mt-1" style="background:#334155;border:4px solid var(--navy);"></div>
+        <div class="md:w-1/2 md:pl-12 pl-12 mt-5 md:mt-0">
+          <ul class="space-y-3">
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span class="text-primary mt-0.5" style="font-size:10px;">●</span> Built end-to-end applications and ETL workflows for high-volume university examination and counseling platforms.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span class="text-primary mt-0.5" style="font-size:10px;">●</span> Replaced manual synchronization with automated integration workflows, improving operational efficiency across release cycles.</li>
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span class="text-primary mt-0.5" style="font-size:10px;">●</span> Developed scalable backend systems integrating SQL databases with web applications across multiple deployment cycles.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Polytechnic -->
+      <div class="reveal relative z-10 flex flex-col md:flex-row w-full">
+        <div class="md:w-1/2 md:pr-12 md:text-right pl-12 md:pl-0">
+          <h3 class="font-display text-[18px] font-bold text-white mb-1">Lecturer — IT &amp; Computer Science</h3>
+          <p class="font-semibold mb-1 text-[14px]" style="color:#7b9fff;">Polytechnic College · Odisha, India</p>
+          <p class="text-on-surface-variant text-[13px]">2012 – 2014</p>
+        </div>
+        <div class="absolute left-[24px] md:left-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full z-20 mt-1.5 md:mt-1" style="background:#1e293b;border:4px solid var(--navy);"></div>
+        <div class="md:w-1/2 md:pl-12 pl-12 mt-5 md:mt-0">
+          <ul class="space-y-3">
+            <li class="text-on-surface-variant text-[13.5px] flex items-start gap-2.5"><span class="text-on-surface-variant mt-0.5" style="font-size:10px;">●</span> Delivered academic instruction in IT systems, database fundamentals, and CS principles; mentored students in programming and problem-solving.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ════════════ BUSINESS IMPACT ════════════ -->
+  <section id="impact" class="py-24 max-w-[1200px] mx-auto px-6 md:px-8">
+    <div class="reveal mb-12">
+      <span class="section-label">Business Impact</span>
+      <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white mt-2 mb-3">Problems Solved. Outcomes Delivered.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+      <div class="reveal reveal-d1 glass rounded-xl p-7">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-[22px]" style="color:#4eefc9;">smart_toy</span>
+          <h3 class="font-display font-bold text-white text-[16px]">AI-Powered Workflow Automation</h3>
+        </div>
+        <div class="space-y-2 text-[13.5px] text-on-surface-variant">
+          <p><strong class="text-white">Problem:</strong> Manual process mapping slowed operations and risked audit failure across FDA &amp; Lean compliance cycles.</p>
+          <p><strong class="text-white">Built:</strong> Intelligent AI-assisted automation engine parsing legacy documentation and generating structured workflow maps.</p>
+          <p style="color:#4eefc9;"><strong style="color:#4eefc9;">Outcome:</strong> Lean cycles accelerated by 40%. Manual effort cut by up to 90%.</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d2 glass rounded-xl p-7">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-[22px] text-primary">bar_chart</span>
+          <h3 class="font-display font-bold text-white text-[16px]">Executive Analytics Platform</h3>
+        </div>
+        <div class="space-y-2 text-[13.5px] text-on-surface-variant">
+          <p><strong class="text-white">Problem:</strong> C-suite lacked real-time operational visibility — decisions ran on stale data.</p>
+          <p><strong class="text-white">Built:</strong> Direct-to-dashboard pipeline uniting SAP ECC, SQL, Power BI, and Data Studio.</p>
+          <p style="color:#4eefc9;"><strong style="color:#4eefc9;">Outcome:</strong> Instant KPI visibility enabling zero-delay strategic planning for global stakeholders.</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d1 glass rounded-xl p-7">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-[22px]" style="color:#f5a742;">verified</span>
+          <h3 class="font-display font-bold text-white text-[16px]">SAP-IDoc Reliability Overhaul</h3>
+        </div>
+        <div class="space-y-2 text-[13.5px] text-on-surface-variant">
+          <p><strong class="text-white">Problem:</strong> Persistent IDoc discrepancies eroded leadership trust in enterprise reporting metrics.</p>
+          <p><strong class="text-white">Built:</strong> Deep RCA process and complete re-architecture of the SQL reporting and reconciliation layer.</p>
+          <p style="color:#4eefc9;"><strong style="color:#4eefc9;">Outcome:</strong> 100% elimination of historic discrepancies. Leadership trust restored.</p>
+        </div>
+      </div>
+
+      <div class="reveal reveal-d2 glass rounded-xl p-7">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="material-symbols-outlined text-[22px] text-primary">deployed_code</span>
+          <h3 class="font-display font-bold text-white text-[16px]">Enterprise CI/CD Implementation</h3>
+        </div>
+        <div class="space-y-2 text-[13.5px] text-on-surface-variant">
+          <p><strong class="text-white">Problem:</strong> Manual deployments caused frequent pipeline downtime and unpredictable release quality.</p>
+          <p><strong class="text-white">Built:</strong> Automated CI/CD pipelines with strict GitLab protocols, testing gates, and deployment automation.</p>
+          <p style="color:#4eefc9;"><strong style="color:#4eefc9;">Outcome:</strong> Faster, predictable, and highly reliable release cycles — zero manual deployment errors.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ════════════ DIFFERENTIATORS ════════════ -->
+  <section class="py-24" style="background:rgba(12,13,20,0.5);">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-8">
+      <div class="reveal text-center mb-14">
+        <span class="section-label">What Sets Me Apart</span>
+        <h2 class="font-display text-3xl md:text-4xl font-extrabold text-white mt-2">Why Hire Me</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <div class="reveal reveal-d1 glass-static rounded-xl p-7 border-l-2" style="border-left-color:#7b9fff;">
+          <h3 class="font-display text-[17px] font-bold text-white mb-2">Enterprise depth + AI breadth.</h3>
+          <p class="text-on-surface-variant text-[13.5px]">9 years of production-hardened data engineering means I don't just layer AI on top — I architect it to survive enterprise realities.</p>
+        </div>
+        <div class="reveal reveal-d2 glass-static rounded-xl p-7 border-l-2" style="border-left-color:#4eefc9;">
+          <h3 class="font-display text-[17px] font-bold text-white mb-2">I own outcomes, not just tasks.</h3>
+          <p class="text-on-surface-variant text-[13.5px]">From requirements definition to deployment and monitoring — I take full ownership of the systems I build.</p>
+        </div>
+        <div class="reveal reveal-d1 glass-static rounded-xl p-7 border-l-2" style="border-left-color:#7b9fff;">
+          <h3 class="font-display text-[17px] font-bold text-white mb-2">I translate systems into decisions.</h3>
+          <p class="text-on-surface-variant text-[13.5px]">I bridge the gap between engineering execution and executive strategy — ensuring systems produce trusted, actionable KPIs.</p>
+        </div>
+        <div class="reveal reveal-d2 glass-static rounded-xl p-7 border-l-2" style="border-left-color:#f5a742;">
+          <h3 class="font-display text-[17px] font-bold text-white mb-2">I ship at global enterprise scale.</h3>
+          <p class="text-on-surface-variant text-[13.5px]">3 manufacturing plants. 40+ global stakeholders. Real production workloads with real reliability requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ CTA ════════════ -->
+  <section class="py-24 max-w-[1200px] mx-auto px-6 md:px-8 text-center">
+    <div class="reveal">
+      <h2 class="font-display text-3xl md:text-[42px] font-extrabold text-white mb-4 leading-tight">
+        If your enterprise data is<br class="hidden md:block"> <span class="grad-text">not yet AI-powered</span>, let's fix that.
+      </h2>
+      <p class="text-on-surface-variant text-[15px] mb-10 max-w-xl mx-auto">I build automation systems that stick — not demos that look good in presentations.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="mailto:ultimate.soumya@gmail.com"
+           class="bg-primary-container text-white px-8 py-3.5 rounded-md font-bold text-[13.5px] hover:opacity-90 transition-all hover:shadow-lg hover:shadow-blue-900/40">
+          Start a Conversation
+        </a>
+        <a href="https://linkedin.com/in/soumyaranjanr" target="_blank" rel="noopener"
+           class="border text-white px-8 py-3.5 rounded-md font-bold text-[13.5px] transition-all hover:bg-white/5"
+           style="border-color:rgba(255,255,255,0.15);">
+          Connect on LinkedIn
+        </a>
+        <button onclick="window.print()"
+                class="border text-white px-8 py-3.5 rounded-md font-bold text-[13.5px] transition-all hover:bg-white/5"
+                style="border-color:rgba(255,255,255,0.15);">
+          Download Resume
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer class="py-8 border-t border-white/5">
+    <div class="max-w-[1200px] mx-auto px-6 md:px-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div>
+        <p class="font-display font-bold text-white text-[14px]">Soumyaranjan Rath</p>
+        <p class="text-on-surface-variant text-[12px]">Senior AI Automation Engineer · Bangalore, India</p>
+      </div>
+      <div class="flex gap-6">
+        <a href="mailto:ultimate.soumya@gmail.com" class="text-on-surface-variant hover:text-white text-[12.5px] font-medium transition-colors">Email</a>
+        <a href="https://linkedin.com/in/soumyaranjanr" target="_blank" rel="noopener" class="text-on-surface-variant hover:text-white text-[12.5px] font-medium transition-colors">LinkedIn</a>
+        <a href="https://github.com/Soumyaranjanr" target="_blank" rel="noopener" class="text-on-surface-variant hover:text-white text-[12.5px] font-medium transition-colors">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── Scripts ─── -->
+  <script>
+    // Mobile menu
+    const mobBtn = document.getElementById('mob-btn');
+    const mobNav = document.getElementById('mob-nav');
+    mobBtn.addEventListener('click', () => mobNav.classList.toggle('hidden'));
+    document.querySelectorAll('.mob-link').forEach(l => l.addEventListener('click', () => mobNav.classList.add('hidden')));
+
+    // Header scroll
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY > 50;
+      header.style.backgroundColor = scrolled ? 'rgba(8,9,16,0.98)' : 'rgba(8,9,16,0.88)';
+      header.style.borderBottomColor = scrolled ? 'rgba(255,255,255,0.1)' : 'rgba(255,255,255,0.05)';
+    });
+
+    // Reveal observer
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 70);
+          revealObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.07 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+    // Nav scroll spy
+    const navLinks = document.querySelectorAll('.nav-link');
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id);
+          });
+        }
+      });
+    }, { threshold: 0.35, rootMargin: '-25% 0px -25% 0px' });
+    document.querySelectorAll('section[id]').forEach(s => spy.observe(s));
+
+    // Counter animation
+    function animateCounter(el) {
+      const target = parseFloat(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      const duration = 1600;
+      const start = performance.now();
+      const isFloat = target % 1 !== 0;
+
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = target * eased;
+        el.textContent = (isFloat ? current.toFixed(1) : Math.floor(current)) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    }
+
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
+  </script>
 </body>
-
 </html>
